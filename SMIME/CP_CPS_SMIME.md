@@ -2,17 +2,23 @@
  
  
 **Disig, a.s.**  
-**Version 2.0**  
-**Valid from March 5, 2026**  
-**OID 1.3.158.35975946.0.0.0.1.11**  
+**Version 2.1**  
+**Valid from April 21, 2026**  
+**OID 1.3.158.35975946.0.0.0.1.11**
+
+Copyright © 2026 Disig, a.s. 
+This work is licensed under the [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/) license.
+
+This document has not been proofread.
+Trademarks: Product names mentioned herein may be trademarks of the firms.
    
  
 # 1. Introduction
 
 This document is a combined Certificate Policy and Certification Practice Statement (CP/CPS) of the company Disig, a.s., with its registered office at Galvaniho 17/C, 821 04 Bratislava - mestská časť Ružinov, National Trade Register number: 35975946, registered in the Business Register of the Municipal Court Bratislava III Section: Sa Insert No.: 3749/B, as a Trusted Service Provider (hereinafter referred to as "Provider") and applies to the root certification authorities and their subordinate certification authorities listed in Section 1.4.1 operated by the Provider, through which it provides trusted services for issuing publicly trusted S/MIME Certificates (hereinafter referred to as the "Certificate").  
 It defines:  
-Policy (CP) - the policies and rules under which Certificates are issued, managed, and used, and  
-Policy (CPS) - the detailed procedures and practices that the Provider implements.
+Certificate Policy (CP) - the policies and rules under which Certificates are issued, managed, and used, and  
+Certification Practice Statement (CPS) - the detailed procedures and practices that the Provider implements.
 
 The Certificate issued for the end user (hereinafter referred to as the "Subscriber" or "Holder" or "Subscriber/Holder") uniquely identifies the entity to which the certificate is issued and binds this entity to the corresponding pair of keys. Unless it is explicitly stated in this CP/CPS that it refers to the certificate of the root certification authority or subordinate certification authority, then the word "Certificate" means the S/MIME certificate of the end entity.
 
@@ -33,12 +39,12 @@ In the event of any inconsistency between these requirements and this CP/CPS, th
 ## 1.2 Document Name and Identification
  
 |  | |
-| :--- | :--- |
-| Document Name:|**Disig S/MIME Certificate Policy and <br>Certification Practice Statement (CP/CPS)** |
-| Skratka názvu: | **SMIME CP/CPS** |
-| Version:|  **2.0** |
-| Approved on:| **March 2, 2026**   |
-| Valid from:| **March 5, 2026**    |  
+|:--- | :--- |
+|Document Name:|**Disig S/MIME Certificate Policy and <br>Certification Practice Statement (CP/CPS)** |
+|Skratka názvu: | **SMIME CP/CPS** |
+|Version:|  **2.1** |
+|Approved on:| **April 16, 2026**   |
+|Valid from:| **April 21, 2026**    |  
 |This document is assigned<br> to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.11** |  
  
  
@@ -68,6 +74,7 @@ This OID (1.3.158.35975946.0.0.0.1.11) is also listed in issued Certificates and
 |1.3|2024/09/16|Addition of part 4.2 in accordance with the requirements of part 2.2 of the current version of SMIME BR; Miskovic|  
 |1.4|2025/03/15|Modification of sections 4.2.2 and 4.2.3 in accordance with the requirements of the current version of SMIME BR v. 1.0.8.|Miskovic|  
 |2.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted SMIME Certificates, which also includes the rules for providing this service, which were originally the subject of a separate document.; Miskovic|
+|2.1|2026/04/21|Addition of information about the issued subordinate CA Disig R4I1 SMIME Certification Service (1.3.1.12); Miškovič|
 
 ##  1.3 PKI Participants
 
@@ -84,44 +91,49 @@ The hierarchy will be used to issue Certificates to end users only until it is r
 
 | | |
 |:--- |:--- |
-|Name:|**CA Disig Root R2**|
-|Certificate serial number: |**0092b888dbb08ac163**|
-|Thumbprint (sha1) (DER):|**B561EBEAA4DEE4254B691A98A55747C234C7D971**|
+|Name:                     |**CA Disig Root R2**|
+|Certificate serial number:|**0092B888DBB08AC163**|
+|Thumbprint (sha1) (DER):  |**B561EBEAA4DEE4254B691A98A55747C234C7D971**|
 |Thumbprint (sha256) (DER):|**E23D4A036D7B70E9F595B1422079D2B91EDFBB1FB651A0633EAA8A9DC5F80703**|
-|Comment:|**It issues Certificates only for subordinate certification authorities of the Provider.**|  
-
-   
+|Comment:                  |**It issues Certificates only for subordinate certification authorities of the Provider.**|  
 
 
 | | |
 |:--- |:--- |
-|Name:|**CA Disig R2I5 Certification Service**|
-|Certificate serial number: |**081b06df4c7965509d000000000000000e**|
+|Name:                       | **CA Disig R2I5 Certification Service**|
+|Certificate serial number:  | **081B06DF4C7965509D000000000000000E**|
 |Issuer:|**CA Disig Root R2**|
-|Thumbprint (sha1) (DER):|**8A189E4E6222B3B16D98EABE88687B39F82827A4**|
-|Thumbprint (sha256) (DER):|**B99B7BCEA9EB7BC56C837F3DB437EDC23D01676A4E4F30F9527E856985BD78F7**|
-|Comment:|**It issues SMIME signature/seal certificates to end users in accordance with the requirements set out <br> in the “Baseline Requirements for the Issuance and Management of Publicly‐Trusted S/MIME Certificates [1]**|
+|Thumbprint (sha1) (DER):    | **8A189E4E6222B3B16D98EABE88687B39F82827A4**|
+|Thumbprint (sha256) (DER):  | **90BA720B376FB9FDCF8A1037A5316FB493B5ACF656AD79C6839008BD43343FDD**|
+|Comment:                    | **It issues SMIME signature/seal certificates to end users in accordance with the requirements set out <br> in the “Baseline Requirements for the Issuance and Management of Publicly‐Trusted S/MIME Certificates [1]**|
 
 
 ####  1.3.1.2 Single-purpose SMIME CA
 
 This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1) currently used to issue Certificates to end users. This single-purpose SMIME CA hierarchy is now fully compliant with the requirements of the current version SMIME BR [1], where new root CAs are required to have a separate CA hierarchy for issuing certificates to end users and are restricted to issuing certificates containing only the id-kp-emailProtection extension  (OID: 1.3.6.1.5.5.7.3.4) in the EKU.  
-The actual issuance of Certificates to end users via this hierarchy is expected to occur only after the full acceptance of the Disig SMIME Root R4 single-purpose CA in the root certification authority programs of Microsoft, Mozilla and Apple.  
+
 
 |  | |
 | :--- | :--- |
-| Name:| **CA Disig SMIME Root R4** |
-| Certificate serial number: | **3F0CFAFD63A38C10294A0579F5457825**|
-| Thumbprint (sha1)(DER):|  **33F3820A9838680BF90DA57815019E9FFDF31718** |
-| Thumbprint (sha256)(DER):| **6AF177B41E97D40C9EA25203533E55C408632E9BD8A4809551001DFF2DC9479B**   |
-| Comment:| **It issues certificates only for the Provider's subordinate certification authorities reserved for issuing SMIME certificates.**    |  
+| Name:                     | **CA Disig SMIME Root R4**|
+| Certificate serial number:| **3F0CFAFD63A38C10294A0579F5457825**|
+| Thumbprint (sha1)(DER):   | **33F3820A9838680BF90DA57815019E9FFDF31718**|
+| Thumbprint (sha256)(DER): | **6AF177B41E97D40C9EA25203533E55C408632E9BD8A4809551001DFF2DC9479B**|
+| Valid from:               | **September 18, 2025**|
+| Valid to:                 | **septamber 14, 2043**| 
+| Comment:                  | **It issues certificates only for the Provider's subordinate certification authorities reserved for issuing SMIME certificates.**|  
 
  
 |  | |
 | :--- | :--- |
-| Name:| **CA Disig R4I1 SMIME Certification Service** |
-| Issuer:|**CA Disig Root R4**|
-| Comment:| **It only issues SMIME Certificates to end users (see 3.1.4.3).**| 
+| Name:                     | **CA Disig R4I1 SMIME Certification Service** |
+| Issuer:                   | **CA Disig SMIME Root R4**|
+| Certificate serial number:| **0AC7948B6549813D0E0000000000000001**|
+| Thumbprint (sha1)(DER):   | **41253D3546812F46FAA7DC97933373E241134F61**|
+| Thumbprint (sha256)(DER): | **855998FAB845C2C1CF0D6F62852C6B9A3C659DFDFA434D405C134C240E4534B5**|
+| Valid from:               | **April 13, 2026**|
+| Valid to:                 | **April 11, 2033**| 
+| Comment:                  | **It only issues SMIME Certificates to end users (see 3.1.4.3).**| 
 
 ###  1.3.2	Registration Authorities
 
@@ -497,11 +509,11 @@ No stipulation.
 
 ##  3.2	Initial identity validation
 The Provider shall authenticate all identity attributes of the Subject that will be included in the Certificate and the Subject's control over the email address, according to the following requirements:
-| Certificate type                 | Mailbox Control              | Organization Identity          |Individual Identity          |
-|----------------------|:-------------------:|:----------------------:|:----------------------:|
-| S/MIME digital signature certificate [Individual-validated]  | Section 3.2.2 | NA  | Section 3.2.4  |
-| S/MIME digital signature certificate [Sponsor-validated]  | Section 3.2.2 | Section 3.2.3  | Section 3.2.4  |
-| S/MIME digital signature certificate [Organization-validated]  | Section 3.2.2 | Section 3.2.3  | NA  |
+| Certificate type                                             | Mailbox Control | Organization Identity | Individual Identity|
+|--------------------------------------------------------------|:---------------:|:---------------------:|:-------------------|
+| S/MIME digital signature certificate [Individual-validated]  | Section 3.2.2   | NA                    | Section 3.2.4      |
+| S/MIME digital signature certificate [Sponsor-validated]     | Section 3.2.2   | Section 3.2.3         | Section 3.2.4      |
+| S/MIME digital signature certificate [Organization-validated]| Section 3.2.2   | Section 3.2.3         | NA                 |
 
 Authentication and verification on behalf of the Provider shall be performed by an RA staff member prior to Certificate issuance.
 
@@ -1450,11 +1462,11 @@ No stipulation.
 
 ###  6.3.2	Certificate operational periods and key pair usage periods 
 The validity of the Certificate issued by the Provider and the usability of the key pair shall not exceed the following:
-| Certificate type| Validity <br> (minimum)| Validity<br>(maximum)|
-|-----------------|:----------------------:|:--------------------:|
-| Root CA         | 2922 days              |  9132 days           |
-| Subordinate CA  | -              |  2560 days           |
-|STRICT or MULTIPURPOSE<br> S/MIME certificate|-|825 days         |
+| Certificate type| Validity <br> (minimum)    | Validity<br>(maximum)|
+|-----------------|:--------------------------:|:--------------------:|
+| Root CA         | 2922 days                  |  9132 days           |
+| Subordinate CA  | -                          |  2560 days           |
+| STRICT or MULTIPURPOSE<br> S/MIME certificate |-|825 days            |
 
 For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day.
 

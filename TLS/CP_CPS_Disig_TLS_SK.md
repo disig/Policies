@@ -2,10 +2,16 @@
  
  
 **Disig, a.s.**  
-**Verzia 7.0**  
-**Platné od 5. 3. 2026**  
+**Verzia 7.1**  
+**Platné od 21. 4. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**  
 
+  
+Copyright © 2026 Disig, a.s. 
+Tento dokument je zverejnený pod licenciou [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/deed.sk).
+
+Tento dokument neprešiel jazykovou korektúrou.
+Ochranné známky: Názvy produktov uvedené v tomto dokumente môžu byť ochrannými známkami príslušných firiem.
 
 # 1. Úvod
 Tento dokument predstavuje kombinovaný dokument, ktorý zahŕňa politiku poskytovania dôveryhodných služieb a pravidlá poskytovania dôveryhodných služieb (ďalej aj „CP/CPS“) spoločnosti Disig, a.s., so sídlom Galvaniho 17/C, 821 04 Bratislava, IČO: 35975946, zapísanú v Obchodnom registri Mestského súdu Bratislava III, odd. Sa, vložka č. 3794/B, ako poskytovateľa dôveryhodných služieb (ďalej len „Poskytovateľ“) a platí pre koreňové certifikačné autority a k nim podriadené certifikačné autority uvedené v kapitole 1.4.1, prevádzkované Poskytovateľom, prostredníctvom ktorých poskytuje dôveryhodnú službu vyhotovovania verejne dôveryhodných TLS certifikátov (ďalej len „TLS certifikát“).  
@@ -37,11 +43,11 @@ V prípade akéhokoľvek nesúladu medzi týmito požiadavkami a týmito CP/CPS 
 
 |  | |
 | :--- | :--- |
-|Názov:|**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
-|Skratka názvu: | **CA Disig TLS CP/CPS** |
-|Verzia:|  **7.0** |
-|Schválené dňa:| **2. 3. 2026**   |
-|Platnosť od:| **5. 3. 2026**    |  
+|Názov:         |**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
+|Skratka názvu: | **CA Disig TLS CP/CPS**|
+|Verzia:        |  **7.1** |
+|Schválené dňa: | **16. 4. 2026**|
+|Platnosť od:   | **21. 4. 2026**|  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 Popis použitého identifikátora objektu (OID):  
@@ -99,6 +105,7 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 |6.3|10. 01. 2025|Ukončenie používania metód na overenie domény v zmysle časti 3.2.2.4.2 a 3.2.4.15 k 15.1.2025;. zavedenie do používania nových metód  na overovanie domény<br> (3.2.2.4.13 a 3.2.2.4.14); doplnenie dokumentu o časť „Multiperspektívne potvrdenie vydania“ (3.2.2.9); Úprava časti 4.9.9;  Miškovič|
 |6.4|01. 09. 2025|Zmena v používaných metódach pre overenie domény (3.2.2.4); Zohľadnenie požiadaviek časti 6.1.3 Mozilla Root Store Policy v. 3.0 (4.9.5); Plány hromadného rušenia (5.7.1.2); Miškovič|
 |7.0|05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby vyhotovovanie verejne dôveryhodných TLS certifikátov, ktorá zahrňuje aj  pravidlá pre poskytovanie<br> tejto služby, ktoré boli pôvodne predmetom samostatného dokumentu. Pridanie novej single-purpose CA Disig TLS Root R3 a jej podriadenej CA Disig R3I1 TLS Certificate Service (1.3.1.2); <br>Doplnenie informácii a profilov týkajúcich sa cross-certifikátov. ( 7); Doplnenie novej metódy overovanie vlastníctva domény- ACME (3.2.2.4.19); Miškovič|
+|7.1|21. 04. 2026| Doplnenie informácií o vydanom certifikáte podriadenej certifikačnej outority CA Disig R3I1 TLS Certification Service a krížovom certifikáte CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Doplnenie odkazov na testovaciu webovú stránku pre platné, expirované a zrušené TLS certifikáty (2.2.4); Doplnenie časových rámcov do kapitoly 4.2.1; Aktualizácie doby platnosti TLS certifikátov pre koncových používateľov (6.3.2); Miškovič|
   
 ## 1.3 Účastníci PKI
 
@@ -114,43 +121,63 @@ Táto hierarchia sa bude používať na vydávanie TLS certifikátov koncovým p
 
 | | |
 |:--- |:--- |
-|Názov:|**CA Disig Root R2**|
-|Sériové číslo certifikátu: |**0092b888dbb08ac163**|
-|Odtlačok (sha1)(DER):|**B561EBEAA4DEE4254B691A98A55747C234C7D971**|
-|Odtlačok (sha256)(DER):|**E23D4A036D7B70E9F595B1422079D2B91EDFBB1FB651A0633EAA8A9DC5F80703**|
-|Poznámka:|**Vydáva certifikáty len pre podriadené certifikačné autority Poskytovateľa.**|  
+|Názov:                    |**CA Disig Root R2**|
+|Sériové číslo certifikátu:|**0092B888DBB08AC163**|
+|Odtlačok (sha1)(DER):     |**B561EBEAA4DEE4254B691A98A55747C234C7D971**|
+|Odtlačok (sha256)(DER):   |**E23D4A036D7B70E9F595B1422079D2B91EDFBB1FB651A0633EAA8A9DC5F80703**|
+|Poznámka:                 |**Vydáva certifikáty len pre podriadené certifikačné autority Poskytovateľa.**|  
 
  
 
 | | |
 |:--- |:--- |
-|Názov:|**CA Disig R2I2 Certification Service**|
-|Sériové číslo certifikátu: |**081792523668f5c8500000000000000003**|
-|Vydavateľ:|**CA Disig Root R2**|
-|Odtlačok (sha1)(DER):|**19F2783DEDD8561A61C682932EE9D5B4D86B00CE**|
-|Odtlačok (sha256)(DER):|**C96F24C45113FD91AE2F9E40E106653BFA0FFBCFA07E209524C844E7C8DA4148**|
-|Poznámka:|**Vydáva len TLS certifikáty pre koncových používateľov (pozri 3.1.4.3).**|
+|Názov:                    |**CA Disig R2I2 Certification Service**|
+|Sériové číslo certifikátu:|**081792523668f5c8500000000000000003**|
+|Vydavateľ:                |**CA Disig Root R2**|
+|Odtlačok (sha1)(DER):     |**19F2783DEDD8561A61C682932EE9D5B4D86B00CE**|
+|Odtlačok (sha256)(DER):   |**C96F24C45113FD91AE2F9E40E106653BFA0FFBCFA07E209524C844E7C8DA4148**|
+|Poznámka:                 |**Vydáva len TLS certifikáty pre koncových používateľov (pozri 3.1.4.3).**|
+
+
+
+| | |
+|:--- |:--- |
+| Typ:                      |**Krížový certifikát**|
+| Názov:                    |**CA Disig TLS Root R3**|
+| Sériové číslo certifikátu:|**0864417EE567132EBA0000000000000011**|
+| Vydavateľ:                |**CA Disig Root R2**|
+| Odtlačok (sha1) (DER):    |**469EDA6B6A016F30617D8504883C1E39C21188FD**|
+| Odtlačok (sha256) (DER):  |**1E4CF8FA6ADA4DB81C33BB8E4BF73B8D29E99C119FF0B7A42D58032366F56509**|
+| Platný od:                |**13. 04. 2026**|
+| Platný do:                |**12. 04. 2029**|
+| Poznámka:                 |**Ide o krížový certifikát medzi CA Disig TLS Root R3 a CA Disig Root R2**|
 
 
 #### 1.3.1.2 Single-purpose TLS CA  
 Táto hierarchia CA predstavuje náhradu „legacy“ hierarchie CA (pozri 1.3.1.1), ktorá je v súčasnosti využívaná na vydávanie TLS certifikátov pre koncových zákazníkov. Táto „single-purpose“ TLS CA hierarchia už plne spĺňa aktuálne požiadavky BR pre TLS [3], kde je pri nových koreňových CA vyžadovaná samostatná hierarchia CA pre účely vydávania TLS certifikátov koncovým zákazníkom a je obmedzená len na vydávanie certifikátov obsahujúcich v rozšírení EKU len id-kp-serverAuth (1.3.6.1.5.5.7.3.1)  
-Reálne vydávanie TLS certifikátov pre koncových zákazníkov prostredníctvom tejto hierarchie sa predpokladá až po úplnej akceptácii „single-purpose“ CA Disig TLS Root R3 v programoch pre koreňové certifikačné autority  spoločností Microsoft, Mozilla, Google a Apple.  
 
 |  | |
 | :--- | :--- |
-| Názov:|**CA Disig Root R3**|
-| Sériové číslo certifikátu:| **5b99abc2b008cf8441d62e523909b41b**|
-| Thumbprint (sha1)(DER):   |  **AF250F267724C554652607D70985DE93DD33AFC0**|
-| Thumbprint (sha256)(DER): | **6248199FEA4811FD34AA96EF0A26DE52134B73A9A2A99678F0C2EBADF8663EF8**|
-| Poznámka:                  | **Vydáva certifikáty len pre podriadené certifikačné autority Poskytovateľa vyhtradené pre TLS certifikáty.**|  
+| Názov:                    |**CA Disig TLS Root R3**|
+| Sériové číslo certifikátu:|**5B99ABC2B008CF8441D62E523909B41B**|
+| Odtlačok (sha1)(DER):     |**AF250F267724C554652607D70985DE93DD33AFC0**|
+| Odtlačok (sha256)(DER):   |**6248199FEA4811FD34AA96EF0A26DE52134B73A9A2A99678F0C2EBADF8663EF8**|
+| Platný od:                |**18. 09. 2025**|
+| Platný do:                |**14. 09. 2040**|
+| Poznámka:                 |**Vydáva certifikáty len pre podriadené certifikačné autority Poskytovateľa vyhradené pre TLS certifikáty.**|  
 
    
 
 |  | |
 | :--- | :--- |
-| Názov:| **CA Disig R3I1 TLS Certification Service** |
-| Vydavateľ:|**CA Disig Root R3**|
-| Poznámka:| **Vydáva len TLS certifikáty pre koncových používateľov (pozri 3.1.4.1).**|
+| Názov:                    |**CA Disig R3I1 TLS Certification Service** |
+| Vydavateľ:                |**CA Disig TLS Root R3**|
+| Sériové číslo certifikátu:|**09B6A42D17F4DEBBEE0000000000000001**|
+| Odtlačok (sha1)(DER):     |**A7AABAD5DCA33457B5D3A4C62BBEA377096CE898**|
+| Odtlačok (sha256)(DER):   |**285C50885D41DF6BB1632B78E979750D89F5DBB995D8EA3496CEF40A446397E7**|
+| Platný od:                |**13. 04. 2026**|
+| Platný do:                |**12. 04. 2029**| 
+| Poznámka:                 |**Vydáva len TLS certifikáty pre koncových používateľov (pozri 3.1.4.1).**|
 
 
 ### 1.3.2 Registračné autority
@@ -423,12 +450,20 @@ Zoznamy CRL sú k dispozícii na nasledujúcich URL adresách HTTP, aby sa predi
 |CA Disig R3I1 TLS Certification Service|http://cdp.disig.sk/subcar3i1/crl/subcar3i1.crl|
 
 ### 2.2.4 Testovacie webové stránky 
-Na demonštráciu funkčnosti vydaných certifikátov na účely zaradenia do koreňového úložiska certifikačná autorita udržiava nasledujúce testovacie lokality:
-|CA                                 |Typ stránky       |Adresa                                       |
-|-----------------------------------|:---------------|---------------------------------------------------|
-|CA Disig R2I2 Certification Service|Platná TLS Stránka  |https://testssl-valid-r2i2.disig.sk/index.en.html  |
-|                                   |Exspirovaná TLS Stránka|https://testssl-expire-r2i2.disig.sk/index.en.html |
-|                                   |Zrušená TLS Stránka|https://testssl-revoked-r2i2.disig.sk/index.en.html|
+Na demonštráciu funkčnosti vydaných certifikátov na účely zaradenia do koreňového úložiska certifikačná autorita udržiava nasledujúce testovacie lokality:  
+
+|CA                                 |Stav TLS certifikátu |Adresa                                             |
+|-----------------------------------|:--------------------|---------------------------------------------------|
+|CA Disig R2I2 Certification Service|Platný               |https://testssl-valid-r2i2.disig.sk/index.en.html  |
+|                                   |Exspirovaný          |https://testssl-expire-r2i2.disig.sk/index.en.html |
+|                                   |Zrušený              |https://testssl-revoked-r2i2.disig.sk/index.en.html|
+
+|CA                                 |Stav TLS certifikátu |Adresa                                             |
+|-----------------------------------|:--------------------|---------------------------------------------------|
+|CA Disig R3I1 Certification Service|Platný               |https://testssl-valid-r3i1.disig.sk/index.en.html  |
+|                                   |Exspirovaný          |https://testssl-expire-r3i1.disig.sk/index.en.html |
+|                                   |Zrušený              |https://testssl-revoked-r3i1.disig.sk/index.en.html|
+
 
 ## 2.3 Čas alebo periodicita zverejňovania
 TLS certifikát musí byť zverejnený ihneď po jeho vydaní. Informácie o vydanom TLS certifikáte musia byť dostupné na webovom sídle Poskytovateľa.
@@ -879,7 +914,22 @@ Pred vydaním TLS certifikátu zamestnanec zastupujúci Poskytovateľa:
 
 Pracovník RA overí identitu a autenticitu Odberateľa v zmysle časti 3.2.     
 Odberatelia uspokojivým spôsobom preukážu RA všetky údaje, ktoré zadali do každej položky žiadosti o TLS certifikát.   
-Pracovník RA vloží žiadosť o TLS certifikát a ďalšie požadované údaje do informačného systému Poskytovateľa.  
+Pracovník RA vloží žiadosť o TLS certifikát a ďalšie požadované údaje do informačného systému Poskytovateľa. 
+
+Poskytovateľ získal údaje alebo dokument zo zdroja uvedeného v časti 3.2 alebo sám vykonal overenie v rámci maximálneho počtu dní pred vydaním TLS Certifikátu, ako je definované v nasledujúcej tabuľke:  
+
+|Certifikát vydané dňa alebo neskôr|Maximálna doba opätovného použitia údajov|
+|:--------------------------------:|:---------------------------------------:|
+|15. 03. 2026                      |398 dní                                  |
+
+Na overenie doménových mien podľa článku 3.2.2.4 musia byť akékoľvek použité údaje, dokumenty alebo dokončené overenie získané v rámci maximálneho počtu dní pred vydaním TLS Certifikátu, ako je definované v nasledujúcej tabuľke:  
+
+|Certifikát vydané dňa alebo neskôr|Certifikát vydaný pred|Maximálna doba opätovného použitia údajov|
+|:--------------------------------:|:--------------------:|:---------------------------------------:|
+|15. 03. 2026                      |15. 03. 2027          |200 dní                                  |      
+|15. 03. 2027                      |15. 03. 2029          |100 dní                                  |    
+|15. 03. 2029                      |                      |10 dní                                   |    
+
 
 ### 4.2.2 Schválenie alebo zamietnutie žiadostí o TLS certifikát  
 V prípade akejkoľvek opodstatnenej pochybnosti o identite Odberateľa, tiež v prípade nedostatkov v dokumentoch, poskytnutia neúplných dokumentov, pracovník RA odmietne registráciu Odberateľa.
@@ -1340,11 +1390,50 @@ Zamestnanci v dôveryhodných rolách musia mať k dispozícii dokumenty potrebn
 Poskytovateľ zaznamenáva všetky dôležité informácie týkajúce sa vydaných TLS certifikátov. Čas zaznamenaný pre každú udalosť musí byť synchronizovaný s UTC aspoň každých 24 hodín.
 
 ### 5.4.1 Typy zaznamenávaných udalostí
-Zaznamenávajú sa udalosti životného cyklu kľúčov a certifikátov CA, udalosti životného cyklu certifikátov odberateľov (žiadosti, schválenia, vydania, zrušenia) a bezpečnostné udalosti (pokusy o prístup, systémové chyby, aktivity firewallu, vstupy do priestorov CA).
-Záznamy musia obsahovať:
-* dátum a čas udalosti;
-* identitu osoby vykonávajúcej záznam;
-* popis udalosti.
+Poskytovateľ zaznamenáva aspoň nasledujúce udalosti:
+* Udalosti životného cyklu certifikátu CA a kľúča vrátane:
+   * Generovanie kľúča, zálohovanie, ukladanie, obnova, archivácia a zničenie;
+   * Žiadosti o certifikát, žiadosti o obnovenie a zmenu kľúča a zrušenie;
+   * Schvaľovanie a zamietnutie žiadostí o certifikát CA;
+   * Udalosti správy životného cyklu kryptografického zariadenia;
+   * Generovanie zoznamov zrušených certifikátov;
+   * Podpisovanie odpovedí OCSP (ako je opísané v časti 4.9 a časti 4.10); a
+   * Zavedenie nových profilov certifikátov a vyradenie existujúcich profilov certifikátov;
+* Udalosti správy životného cyklu TLS certifikátu z8kazn9ka vrátane:
+   * Žiadosti o TLS certifikát, žiadosti o obnovenie a zmenu kľúča a zrušenie;
+   * Všetky overovacie činnosti uvedené v TLS BR [3] a CP/CPS;
+   * Schvaľovanie a zamietnutie žiadostí o TLS certifikát;
+   * Vydávanie TLS certifikátov;
+   * Generovanie zoznamov zrušených certifikátov; a
+   * Podpisovanie odpovedí OCSP v súlade s TLS BR [3] oddiel 4.9 a 4.10;
+* Bezpečnostné udalosti vrátane:
+   * Úspešných a neúspešných pokusov o prístup do systému PKI;
+   * Vykonaných akcií PKI a bezpečnostného systému;
+   * Zmien bezpečnostného profilu;
+   * Inštalácie, aktualizácie a odstraňovania softvéru v certifikačnom systéme;
+   * Pád systému, zlyhania hardvéru a iné anomálie;
+   * Aktivít brány firewall a smerovača; a
+   * Vstupov do a odchodov zo zariadenia CA;
+* Záznamy denníka musia obsahovať nasledujúce prvky:
+  * Dátum a čas udalosti;
+  * Identita osoby, ktorá robí záznam v denníku; a
+  * Popis udalosti;
+
+Všetky udalosti súvisiace s operáciami vykonanými v aplikácii RA Client sú zaznamenávané priamo aplikáciou. Podobne sú všetky informácie odoslané z aplikácie RA Client zaznamenávané na strane servera poskytovateľa služieb.
+
+Udalosti súvisiace so životným cyklom certifikátov TLS pre koncových používateľov v rozsahu:
+* žiadosti o vydanie certifikátu TLS;
+* schválenia žiadosti o vydanie;
+* vydanie certifikátu TLS;
+* zrušenie certifikátu TLS;
+sú zaznamenané v databáze SWACA;
+
+#### 5.4.1.1 Záznamy aktivít smerovača a firewall-ov
+Záznamy aktivít smerovača a brány firewall potrebné na splnenie požiadaviek oddielu 5.4.1, pododdielu 3.6 musia minimálne zahŕňať:
+1. Úspešné a neúspešné pokusy o prihlásenie do smerovačov a brán firewall; a
+2. Záznamy všetkých administratívnych akcií vykonaných na smerovačoch a bránach firewall vrátane zmien konfigurácie, aktualizácií firmvéru a úprav riadenia prístupu; a
+3. Záznamy všetkých zmien vykonaných v pravidlách brány firewall vrátane pridaní, úprav a odstránení; a
+4. Záznamy všetkých systémových udalostí a chýb vrátane zlyhaní hardvéru, zlyhaní softvéru a reštartov systému.
 
 ### 5.4.3 Doba uchovávania auditných záznamov
 Poskytovateľ uchováva záznamy o životnom cykle kľúčov a certifikátov CA a bezpečnostné záznamy najmenej dva (2) roky po zničení súkromného kľúča CA alebo exspirácii certifikátu.
@@ -1526,7 +1615,7 @@ Pozri časť 6.2.1.
 | :--- | :---: | :---: |
 | Koreňová CA (Root CA) | 2922 dní | 9132 dní |
 | Podriadená CA (Subordinate CA) | | 1095 dní |
-| TLS certifikát | - | 395 dní do 14. 3. 2026<br> 200 dní od 15. 3. 2026 do 14. 3. 2027<br> 100 dní od 15. 3. 2027 do 14.3.2029<br> 47 dní od 15. 3. 2029|
+| TLS certifikát | - | 200 dní od 15. 3. 2026 do 14. 3. 2027<br> 100 dní od 15. 3. 2027 do 14.3.2029<br> 47 dní od 15. 3. 2029|
 
 Pri výpočtoch sa deň počíta ako 86 400 sekúnd.
 

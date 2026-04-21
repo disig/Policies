@@ -3,16 +3,22 @@
 
 
 **Disig, a.s.**  
-**Version 7.0**  
-**Valid from March 5, 2026**  
+**Version 7.1**  
+**Valid from April 21, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
-    
+
+Copyright © 2026 Disig, a.s. 
+This work is licensed under the [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/) license.
+
+This document has not been proofread.
+Trademarks: Product names mentioned herein may be trademarks of the firms.
+   
 
 # 1. Introduction
 This document is a combined Certificate Policy and Certification Practice Statement (CP/CPS) of the company Disig, a.s., with its registered office at Galvaniho 17/C, 821 04 Bratislava - mestská časť Ružinov, National Trade Register number: 35975946, registered in the Business Register of the City Court Bratislava III Section: Sa Insert No.: 3749/B, as a Trusted Service Provider (hereinafter referred to as "Provider") and applies to the root certification authorities and their subordinate certification authorities listed in Section 1.4.1 operated by the Provider, through which it provides trusted services for issuing publicly trusted TLS server Certificates (hereinafter referred to as the "TLS Certificate").  
 It defines:  
-Policy (CP) - the policies and rules under which TLS Certificates are issued, managed, and used, and  
-Policy (CPS) - the detailed procedures and practices that the Provider implements to comply with this CP.
+Certificate Policy (CP) - the policies and rules under which TLS Certificates are issued, managed, and used, and  
+Certification Practice Statement (CPS) - the detailed procedures and practices that the Provider implements to comply with this CP.
 
 Publicly‐Trusted TLS Server Certificates issued to end users uniquely identify the entity to which the TLS Certificate is issued and bind this entity to the corresponding key pair. Unless the CP/CPS explicitly states that it refers to a root certification authority or subordinate certification authority TLS Certificate, the word "TLS Certificate" means the Publicly‐Trusted TLS Server Certificate of the end entity.
 
@@ -40,9 +46,9 @@ In the event of any inconsistency between these requirements and this CP/CPS, th
 | :--- | :--- |
 | Document Name:|**Disig TLS Certificate Policy and <br>Certification Practice Statement (CP/CPS)** |
 | Name abbreviation: | **CA Disig TLS CP/CPS** |
-| Version:|  **7.0** |
-| Approved on:| **March 2, 2026**   |
-| Valid from:| **March 5, 2026**    |  
+| Version:|  **7.1** |
+| Approved on:| **April 16, 2026**   |
+| Valid from:| **April 21, 2026**    |  
 |This document is assigned<br> to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 
@@ -100,8 +106,8 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |6.2|2024/08/15|Extension of domain validation methods by DNS Change method in accordance with TLS Baseline Requirements section 3.2.2.4.7; Miskovic|
 |6.3|2025/01/10|Termination of use of domain verification methods in accordance with sections 3.2.2.4.2 and 3.2.4.15 as of 15.1.2025;. introduction of new domain verification methods (3.2.2.4.13 and 3.2.2.4.14);<br> addition of the document to the section "Multi-perspective release confirmation" (3.2.2.9); Modification of section 4.9.9; Miskovic|
 |6.4|2025/09/01|Change in the methods used for domain validation (3.2.2.4); Consideration of the requirements of section 6.1.3 Mozilla Root Store Policy v. 3.0 (4.9.5); Mass Revocation Plans (5.7.1.2); Miskovic|
-|7.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted TLS Certificates, which also includes the rules for providing this service,<br> which were originally the subject of a separate document. Addition of a new single-purpose CA Disig TLS Root R3 and its subordinate CA Disig R3I1 TLS Certificate Service (1.3.1.2);<br> Addition of information and profiles related to cross-TLS Certificates. ( 7); Miskovic|
-
+|7.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted TLS Certificates, which also includes the rules for providing this service,<br> which were originally the subject of a separate document. Addition of a new single-purpose CA Disig TLS Root R3 and its subordinate CA Disig R3I1 TLS Certificate Service (1.3.1.2);<br> Addition of information and profiles related to cross-TLS Certificates. (7); Miskovic|
+|7.1|2026/04/21|Addition of information about the issued subordinate CA Disig R3I1 TLS Certification Service and Cross Certificate CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Addition of links to the test web site for valid, expired and revoked TLS certificates (2.2.4); Addition of time frames to chapter 4.2.1; Updates to the validity period of TLS certificates for end users (6.3.2); Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -118,44 +124,58 @@ The hierarchy will be used to issue TLS Certificates to end users only until it 
 
 | | |
 |:--- |:--- |
-|Name:|**CA Disig Root R2**|
-|Certificate serial number: |**0092b888dbb08ac163**|
-|Thumbprint (sha1) (DER):|**B561EBEAA4DEE4254B691A98A55747C234C7D971**|
+|Name:                     |**CA Disig Root R2**|
+|Certificate serial number:|**0092B888DBB08AC163**|
+|Thumbprint (sha1) (DER):  |**B561EBEAA4DEE4254B691A98A55747C234C7D971**|
 |Thumbprint (sha256) (DER):|**E23D4A036D7B70E9F595B1422079D2B91EDFBB1FB651A0633EAA8A9DC5F80703**|
-|Comment:|**It issues Certificates only for subordinate certification authorities of the Provider.**|  
+|Comment:                  |**It issues Certificates only for subordinate certification authorities of the Provider.**|  
 
  
 
 | | |
 |:--- |:--- |
-|Name:|**CA Disig R2I2 Certification Service**|
-|Certificate serial number: |**081792523668f5c8500000000000000003**|
+|Name:                       |**CA Disig R2I2 Certification Service**|
+|Certificate serial number:  |**081792523668f5c8500000000000000003**|
 |Issuer:|**CA Disig Root R2**|
-|Thumbprint (sha1) (DER):|**19F2783DEDD8561A61C682932EE9D5B4D86B00CE**|
-|Thumbprint (sha256) (DER):|**C96F24C45113FD91AE2F9E40E106653BFA0FFBCFA07E209524C844E7C8DA4148**|
-|Comment:|**It issues only TLS Certificates to end users (see 3.1.4.3)**|
+|Thumbprint (sha1) (DER):    |**19F2783DEDD8561A61C682932EE9D5B4D86B00CE**|
+|Thumbprint (sha256) (DER):  |**C96F24C45113FD91AE2F9E40E106653BFA0FFBCFA07E209524C844E7C8DA4148**|
+|Comment:                    |**It issues only TLS Certificates to end users (see 3.1.4.3)**|
+
+| | |
+|:--- |:--- |
+|Type:                       |**Cross-Certificate**|
+|Name:                       |**CA Disig TLS Root R3**|
+|Certificate serial number:  |**0864417EE567132EBA0000000000000011**|
+|Issuer:|**CA Disig Root R2**|
+|Thumbprint (sha1) (DER):    |**469EDA6B6A016F30617D8504883C1E39C21188FD**|
+|Thumbprint (sha256) (DER):  |**1E4CF8FA6ADA4DB81C33BB8E4BF73B8D29E99C119FF0B7A42D58032366F56509**|
+|Comment:                    |**It is Cross-Certificate between CA Disig TLS Root R3 and CA Disig Root R2**|
 
 
 #### 1.3.1.2 Single-purpose TLS CA  
 This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1) currently used to issue TLS Certificates to end users. This single-purpose TLS CA hierarchy already fully complies with the current TLS BR [3], where new root CAs are required to have a separate CA hierarchy for issuing TLS Certificates to end users and are limited to issuing Certificates containing only id-kp-serverAuth in the EKU extension (1.3.6.1.5.5.7.3.1).  
-The actual issuance of TLS Certificates to end users via this hierarchy is expected to occur only after the full acceptance of the Disig TLS Root R3 single-purpose CA in the root certification authority programs of Microsoft, Mozilla, Google, and Apple.  
 
 |  | |
 | :--- | :--- |
-| Name:|**CA Disig Root R3**|
-| Certificate serial number:| **5b99abc2b008cf8441d62e523909b41b**|
-| Thumbprint (sha1)(DER):   | **AF250F267724C554652607D70985DE93DD33AFC0**|
-| Thumbprint (sha256)(DER): | **6248199FEA4811FD34AA96EF0A26DE52134B73A9A2A99678F0C2EBADF8663EF8**|
-| Comment:                  | **It issues certificates only for the Provider's subordinate certification authorities reserved for issuing TLS certificates.**|  
+| Name:                     |**CA Disig TLS Root R3**|
+| Certificate serial number:|**5B99ABC2B008CF8441D62E523909B41B**|
+| Thumbprint (sha1)(DER):   |**AF250F267724C554652607D70985DE93DD33AFC0**|
+| Thumbprint (sha256)(DER): |**6248199FEA4811FD34AA96EF0A26DE52134B73A9A2A99678F0C2EBADF8663EF8**|  
+| Valid from:               |**September 18, 2025**|
+| Valid to:                 |**September 14, 2040**| 
+| Comment:                  |**It issues certificates only for the Provider's subordinate certification authorities reserved for issuing TLS certificates.**|  
 
-   
-
-
+ 
 |  | |
 | :--- | :--- |
-| Name:| **CA Disig R3I1 TLS Certification Service** |
-| Issuer:|**CA Disig Root R3**|
-| Comment:| **It issues only TLS Certificates to end users (see 3.1.4.3).**|  
+| Name:                     |**CA Disig R3I1 TLS Certification Service** |
+| Issuer:                   |**CA Disig TLS Root R3**|
+| Certificate serial number:|**09B6A42D17F4DEBBEE0000000000000001**|
+| Thumbprint (sha1)(DER):   |**A7AABAD5DCA33457B5D3A4C62BBEA377096CE898**|
+| Thumbprint (sha256)(DER): |**285C50885D41DF6BB1632B78E979750D89F5DBB995D8EA3496CEF40A446397E7**|
+| Valid from:               |**April 13, 2026**|
+| Valid to:                 |**April 12, 2029**| 
+| Comment:                  |**It issues only TLS Certificates to end users (see 3.1.4.3).**|  
 
 ###  1.3.2 Registration Authorities ### 
 The Registration Authority ("RA") is an entity that under contract conducts certain selected activities in the provision of trusted services on behalf of the Provider.
@@ -435,6 +455,12 @@ To demonstrate the functionality of the issued certificates for Root Store inclu
 |CA Disig R2I2 Certification Service|Valid TLS Site  |https://testssl-valid-r2i2.disig.sk/index.en.html  |
 |                                   |Expired TLS Site|https://testssl-expire-r2i2.disig.sk/index.en.html |
 |                                   |Revoked TLS Site|https://testssl-revoked-r2i2.disig.sk/index.en.html|
+
+|CA                                 |Site type       |Site address                                       |
+|-----------------------------------|:---------------|---------------------------------------------------|
+|CA Disig R3I1 Certification Service|Valid TLS Site  |https://testssl-valid-r3i1.disig.sk/index.en.html  |
+|                                   |Expired TLS Site|https://testssl-expire-r3i1.disig.sk/index.en.html |
+|                                   |Revoked TLS Site|https://testssl-revoked-r3i1.disig.sk/index.en.html|
 
 
 ## 2.3 Time or frequency of publication
@@ -897,7 +923,22 @@ Before issuing the TLS Certificate, the employee representing the Provider shall
 
 RA staff member shall verify the identity and authenticity of the Subscriber within the meaning of the Section 3.2.    
 The Subscribers shall show to the RA in a satisfactory manner all the data he / she has entered into each item of the TLS Certificate request.  
-RA staff member shall insert a TLS Certificate request and other required data into the Provider's information system.  
+RA staff member shall insert a TLS Certificate request and other required data into the Provider's information system. 
+
+Provider obtained the data or document from a source specified under Section 3.2 or completed the validation itself within the maximum number of days prior to issuing the Certificate, as defined in the following table:  
+
+|Certificate issued on or after| Maximum data reuse period|
+|:----------------------------:|:------------------------:|
+|2026‐03‐15                    |398 days                  |
+
+For validation of Domain Names according to Section 3.2.2.4, any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:  
+
+|Certificate issued on or after|Certificate issued before|Maximum data reuse period|
+|:----------------------------:|:-----------------------:|:------------------------:|
+|2026‐03‐15                    |2027‐03‐15               |200 days                  |      
+|2027‐03‐15                    |2029‐03‐15               |100 days                  | 
+|2029‐03‐15                    |                         |10 days                   | 
+
 ### 4.2.2 Approval or rejection of TLS Certificate applications  
 In the event of any reasonable doubt as to the identity of the Subscriber, also in case of deficiencies in the documents, providing incomplete documents, the RA staff member shall refuse the Subscriber's registration.
 The application shall also be rejected if its format or Content does not meet the requirements set out in Section 3.1.4.  
@@ -1281,7 +1322,7 @@ The spaces in which the Provider's equipment is located shall be reliably protec
 
 ### 5.1.6 Media storage  
 Media shall be stored in rooms that are protected against accidental, unintentional damage (water, fire, and electromagnetism). Media containing security audits, archives, or backed up information should be stored on a site separate from CMA.  
-Media is stored on a location that is protected from accidental, unintentional damage (water, fire, electromagnetic). Media containing information related to security audits, archives, or backup information is stored in a location separate from CMA equipment.
+Media is stored in a location that is protected from accidental, unintentional damage (water, fire, electromagnetic). Media containing information related to security audits, archives, or backup information is stored in a location separate from CMA equipment.
 
 ### 5.1.7 Waste disposal  
 With the waste arising from the operation of the Provider it shall be managed in such a way that no environmental pollution is involved.  
@@ -1403,6 +1444,14 @@ Events related to the life cycle of TLS Certificates for end users in the scope 
 * issuance of a TLS Certificate;  
 * revocation of a TLS Certificate;  
 are recorded in the SWACA database;  
+
+#### 5.4.1.1 Router and firewall activities logs
+
+Logging of router and firewall activities necessary to meet the requirements of Section 5.4.1, Subsection 3.6 must at a minimum include:  
+**1.**  Successful and unsuccessful login attempts to routers and firewalls; and  
+**2.**  Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and  
+**3.**  Logging of all changes made to firewall rules, including additions, modifications, and deletions; and  
+**4.**  Logging of all system events and errors, including hardware failures, software crashes, and system restarts.  
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs  
 No stipulation.  
@@ -1637,7 +1686,7 @@ The validity of the Certificate issued by the Provider and the usability of the 
 |----------------|:------------------:|:------------------:|
 |Root CA|2922 days |9132 days |
 |Subordinate CA||1095 days|
-|TLS Certificate|-|395 days to 14.3.2026<br> 200 days from 15.3.2026 to 14.3.2027<br> 100 days from 15.3.2027 to 14.3.2029<br> 47 days from 15.3.2029|
+|TLS Certificate|-| 200 days from 15.3.2026 to 14.3.2027<br> 100 days from 15.3.2027 to 14.3.2029<br> 47 days from 15.3.2029|
 
 To calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day.  
 
@@ -1753,14 +1802,14 @@ Table 5 The content of the items in the Cross-Certified Subordinate CA subject
 Table 6 Certificate extensions in Cross-Certified Subordinate CA  
 |Extension / OID|Presence|Severity|
 |---------------|:--------:|:--------:|
-|authorityKeyIdentifier / 2.5.29.35|YES|NO|
-|basicConstraints / 2.5.29.19|YES|YES|
-|certificatePolicies / 2.5.29.32|YES|NO|
-|keyUsage / 2.5.29.15|YES|YES|
 |subjectKeyIdentifier / 2.5.29.14|YES|NO|
+|authorityKeyIdentifier / 2.5.29.35|YES|NO|
+|authorityInfoAccess / 1.3.6.1.5.5.7.1.1|YES|NO| 
 |crlDistributionPoints / 2.5.29.31|YES|NO|
+|certificatePolicies / 2.5.29.32|YES|NO|
 |extKeyUsage /  2.5.29.37|YES|NO|
-|authorityInfoAccess / 1.3.6.1.5.5.7.1.1|YES|NO|  
+|basicConstraints / 2.5.29.19|YES|YES|
+|keyUsage / 2.5.29.15|YES|YES|
 
 *#### 7.1.2.3 Technically Constrained Non-TLS Subordinate CA Certificate Profile  
 No stipulation.  
