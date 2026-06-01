@@ -4,7 +4,7 @@
 
 **Disig, a.s.**  
 **Version 7.2**  
-**Valid from MM.dd, 2026**  
+**Valid from June 2, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
@@ -108,7 +108,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |6.4|2025/09/01|Change in the methods used for domain validation (3.2.2.4); Consideration of the requirements of section 6.1.3 Mozilla Root Store Policy v. 3.0 (4.9.5); Mass Revocation Plans (5.7.1.2); Miskovic|
 |7.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted TLS Certificates, which also includes the rules for providing this service,<br> which were originally the subject of a separate document. Addition of a new single-purpose CA Disig TLS Root R3 and its subordinate CA Disig R3I1 TLS Certificate Service (1.3.1.2);<br> Addition of information and profiles related to cross-TLS Certificates. (7); Miskovic|
 |7.1|2026/04/21|Addition of information about the issued subordinate CA Disig R3I1 TLS Certification Service and Cross Certificate CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Addition of links to the test web site for valid, expired and revoked TLS certificates (2.2.4); Addition of time frames to chapter 4.2.1; Updates to the validity period of TLS certificates for end users (6.3.2); Miškovič|
-|7.2|2026/mm/dd|Addition of information regarding automatic issuance of TLS certificates via the ACME protocol (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.6.1) Miškovič|
+|7.2|2026/mm/dd|Addition of information regarding automatic issuance of TLS certificates via the ACME protocol (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.2.1; 4.6.1) Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -983,6 +983,8 @@ For validation of Domain Names according to Section 3.2.2.4, any data, document,
 |2026‐03‐15                    |2027‐03‐15               |200 days                  |      
 |2027‐03‐15                    |2029‐03‐15               |100 days                  | 
 |2029‐03‐15                    |                         |10 days                   | 
+
+The Provider programmatically processes each incoming ACME certificate request by executing the identification and authentication functions required by this CP/CPS. This includes the automated verification of domain control and the strict enforcement of DNS CAA records, including the accounturi and validationmethods parameters, in accordance with the procedures and specifications defined in Section 3.2.2.8.
 
 ### 4.2.2 Approval or rejection of TLS Certificate applications  
 In the event of any reasonable doubt as to the identity of the Subscriber, also in case of deficiencies in the documents, providing incomplete documents, the RA staff member shall refuse the Subscriber's registration.
