@@ -4,7 +4,7 @@
 
 **Disig, a.s.**  
 **Version 7.2**  
-**Valid from June 2, 2026**  
+**Valid from MM.dd, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
