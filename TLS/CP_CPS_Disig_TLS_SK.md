@@ -2,8 +2,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 7.1**  
-**Platné od 21. 4. 2026**  
+**Verzia 7.2**  
+**Platné od 15. 6. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**  
 
   
@@ -45,9 +45,9 @@ V prípade akéhokoľvek nesúladu medzi týmito požiadavkami a týmito CP/CPS 
 | :--- | :--- |
 |Názov:         |**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
 |Skratka názvu: | **CA Disig TLS CP/CPS**|
-|Verzia:        |  **7.1** |
-|Schválené dňa: | **16. 4. 2026**|
-|Platnosť od:   | **21. 4. 2026**|  
+|Verzia:        |  **7.2** |
+|Schválené dňa: | **10. 6. 2026**|
+|Platnosť od:   | **15. 6. 2026**|  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 Popis použitého identifikátora objektu (OID):  
@@ -106,7 +106,8 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 |6.4|01. 09. 2025|Zmena v používaných metódach pre overenie domény (3.2.2.4); Zohľadnenie požiadaviek časti 6.1.3 Mozilla Root Store Policy v. 3.0 (4.9.5); Plány hromadného rušenia (5.7.1.2); Miškovič|
 |7.0|05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby vyhotovovanie verejne dôveryhodných TLS certifikátov, ktorá zahrňuje aj  pravidlá pre poskytovanie<br> tejto služby, ktoré boli pôvodne predmetom samostatného dokumentu. Pridanie novej single-purpose CA Disig TLS Root R3 a jej podriadenej CA Disig R3I1 TLS Certificate Service (1.3.1.2); <br>Doplnenie informácii a profilov týkajúcich sa cross-certifikátov. ( 7); Doplnenie novej metódy overovanie vlastníctva domény- ACME (3.2.2.4.19); Miškovič|
 |7.1|21. 04. 2026| Doplnenie informácií o vydanom certifikáte podriadenej certifikačnej outority CA Disig R3I1 TLS Certification Service a krížovom certifikáte CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Doplnenie odkazov na testovaciu webovú stránku pre platné, expirované a zrušené TLS certifikáty (2.2.4); Doplnenie časových rámcov do kapitoly 4.2.1; Aktualizácie doby platnosti TLS certifikátov pre koncových používateľov (6.3.2); Miškovič|
-  
+|7.2|02. 06. 2026| Doplnenie informácií týkajúcich sa automatického vydávania TLS certifikátov prostredníctvom ACME protokolu (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.6.1) Miškovič|  
+
 ## 1.3 Účastníci PKI
 
 ### 1.3.1 Certifikačné autority
@@ -114,6 +115,9 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 Koreňová CA (Root CA) je certifikačná autorita najvyššej úrovne, ktorej koreňový certifikát distribuujú dodávatelia aplikačného softvéru. Koreňová CA vydáva certifikáty podriadeným certifikačným autoritám.
 Podriadená CA (Subordinate CA) je certifikačná autorita, ktorej certifikát je podpísaný koreňovou CA alebo inou podriadenou CA.
 Tieto CP/CPS sa vzťahujú na poskytovanie dôveryhodných služieb podriadenými certifikačnými autoritami, ktoré patria do jednej z hierarchií CA prevádzkovaných Poskytovateľom na vydávanie verejne dôveryhodných TLS certifikátov, ako je opísané nižšie.
+
+Vydávajúce podriadené certifikačné autority podporujú automatizovanú správu životného cyklu certifikátov. Poskytovateľ prevádzkuje automatizované rozhranie pre programovanie aplikácií (API) založené na protokole ACME v prísnom súlade s RFC 8555 pre exkluzívne vydávanie certifikátov TLS overených organizáciou (OV).  
+Registrácia anonymných účtov je zakázaná; Poskytovateľ prísne presadzuje viazanie externých účtov (EAB), aby sa zabezpečilo, že automatické vydávanie je obmedzené výlučne na vopred preverené a autorizované organizácie predplatiteľov.
 
 #### 1.3.1.1 Viacúčelová hierarchia CA
 Táto hierarchia zahŕňa koreňovú CA a vydávajúcu podriadenú CA, čo predstavuje pôvodnú štruktúru CA prevádzkovanú Poskytovateľom od jeho prijatia za poskytovateľa verejne dôveryhodných TLS certifikátov v rámci príslušných programov koreňových CA akceptovaných spoločnosťami Microsoft, Mozilla, Google a Apple.
@@ -205,6 +209,8 @@ Pri žiadosti o TLS certifikát pre zariadenie alebo systém prevádzkovaný fyz
 * Fyzická alebo právnická osoba prevádzkujúca zariadenie alebo systém.
 * Akýkoľvek subjekt, ktorému príslušný právny systém umožňuje zastupovať právnickú osobu; alebo
 * Právny zástupca právnickej osoby, ktorý objednáva služby pre svoje dcérske spoločnosti.
+
+Zákazníci, ktorí môžu využívať automatizovaný pracovný postup vydávania prostrednítvom ACME protokolu, sú prísne obmedzení len na právnické osoby (organizácie), ktoré, pred zašatím využívania ACME protokolu, úspešne dokončili proces overenia identity u Poskytovateľa a ktorým boli poskytnuté platné prihlasovacie údaje EAB.
 
 ### 1.3.4 Spoliehajúce sa strany (Relying Parties)
 Spoliehajúce sa strany sú fyzické alebo právnické osoby, ktoré sa vo svojom konaní spoliehajú na elektronickú identifikáciu alebo dôveryhodné služby Poskytovateľa.
@@ -396,6 +402,7 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
  **[22]** Network and Certificate System Security Requirements [https://cabforum.org/working-groups/netsec/documents/](https://cabforum.org/working-groups/netsec/documents/)  
  **[23]** RFC 6962 Certificate Transparency.  
  **[24]** CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy). 
+ **[25]** ACME Renewal Information (ARI) Extension
 
 ### 1.6.4 Konvencie 
 Kľúčové slová „MUSÍ“, „NESMIE“, „POVINNÉ“, „MAL BY“, „NEMALO BY“, „ODPORÚČANÉ“, „MÔŽE“ a „VOLITEĽNÉ“ v týchto CP/CPS sa musia interpretovať v súlade s RFC 2119.
@@ -424,7 +431,15 @@ Poskytovateľ poskytne on-line úložisko prístupné Zmluvným partnerom, Odber
 
 Ak CA nedodrží akúkoľvek požiadavku aktuálnej verzie politiky „Mozilla Root Store Policy“ [5], či už ide o chybné vydanie certifikátu, procesný alebo prevádzkový problém, alebo akýkoľvek iný druh nesúladu – táto udalosť sa klasifikuje ako incident. Poskytovateľ je povinný bezodkladne nahlásiť všetky incidenty spoločnosti Mozilla vo forme Správy o incidente (Incident Report) a musí pravidelne aktualizovať túto správu, až kým zástupca spoločnosti Mozilla neoznačí príslušnú chybu (bug) za vyriešenú v systéme Bugzilla spoločnosti mozilla.org. Poskytovateľ by mal pozastaviť vydávanie certifikátov, kým sa nezabráni opätovnému výskytu problému.
 
-Ak nie sú splnené podmienky stanovené v aktuálnej politike „Mozilla Root Store Policy“, za nahlásenie incidentu zodpovedá manažér certifikačnej autority Poskytovateľa vymenovaný do roly PMA.
+Ak nie sú splnené podmienky stanovené v aktuálnej politike „Mozilla Root Store Policy“, za nahlásenie incidentu zodpovedá manažér certifikačnej autority Poskytovateľa vymenovaný do roly PMA.  
+
+Poskytovateľ verejne zverejňuje dostupnosť a konfiguráciu svojich automatizovaných rozhraní pre správu životného cyklu TLS certiifkátu.
+URL koncových bodov ACME API je oficiálne zverejnená a spravovaná na adrese:  
+* Pre CA Disig R2I2 Cerification Service: [https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory);  
+* Pre CA Disig R3I1 TLS Certification Service: [https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory).  
+
+Všetky aktualizácie, technické špecifikácie alebo určené časové okná údržby týkajúce sa infraštruktúry ACME sú zverejnené prostredníctvom úložiska Poskytovateľa v súlade s touto časťou.
+
 Poskytovateľ zverejňuje vo svojom verejnom úložisku nasledujúce informácie, pričom zabezpečuje ich dostupnosť v režime 24x7:
 
 ### 2.2.1 Politiky a pravidlá 
@@ -712,6 +727,16 @@ Ak Poskytovateľ vydá certifikát, musí tak urobiť do TTL záznamu CAA alebo 
 Zamestnanec RA musí pred vydaním certifikátu TLS skontrolovať zverejnený záznam CAA. Ak zistí, že takýto záznam existuje, nesmie vydať certifikát TLS, kým sa nepotvrdí, že žiadosť o certifikát TLS je v súlade s príslušným záznamom v CAA.
 Overenie záznamu sa vykonáva pre každé FQDN uvedené v CN žiadosti alebo to, ktoré má byť uvedené v SAN takým spôsobom, že strom mien postupuje zľava doprava, napr. pri kontrole záznamu CAA žiadosti, ktorá obsahuje FQDN vo formáte X.Y.X, sa kontrola vykonáva v poradí X.Y.X -> Y.Z -> Z, pokiaľ Z nie je národná úroveň, napr. ".sk".
 
+Poskytovateľ pred vydaním akéhokoľvek TLS certifikátu overuje záznamy DNS CAA pre požadované názvy domén. Spracovanie záznamov CAA sa vynucuje na základe metódy vydania takto:  
+
+1. Pracovný postup manuálneho vydania
+V prípade certifikátov vydaných prostredníctvom manuálneho pracovného postupu Poskytovateľ kontroluje záznamy CAA, aby sa uistila, že názov domény určený CA poskytovateľa je explicitne autorizovaný na vydanie (napr. issue „disig.sk“). Ak nie je prítomný žiadny záznam CAA, vydanie je povolené. Ak je prítomný záznam CAA, ale neautorizuje Poskytovateľa, žiadosť sa zamietne alebo sa označí na manuálne preskúmanie súladu.
+
+2. Automatizovaný pracovný postup vydávania (ACME)
+V prípade certifikátov vydaných prostredníctvom automatizovaného rozhrania ACME API Poskytovateľ prísne vynucuje štandardné kontroly CAA v spojení s rozšírenými kryptografickými parametrami definovanými v RFC 8657, aby sa zmiernilo riziko neoprávneného vydávania certifikátov viacerými žiadateľmi:  
+__URI účtu__ (accounturi): Ak záznam CAA obsahuje parameter accounturi, automatizovaný pracovný postup vydávania bude pokračovať iba v prípade, že zadané URI presne zodpovedá ID účtu ACME overenej organizácie prepojenému s EAB. Ak sa zistí nezhoda, žiadosť o certifikát sa automaticky zamietne.  
+__Väzba metódy ACME__ (validationmethods): Ak záznam CAA obmedzuje vydávanie certifikátov prostredníctvom parametra validationmethods, overenie domény bude povolené výlučne prostredníctvom explicitne autorizovaných metód výzvy ACME (napr. iba dns-01). Akékoľvek pokusy o overenie pomocou metód, ktoré nie sú uvedené v parametri, automaticky zlyhajú.  
+
 #### 3.2.2.9 Viacperspektívne potvrdzovanie vydávania (Multi-Perspective Issuance Corroboration)
 Viacperspektívna korektorácia vydania certifikátu sa pokúša overiť určenia (t. j. úspešnosť/neúspech overenia domény, povolenie/zákaz CAA) vykonané primárnou sieťovou perspektívou z viacerých vzdialených sieťových perspektív pred vydaním certifikátu TLS. Tento proces môže zlepšiť ochranu pred útokmi alebo únosmi protokolu BGP (Border Gateway Protocol) s rovnako špecifickým prefixom.  
 
@@ -883,25 +908,51 @@ Po zrušení TLS certifikátu musí žiadateľ o následný TLS certifikát abso
 O TLS certifikát môže požiadať fyzická alebo právnická osoba prevádzkujúca zariadenie alebo systém, ktorá v žiadosti o TLS certifikát preukáže, že je oprávnená žiadať o TLS certifikát s FQDN a že všetky FQDN sú uvedené v SAN TLS certifikátu.
 Poskytovateľ vedie internú databázu všetkých zrušenýchatnených TLS certifikátov a zamietnutých žiadostí z dôvodu podozrenia z phishingu alebo inej podvodnej aktivity.  
 
-### 4.1.2 Proces registrácie a zodpovednosti  
+### 4.1.2 Proces registrácie a zodpovednosti
 
-#### 4.1.2.1 Príprava  
-Zmluvný partner/Odberateľ podnikne nasledujúce kroky na prípravu návštevy u Poskytovateľa:     
+Proces registrácie pre automatizovaný zápis (ACME) sa vykonáva prostredníctvom automatizovaného rozhrania pre programovanie aplikácií (API) s použitím protokolu ACME, čo zaisťuje bezpečnú a štandardizovanú komunikáciu.  
+Na ochranu infraštruktúry pred zneužitím, udržanie vysokej dostupnosti a zabezpečenie kryptografickej bezpečnosti overených organizácií CA presadzuje v ekosystéme ACME nasledujúce prísne limity prevádzkovej rýchlosti:  
+* Limit registrácie účtov: Vytvorenie nových účtov je obmedzené na maximálne 5 úspešných registrácií na overenú organizáciu za hodinu, pretože registrácia vyžaduje platné prihlasovacie údaje pre externé väzby účtov (EAB).  
+* Limit nových objednávok: Na overenú doménu druhej úrovne (SLD) je možné v priebehu 7 dní odoslať maximálne 50 žiadostí o vydanie certifikátu (nových žiadostí).  
+* Limit čakajúcich výziev: Na účet ACME je povolených maximálne 5 neúspešných pokusov o overenie domény (čakajúcich výziev) za hodinu.  
+
+#### 4.1.2.1 Príprava 
+Manuálne vydávanie TLS certifikátu:    
+Zmluvný partner/Zákazník podnikne nasledujúce kroky na prípravu návštevy u Poskytovateľa:     
 * Oboznámi sa s dokumentmi „Všeobecné podmienky poskytovania a používania dôveryhodnej služby vydávania a overovania certifikátov“ [12] a „Informácia o spracúvaní osobných údajov“ [18], ktoré musia byť prístupné na trvalom komunikačnom kanáli (pozri [https//eidas.disig.sk/sk/documents/](https//eidas.disig.sk/sk/documents/));  
 * Oboznámi sa s týmto postupom, prípadne so zásadami a pokynmi na získanie TLS certifikátu;  
 * Pripraví si hodnoty každého poľa žiadosti o TLS certifikát tak, aby tieto hodnoty boli v súlade s týmito CP/CPS (pozri odsek 3.1.4); 
 * Pripraví si žiadosť o TLS certifikát vo forme PKCS #10 alebo SPKAC, ktorá bude vopred zaslaná Poskytovateľovi (pozri odsek 4.1.4);  
 * Pripraví si vybrané doklady totožnosti a ďalšie potrebné dokumenty, t. j. výpis z obchodného registra, plnomocenstvo atď.;
-* Dohodne si termín návštevy.  
+* Dohodne si termín návštevy.
 
-#### 4.1.2.2 Generovanie žiadosti  
-Pri žiadosti o TLS certifikát si Odberateľ vygeneruje pár kryptografických kľúčov (súkromný a verejný) pomocou svojho softvéru (typicky napríklad Microsoft IIS alebo Apache / OpenSSL) a vytvorí novú žiadosť o TLS certifikát, ktorú uloží na vhodné médium. 
+Automatické vydávanie (ACME):
+Pred začatím automatického vydávania certifikátov (ACME) musí Zákazník vopred dokončiť proces overenia organizácie. Po úspešnom overení Poskytovateľ poskytne Zákazníkovi prihlasovacie údaje pre väzbu externého účtu (EAB).  
+Zákazník musí nakonfigurovať svojho ACME klienta s týmito prihlasovacími údajmi, aby prepojil svoj účet ACME s overenou identitou organizácie. Platia limity miery registrácie účtov, ako je uvedené v časti 4.1.2.  
+
+Poskytovateľ podporuje automatické prenos kľúčov účtu v súlade s postupmi uvedenými v časti 7.3.5 dokumentu RFC 8555. Overení Zákazníci z radov organizácií majú právo kedykoľvek prepojiť svoj existujúci účet ACME viazaný na EAB s novým párom kryptografických kľúčov odoslaním platnej žiadosti o zmenu kľúča. Táto žiadosť musí byť súčasne podpísaná starým (existujúcim) aj novým súkromným kľúčom, aby sa overilo vlastníctvo účtu bez narušenia vopred overeného mapovania organizácie.
+
+#### 4.1.2.2 Generovanie žiadosti
+Manuálne generovanie žiadosti: 
+Pri žiadosti o TLS certifikát si Zákazník vygeneruje pár kryptografických kľúčov (súkromný a verejný) pomocou svojho softvéru (typicky napríklad Microsoft IIS alebo Apache / OpenSSL) a vytvorí novú žiadosť o TLS certifikát, ktorú uloží na vhodné médium. 
 Poskytovateľ vydáva TLS certifikáty výlučne v sídle spoločnosti v Bratislave. 
 
-Poznámky a varovania: Upozorňujeme, že žiadosť o TLS certifikát alebo verejný kľúč v nej, pre ktorý už bol TLS certifikát vydaný, nemôže byť z bezpečnostných dôvodov použitá opakovane na vydanie ďalšieho TLS certifikátu a bude na RA odmietnutá! Žiadosť o TLS certifikát musí obsahovať vhodne vyplnenú položku <subject:commonName> (tzv. meno entity). Jednotlivé položky sa vypĺňajú tak, aby zadané hodnoty boli v súlade s týmto dokumentom, s dôrazom na jeho časť 3.1.2, a aby jasne identifikovali entitu, ktorá bude daný TLS certifikát používať (typicky plne kvalifikované doménové meno (FQDN)). Ak je v žiadosti vyplnená položka O (<subject:organizationName>), musí byť vyplnená aj položka L (<subject:localityName>). Je tiež potrebné dodržať poradie položiek v žiadosti, ako je uvedené v časti 3.1.4.1 tabuľka 3.  
+Poznámky a varovania: Upozorňujeme, že žiadosť o TLS certifikát alebo verejný kľúč v nej, pre ktorý už bol TLS certifikát vydaný, nemôže byť z bezpečnostných dôvodov použitá opakovane na vydanie ďalšieho TLS certifikátu a bude na RA odmietnutá! Žiadosť o TLS certifikát musí obsahovať vhodne vyplnenú položku <subject:commonName> (tzv. meno entity). Jednotlivé položky sa vypĺňajú tak, aby zadané hodnoty boli v súlade s týmto dokumentom, s dôrazom na jeho časť 3.1.2, a aby jasne identifikovali entitu, ktorá bude daný TLS certifikát používať (typicky plne kvalifikované doménové meno (FQDN)). Ak je v žiadosti vyplnená položka O (<subject:organizationName>), musí byť vyplnená aj položka L (<subject:localityName>). Je tiež potrebné dodržať poradie položiek v žiadosti, ako je uvedené v časti 3.1.4.1 tabuľka 3.
 
-#### 4.1.2.3 Odoslanie žiadosti o TLS certifikát  
+Automatické vydávanie (ACME):  
+ACME klient Zákazníka programovo generuje pár kryptografických kľúčov a štandardnú žiadosť o podpis certifikátu (CSR), ktoré zodpovedajú schváleným údajom organizácie. ACME klient musí zabezpečiť súkromný kľúč a naformátovať žiadosť v súlade s technickými špecifikáciami RFC 8555. Na túto fázu sa vzťahujú limity rýchlosti pre nové žiadosti, ako je definované v časti 4.1.2.
+
+#### 4.1.2.3 Odoslanie žiadosti o TLS certifikát
+Manuálne odosielanie žiadosti:  
 Žiadosť o vydanie TLS certifikátu zasiela žiadateľ/Odberateľ na adresu RA ([radisig@disig.sk](mailto:radisig@disig.sk)), ktorá vykoná všetky úkony súvisiace s procesom vydávania TLS certifikátu.
+
+Automatické vydávanie (ACME):  
+ACME klient bezpečne prenesie podpísanú požiadavku do určeného koncového bodu adresára poskytovateľa
+[https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory) alebo
+[https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory).
+
+Prenos a následné overenie výzvy a odpovede (napr. prostredníctvom overovacích metód HTTP-01 alebo DNS-01) sa vykonávajú plne prostredníctvom protokolu ACME bez ľudského zásahu.
+Odoslanie podlieha limitom počtu čakajúcich výziev uvedeným v časti 4.1.2.
 
 ## 4.2 Spracovanie žiadosti o certifikát  
 
@@ -1009,7 +1060,20 @@ Spoliehajúca sa strana, ktorá sa spolieha na TLS certifikát vydaný podľa t�
 Žiadne ustanovenia.  
 
 ### 4.6.1 Okolnosti pre obnovu TLS certifikátu  
+Obnovenie TLS certifikátu označuje vydanie nového TLS certifikátu Zákazníkovi s dobou platnosti, ktorá sa prekrýva alebo predlžuje dobu platnosti existujúceho certifikátu, s použitím nového páru kryptografických kľúčov.
 Poskytovateľ nepovolí obnovu (vydanie) TLS certifikátu k verejnému kľúču, ku ktorému už bol vydaný TLS certifikát tou istou CA Poskytovateľa.  
+
+Poskytovateľ podporuje manuálny aj automatizovaný proces obnovy:
+
+1. Pracovný postup manuálnej obnovy 
+Pre TLS certifikáty spravované mimo ekosystému ACME sa oznámenia o obnovení elektronicky odosielajú oprávneným zástupcom predplatiteľa pred uplynutím platnosti. Proces obnovy musí byť manuálne iniciovaný a potvrdený RA.
+
+2. Pracovný postup automatizovanej obnovy (ACME ARI)  
+Pre certifikáty vydané a spravované prostredníctvom automatizovaného rozhrania ACME API Poskytovateľ podporuje a implementuje rozšírenie ACME Renewal Information (ARI) v súlade s RFC 9773.
+
+Navrhované okno obnovy: Server ACME Poskytovateľa dynamicky vypočíta a publikuje špecifické, automatizované okno obnovy pre každý aktívny TLS certifikát. Očakáva sa, že kompatibilný klientsky softvér ACME bude pravidelne kontrolovať tento koncový bod a automaticky spustiť proces obnovy v určenom časovom rámci.
+
+Hromadné zrušenie a škálovanie agility: Za výnimočných okolností, pri vyššej moci alebo v scenároch povinného hromadného zrušenia (napr. z dôvodu oneskoreného problému s dodržiavaním predpisov alebo anomálie overovania) Poskytovateľ programovo upraví navrhované okno obnovy prostredníctvom rozšírenia ARI. Tento mechanizmus núti každý aktívny, kompatibilný klientsky softvér okamžite a automaticky spustiť obnovu TLS certifikátu pred dátumom účinnosti plánovaného zrušenia, čím sa zabráni prerušeniu služieb pre overenú organizáciu.
 
 ### 4.6.2 Kto môže žiadať o obnovu  
 Žiadne ustanovenia.

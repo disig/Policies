@@ -3,8 +3,8 @@
 
 
 **Disig, a.s.**  
-**Version 7.1**  
-**Valid from April 21, 2026**  
+**Version 7.2**  
+**Valid from June 15, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
@@ -47,8 +47,8 @@ In the event of any inconsistency between these requirements and this CP/CPS, th
 | Document Name:|**Disig TLS Certificate Policy and <br>Certification Practice Statement (CP/CPS)** |
 | Name abbreviation: | **CA Disig TLS CP/CPS** |
 | Version:|  **7.1** |
-| Approved on:| **April 16, 2026**   |
-| Valid from:| **April 21, 2026**    |  
+| Approved on:| **June 10, 2026**   |
+| Valid from:| **June 15, 2026**    |  
 |This document is assigned<br> to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 
@@ -108,6 +108,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |6.4|2025/09/01|Change in the methods used for domain validation (3.2.2.4); Consideration of the requirements of section 6.1.3 Mozilla Root Store Policy v. 3.0 (4.9.5); Mass Revocation Plans (5.7.1.2); Miskovic|
 |7.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted TLS Certificates, which also includes the rules for providing this service,<br> which were originally the subject of a separate document. Addition of a new single-purpose CA Disig TLS Root R3 and its subordinate CA Disig R3I1 TLS Certificate Service (1.3.1.2);<br> Addition of information and profiles related to cross-TLS Certificates. (7); Miskovic|
 |7.1|2026/04/21|Addition of information about the issued subordinate CA Disig R3I1 TLS Certification Service and Cross Certificate CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Addition of links to the test web site for valid, expired and revoked TLS certificates (2.2.4); Addition of time frames to chapter 4.2.1; Updates to the validity period of TLS certificates for end users (6.3.2); Miškovič|
+|7.2|2026/06/15|Addition of information regarding automatic issuance of TLS certificates via the ACME protocol (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.2.1; 4.6.1) Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -116,6 +117,8 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 Root CA is the top-level Certification Authority whose Root Certificate is distributed by Application Software Suppliers. Root CA issues Subordinate CA Certificates.
 Subordinate CA is a Certification Authority whose Certificate is signed by Root CA, or another Subordinate CA.    
 This CP/CPS applies to the provision of trust services by subordinate certification authorities that fall under one of the CA hierarchies operated by a provider for issuing publicly trusted TLS certificates, as described below.  
+Issuing subordinate certification authorities support automated certificate lifecycle management. The Provider operates an automated Application Programming Interface (API) based on the ACME protocol in strict compliance with RFC 8555 for the exclusive issuance of Organization Validated (OV) TLS certificates.   
+Anonymous account registration is prohibited; the Provider strictly enforces External Account Binding (EAB) to ensure that automated issuance is restricted solely to pre-vetted and authorized subscriber organizations.
 
 ####  1.3.1.1 Multi-purpose CA Hierarchy  
 This hierarchy includes root CA and issuing subordinate CA, which represents the legacy CA structure operated by the Provider since its acceptance as a publicly trusted TLS Certificate provider under the corresponding root CA programs accepted by Microsoft, Mozilla, Google, and Apple.   
@@ -202,6 +205,8 @@ When applying for a TLS certificate for a device or system operated by or on beh
 * The natural or legal person operating the device or system.
 * Any entity as allowed under the relevant legal system to represent the legal person; or
 * A legal representative of a legal person subscribing to his subsidiaries.  
+
+Subscribers permitted to utilize the ACME automated issuance workflow are strictly limited to legally established organizations that have successfully completed the out-of-band identity validation process with the Provider and have been provisioned with valid EAB credentials.
 
 ### 1.3.4 Relying Parties  
 Relying party is a natural or legal person who relies, in their proceedings, on the electronic identification or trusted services of the Provider.  
@@ -396,7 +401,8 @@ The CP/CPS is published in accordance with the publication and notification poli
  **[22]** Network and Certificate System Security Requirements [https://cabforum.org/working-groups/netsec/documents/](https://cabforum.org/working-groups/netsec/documents/)  
  **[23]** RFC 6962 Certificate Transparency.  
  **[24]** CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy).
-
+ **[25]** RFC 9733 ACME Renewal Information (ARI) Extension  
+ 
 ### 1.6.4 Conventions 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this CP/CPS shall be interpreted in accordance with RFC 2119.
 
@@ -424,6 +430,14 @@ The Provider shall provide on-line storage that is accessible to the Contractors
 When a CA fails to comply with any requirement of the current version of "Mozilla Root Store Policy" [5], whether it is a misissuance, a procedural or operational issue, or any other variety of non-compliance - the event is classified as an incident. At a minimum, Provider shall promptly report all incidents to Mozilla in the form of an Incident Report and shall regularly update the Incident Report until a Mozilla representative mark the corresponding bug as resolved in the mozilla.org Bugzilla system. The Provider should cease issuance until the problem has been prevented from reccurring.
 
 If the conditions set out in the current "Mozilla Root Store Policy" are not met, the Provider's certification authority manager appointed to the PMA role is responsible for reporting the incident.
+
+Provider publicly discloses the availability and configuration of its automated lifecycle management interfaces. 
+The ACME API directory endpoint URL is officially published and maintained at
+* For CA Disig R2I2 Certification Service: [https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory);
+* For CA Disig R3I1 TLS Certification Service: [https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory).
+
+Any updates, technical specifications, or designated maintenance windows regarding the ACME infrastructure are published via the CA’s repository in accordance with this Section.
+
 The Provider publishes the following information in its public Repository, ensuring availability on a 24x7 basis:
 
 ### 2.2.1 Policies and Practice Statements 
@@ -718,7 +732,17 @@ If the Provider issues, they shall do so within the TTL of the CAA record, or 8 
 The RA staff member must check the published CAA record before issuing a TLS Certificate. If he finds that such a record exists, he must not issue the TLS Certificate until it is confirmed that the TLS Certificate application is in accordance with the relevant set of records in the CAA.
 The verification of the record is performed for each FQDN specified in the CN of the application or that which is to be specified in the SAN in such a way that the name tree is progressed from left to right, e.g. for checking the CAA record of an application that contains an FQDN in the form X.Y.X, the check is performed in the order X.Y.X -> Y.Z -> Z, unless Z is a national level, e.g. ".sk".  
 
-A written record of the CAA record check is created, containing all checked FQDNs and the result of the check.  
+A written record of the CAA record check is created, containing all checked FQDNs and the result of the check. 
+
+The Provider verifies DNS CAA records for the requested domain names prior to issuing any TLS certificate. The processing of CAA records is enforced based on the issuance method as follows:  
+
+1.  Manual Issuance Workflow
+For certificates issued through the manual workflow, the CA checks the CAA records to ensure that the Provider's CA designated domain name is explicitly authorized for issuance (e.g., issue "disig.sk"). If no CAA record is present, issuance is permitted. If a CAA record is present but does not authorize the CA, the request is rejected or flagged for manual compliance review.
+
+2.  Automated Issuance Workflow (ACME)
+For certificates issued through the automated ACME API, the CA strictly enforces standard CAA checks in conjunction with the extended cryptographic parameters defined in RFC 8657 to mitigate the risk of unauthorized multi-tenant issuance:  
+__Account URI__ (accounturi): If the CAA record contains the accounturi parameter, the automated issuance workflow will only proceed if the specified URI strictly matches the EAB-linked ACME account ID of the verified organization. If a mismatch is detected, the certificate application is automatically rejected.  
+__ACME Method Binding__ (validationmethods): If the CAA record restricts issuance via the validationmethods parameter, domain validation shall exclusively be permitted through the explicitly authorized ACME challenge methods (e.g., dns-01 only). Any validation attempts using methods not listed in the parameter will fail automatically.
 
 #### 3.2.2.9 Multi-Perspective Issuance Corroboration  
 Multi-Perspective Issuance Corroboration attempts to corroborate the determinations (i.e., domain validation pass/fail, CAA permission/prohibition) made by the Primary Network Perspective from multiple remote Network Perspectives before TLS Certificate issuance. This process can improve protection against equally-specific prefix Border Gateway Protocol (BGP) attacks or hijacks.  
@@ -894,7 +918,10 @@ The Provider shall maintain an internal database of all revoked TLS Certificates
 
 ### 4.1.2 Enrollment process and responsibilities  
 
-#### 4.1.2.1 Preparation  
+No stipulation.
+
+#### 4.1.2.1 Preparation
+For Manual Enrollment:   
 The Contractor/Subscriber shall take the following steps to prepare for a visit to the Provider:    
 * Familiarize yourself with the "Všeobecné podmienky poskytovania a používania dôveryhodnej služby vydávania a overovania certifikátov (General Terms and Conditions for Providing and Using a Trusted Certificate Issuance and Verification Service)" [12] and "Informáciou o spracúvaní osobných údajov (Information on Personal Data Processing)" [18], which shall be accessible in a durable communication channel (see [https//eidas.disig.sk/sk/documents/](https//eidas.disig.sk/sk/documents/));  
 * To get acquainted with this procedure, possibly with the principles and instructions for obtaining the TLS Certificate;  
@@ -903,14 +930,32 @@ The Contractor/Subscriber shall take the following steps to prepare for a visit 
 * To have prepared the selected identity documents and other necessary documents, i.e., Extract from business register, Power of Attorney, etc.;
 * To arrange a date for the visit.  
 
+For Automated Enrollment (ACME)
+Prior to initiating automated certificate issuance, the Subscriber must complete the organization validation process out-of-band. Upon successful verification, the Provider provisions the Subscriber with External Account Binding (EAB) credentials.  
+The Subscriber must configure their ACME client with these credentials to bind their ACME account to the vetted organizational identity. 
+
+The Provider supports automated Account Key Rollover in compliance with the procedures set forth in Section 7.3.5 of RFC 8555. Verified organization subscribers are entitled to associate their existing, EAB-bound ACME account with a new cryptographic key pair at any time by submitting a valid keyChange request. This request must be concurrently signed by both the old (existing) and the new private keys to verify account ownership without disrupting the pre-vetted organization mapping
+
 #### 4.1.2.2 Request generation  
+For Manual Enrollment: 
 When requesting a TLS Certificate, the Subscriber shall generate a cryptographic key pair (private and public) using their software (typically Microsoft IIS or Apache / OpenSSL, for example) and shall create a new TLS Certificate request and save it on suitable medium. 
 The Provider issues TLS Certificates exclusively at the company's headquarters in Bratislava. 
 
-Notes and warnings: Please note that the request for a TLS Certificate or the public key in it, for which a TLS Certificate has already been issued, cannot be used repeatedly to issue another TLSA Certificate for security reasons and will be rejected at the RA! The request for a TLS Certificate shall include the <subject:commonName> (the so-called entity name) item, filled in appropriately. The individual items shall be filled in so that the entered values are in accordance with this document, with an emphasis on its Section 3.1.2, and to clearly identify the entity that will use the given TLS Certificate (typically the fully qualified domain name (FQDN)). If item O (subject:organizationName) is filled in the application, item L (subject:localityName) shall also be filled in. It is also necessary to maintain the order of items in the application as stated in Section 3.1.4.2 Table 1.  
+Notes and warnings: Please note that the request for a TLS Certificate or the public key in it, for which a TLS Certificate has already been issued, cannot be used repeatedly to issue another TLSA Certificate for security reasons and will be rejected at the RA! The request for a TLS Certificate shall include the <subject:commonName> (the so-called entity name) item, filled in appropriately. The individual items shall be filled in so that the entered values are in accordance with this document, with an emphasis on its Section 3.1.2, and to clearly identify the entity that will use the given TLS Certificate (typically the fully qualified domain name (FQDN)). If item O (subject:organizationName) is filled in the application, item L (subject:localityName) shall also be filled in. It is also necessary to maintain the order of items in the application as stated in Section 3.1.4.2 Table 1.
+
+For Automated Enrollment (ACME):
+The Subscriber's ACME client programmatically generates a cryptographic key pair and a standard Certificate Signing Request (CSR) matching the approved organizational details. The ACME client must secure the private key and format the request in compliance with RFC 8555 technical specifications. 
 
 #### 4.1.2.3 Sending a TLS Certificate request  
+For Manual Enrollment:
 The request for the issuance of a TLS Certificate is sent by the Applicant/Subscriber to the RA address ([radisig@disig.sk](radisig@disig.sk)) which shall perform all actions related to the TLS Certificate issuance process.
+
+For Automated Enrollment (ACME):
+The ACME client securely transmits the signed request to the Provider’s designated directory endpoint 
+[https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory) or
+[https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory).  
+
+The transmission and subsequent challenge-response validation (e.g., via HTTP-01 or DNS-01 validation methods) are executed fully through the ACME protocol without human intervention.  
 
 ## 4.2 Certificate application processing  
 
@@ -938,6 +983,8 @@ For validation of Domain Names according to Section 3.2.2.4, any data, document,
 |2026‐03‐15                    |2027‐03‐15               |200 days                  |      
 |2027‐03‐15                    |2029‐03‐15               |100 days                  | 
 |2029‐03‐15                    |                         |10 days                   | 
+
+The Provider programmatically processes each incoming ACME certificate request by executing the identification and authentication functions required by this CP/CPS. This includes the automated verification of domain control and the strict enforcement of DNS CAA records, including the accounturi and validationmethods parameters, in accordance with the procedures and specifications defined in Section 3.2.2.8.
 
 ### 4.2.2 Approval or rejection of TLS Certificate applications  
 In the event of any reasonable doubt as to the identity of the Subscriber, also in case of deficiencies in the documents, providing incomplete documents, the RA staff member shall refuse the Subscriber's registration.
@@ -1011,7 +1058,21 @@ The relying party that relies on the TLS Certificate issued under this CP/CPS an
 ## 4.6 Certificate renewal  
 
 ### 4.6.1 Circumstance for TLS Certificate renewal  
-The Provider will not allow the TLS Certificate to be renewed (issued) to a public key to which TLS Certificate has already been issued by the same CA of the Provider.   
+
+Certificate renewal refers to the issuance of a new certificate to a Subscriber with a validity period that overlaps or extends the validity period of an existing certificate, utilizing  a new cryptographic key pair. The Provider will not allow the TLS Certificate to be renewed (issued) to a public key to which TLS Certificate has already been issued by the same CA of the Provider.  
+
+The Provider supports both manual and automated renewal processes:
+
+1. Manual Renewal Workflow
+For certificates managed outside the ACME ecosystem, renewal notices are electronically transmitted to the authorized Subscriber representatives prior to expiration. The renewal process must be manually initiated and confirmed by an RA .
+
+2. Automated Renewal Workflow (ACME ARI)
+For certificates issued and managed via the automated ACME API, the Provider supports and implements the ACME Renewal Information (ARI) extension in accordance with RFC 9773.
+
+Suggested Renewal Window: The Provider’s ACME server dynamically calculates and publishes a specific, automated renewal window for each active TLS certificate. Compliant ACME client software is expected to periodically check this endpoint and automatically initiate the renewal process within the designated timeframe.
+
+Mass Revocation and Agility Scaling: In exceptional circumstances, force majeure, or mandatory mass revocation scenarios (e.g., due to a delayed compliance issue or a validation anomaly), the Provider will programmatically adjust the suggested renewal window via the ARI extension. This mechanism forces all active, compliant client software to immediately and automatically initiate TLS certificate renewal prior to the effective date of the scheduled revocation, preventing service disruption for the verified organization.
+
 
 ### 4.6.2 Who may request renewal  
 No stipulation.
