@@ -2,8 +2,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 7.2**  
-**Platné od 15. 6. 2026**  
+**Verzia 7.3**  
+**Platné od 20. 7. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**  
 
   
@@ -45,9 +45,9 @@ V prípade akéhokoľvek nesúladu medzi týmito požiadavkami a týmito CP/CPS 
 | :--- | :--- |
 |Názov:         |**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
 |Skratka názvu: | **CA Disig TLS CP/CPS**|
-|Verzia:        |  **7.2** |
-|Schválené dňa: | **10. 6. 2026**|
-|Platnosť od:   | **15. 6. 2026**|  
+|Verzia:        |  **7.3** |
+|Schválené dňa: | **20. 7. 2026**|
+|Platnosť od:   | **20. 7. 2026**|  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 Popis použitého identifikátora objektu (OID):  
@@ -107,6 +107,7 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 |7.0|05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby vyhotovovanie verejne dôveryhodných TLS certifikátov, ktorá zahrňuje aj  pravidlá pre poskytovanie<br> tejto služby, ktoré boli pôvodne predmetom samostatného dokumentu. Pridanie novej single-purpose CA Disig TLS Root R3 a jej podriadenej CA Disig R3I1 TLS Certificate Service (1.3.1.2); <br>Doplnenie informácii a profilov týkajúcich sa cross-certifikátov. ( 7); Doplnenie novej metódy overovanie vlastníctva domény- ACME (3.2.2.4.19); Miškovič|
 |7.1|21. 04. 2026| Doplnenie informácií o vydanom certifikáte podriadenej certifikačnej outority CA Disig R3I1 TLS Certification Service a krížovom certifikáte CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Doplnenie odkazov na testovaciu webovú stránku pre platné, expirované a zrušené TLS certifikáty (2.2.4); Doplnenie časových rámcov do kapitoly 4.2.1; Aktualizácie doby platnosti TLS certifikátov pre koncových používateľov (6.3.2); Miškovič|
 |7.2|02. 06. 2026| Doplnenie informácií týkajúcich sa automatického vydávania TLS certifikátov prostredníctvom ACME protokolu (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.6.1) Miškovič|  
+|7.3|20. 07. 2026| Zmena „Key Usage“ pre profil TLS certifikátu na kritické (7.1.2.7) Miškovič| 
 
 ## 1.3 Účastníci PKI
 
@@ -1857,7 +1858,7 @@ Nasledujúca tabuľka uvádza rozšírenia použité vo vydaných TLS certifiká
 | Certificate Policies | {id-ce-certificatePolicies} {2.5.29.32} Uvádza politiky certifikátu platné pre tento certifikát. | ÁNO | NIE |
 | Extended Key Usage | {id-ce-extKeyUsage} {2.5.29.37} Indikuje účely, na ktoré sa môže certifikovaný verejný kľúč použiť nad rámec základných účelov. | ÁNO | NIE |
 | subjectAltName | {id-ce-subjectAltName} {2.5.29.17} Obsahuje jedno alebo viac alternatívnych mien entity (napr. FQDN). | ÁNO | NIE |
-| Key Usage | {id-ce-keyUsage} {2.5.29.15} Indikuje účel, na ktorý sa používa certifikovaný verejný kľúč. | ÁNO | NIE |
+| Key Usage | {id-ce-keyUsage} {2.5.29.15} Indikuje účel, na ktorý sa používa certifikovaný verejný kľúč. | ÁNO | ÁNO |
 | CRL Distribution Points | {id-ce-cRLDistributionPoints} {2.5.29.31} Identifikuje body distribúcie CRL pre zistenie, či certifikát nebol zrušený. | ÁNO | NIE |
 
 ##### 7.1.2.7.1 Typy certifikátov odberateľov

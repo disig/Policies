@@ -3,8 +3,8 @@
 
 
 **Disig, a.s.**  
-**Version 7.2**  
-**Valid from June 15, 2026**  
+**Version 7.3**  
+**Valid from July 20, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
@@ -46,9 +46,9 @@ In the event of any inconsistency between these requirements and this CP/CPS, th
 | :--- | :--- |
 | Document Name:|**Disig TLS Certificate Policy and <br>Certification Practice Statement (CP/CPS)** |
 | Name abbreviation: | **CA Disig TLS CP/CPS** |
-| Version:|  **7.1** |
-| Approved on:| **June 10, 2026**   |
-| Valid from:| **June 15, 2026**    |  
+| Version:|  **7.3** |
+| Approved on:| **July 20, 2026**   |
+| Valid from:| **July 20, 2026**    |  
 |This document is assigned<br> to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 
@@ -109,6 +109,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |7.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted TLS Certificates, which also includes the rules for providing this service,<br> which were originally the subject of a separate document. Addition of a new single-purpose CA Disig TLS Root R3 and its subordinate CA Disig R3I1 TLS Certificate Service (1.3.1.2);<br> Addition of information and profiles related to cross-TLS Certificates. (7); Miskovic|
 |7.1|2026/04/21|Addition of information about the issued subordinate CA Disig R3I1 TLS Certification Service and Cross Certificate CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12); Addition of links to the test web site for valid, expired and revoked TLS certificates (2.2.4); Addition of time frames to chapter 4.2.1; Updates to the validity period of TLS certificates for end users (6.3.2); Miškovič|
 |7.2|2026/06/15|Addition of information regarding automatic issuance of TLS certificates via the ACME protocol (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.2.1; 4.6.1) Miškovič|
+|7.3|2026/07/20| Change of "Key Usage" for Subscriber (Server) Certificate Profile to Critical (7.1.2.7); Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -1929,7 +1930,7 @@ Next table lists the extensions used in issued TLS Certificates.
 |Certificate Policies|{id-ce-TLS CertificatePolicies}<br>{2.5.29.32}<br>This extension lists TLS Certificate policies, recognized by the issuing CA, <br>which apply to the TLS Certificate,<br> together with optional qualifier information pertaining to these TLS Certificate policies.|YES|NO|
 |Extended Key Usage|{id-ce-extKeyUsage}<br>[2.5.29.37]<br>This field indicates one or more purposes for which the certified public key may be used, <br>in addition to or in place of the basic purposes indicated in the key usage extension field.|YES|NO|
 |subjectAltName|id-ce-subjectAltName<br>[2.5.29.17]<br>This extension contains one or more alternative names, using any of a variety of name forms, <br>for the entity that is bound by the CA to the certified public key.|YES|NO|
-|Key Usage|{id-ce-keyUsage}<br>{2.5.29.15}<br>This extension indicates the purpose for which the certified public key is used.|YES|NO|
+|Key Usage|{id-ce-keyUsage}<br>{2.5.29.15}<br>This extension indicates the purpose for which the certified public key is used.|YES|YES|
 |CRL Distribution Points|{id-ce-CRLDistributionPoints}<br>{2.5.29.31}<br>This field identifies the CRL distribution point or points to which a <br>TLS Certificate user should refer to ascertain if the TLS Certificate has been revoked|YES|NO|  
 
 The cRLDistributionPoints extension contains the HTTP URL of the CA’s CRL service as specified in Section 2.2.3 of this CP/CPS. 
