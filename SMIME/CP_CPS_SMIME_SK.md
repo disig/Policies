@@ -3,8 +3,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 2.1**  
-**Platná od 21. 4. 2026**  
+**Verzia 2.2**  
+**Platná od 4. 9. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.11**  
 
 Copyright © 2026 Disig, a.s. 
@@ -12,6 +12,84 @@ Tento dokument je zverejnený pod licenciou [CC BY-ND 4.0](https://creativecommo
 
 Tento dokument neprešiel jazykovou korektúrou.
 Ochranné známky: Názvy produktov uvedené v tomto dokumente môžu byť ochrannými známkami príslušných firiem.
+
+Obsah:
+- [1. Úvod](#1-úvod)
+  - [1.1 Prehľad](#11-prehľad)
+  - [1.2 Názov dokumentu a jeho identifikácia](#12-názov-dokumentu-a-jeho-identifikácia)
+  - [1.3 Účastníci PKI](#13-účastníci-pki)
+- [2. ZODPOVEDNOSŤ ZA ZVEREJŇOVANIE A ÚLOŽISKO](#2-zodpovednosť-za-zverejňovanie-a-úložisko)
+  - [2.1 Úložiská](#21-úložiská)
+  - [2.2 Zverejňovanie informácií](#22-zverejňovanie-informácií)
+  - [2.3 Čas alebo periodicita zverejňovania](#23-čas-alebo-periodicita-zverejňovania)
+  - [2.4 Kontroly prístupu k úložiskám](#24-kontroly-prístupu-k-úložiskám)
+- [3.  IDENTIFIKÁCIA A AUTENTIFIKÁCIA](#3--identifikácia-a-autentifikácia)
+  - [3.1 Pomenovanie (Naming)](#31-pomenovanie-naming)
+  - [3.2 Počiatočné overenie identity](#32-počiatočné-overenie-identity)
+  - [3.3 Identifikácia a autentifikácia pri žiadostiach o nový kľúč (re-key)](#33-identifikácia-a-autentifikácia-pri-žiadostiach-o-nový-kľúč-re-key)
+  - [3.4 Identifikácia a autentifikácia pre žiadosť o zrušenie](#34-identifikácia-a-autentifikácia-pre-žiadosť-o-zrušenie)
+- [4.  PREVÁDZKOVÉ POŽIADAVKY NA ŽIVOTNÝ CYKLUS CERTIFIKÁTU](#4--prevádzkové-požiadavky-na-životný-cyklus-certifikátu)
+  - [4.1 Žiadosť o certifikát](#41-žiadosť-o-certifikát)
+  - [4.2 Spracovanie žiadosti o certifikát](#42-spracovanie-žiadosti-o-certifikát)
+  - [4.3 Vydanie certifikátu](#43-vydanie-certifikátu)
+  - [4.4 Prevzatie certifikátu](#44-prevzatie-certifikátu)
+  - [4.5 Používanie páru kľúčov a certifikátu](#45-používanie-páru-kľúčov-a-certifikátu)
+  - [4.6 Obnova certifikátu (Renewal)](#46-obnova-certifikátu-renewal)
+  - [4.7 Výmena kľúčov certifikátu (Re-key)](#47-výmena-kľúčov-certifikátu-re-key)
+  - [4.8 Modifikácia certifikátu](#48-modifikácia-certifikátu)
+  - [4.9 Zrušenie a pozastavenie certifikátu](#49-zrušenie-a-pozastavenie-certifikátu)
+  - [4.10 Služby overovania stavu certifikátov](#410-služby-overovania-stavu-certifikátov)
+  - [4.11 Ukončenie odberu](#411-ukončenie-odberu)
+  - [4.12 Úschova kľúčov (Key Escrow) a obnova](#412-úschova-kľúčov-key-escrow-a-obnova)
+- [5.  MANAŽÉRSKE, PREVÁDZKOVÉ A FYZICKÉ KONTROLY](#5--manažérske-prevádzkové-a-fyzické-kontroly)
+  - [5.1 Fyzické bezpečnostné kontroly](#51-fyzické-bezpečnostné-kontroly)
+  - [5.2 Procesné kontroly](#52-procesné-kontroly)
+  - [5.3 Personálne kontroly](#53-personálne-kontroly)
+  - [5.4 Postupy protokolovania auditov](#54-postupy-protokolovania-auditov)
+  - [5.5 Archivácia záznamov](#55-archivácia-záznamov)
+  - [5.6 Výmena kľúčov](#56-výmena-kľúčov)
+  - [5.7 Kompromitácia a obnova po havárii](#57-kompromitácia-a-obnova-po-havárii)
+  - [5.8 Ukončenie činnosti CA alebo RA](#58-ukončenie-činnosti-ca-alebo-ra)
+- [6.   TECHNICKÉ BEZPEČNOSTNÉ KONTROLY](#6---technické-bezpečnostné-kontroly)
+  - [6.1 Generovanie a inštalácia páru kľúčov](#61-generovanie-a-inštalácia-páru-kľúčov)
+  - [6.2 Ochrana súkromného kľúča a inžinierstvo kryptografického modulu](#62-ochrana-súkromného-kľúča-a-inžinierstvo-kryptografického-modulu)
+  - [6.3 Ostatné aspekty správy párov kľúčov](#63-ostatné-aspekty-správy-párov-kľúčov)
+  - [6.4 Aktivačné údaje](#64-aktivačné-údaje)
+  - [6.5 Počítačové bezpečnostné kontroly](#65-počítačové-bezpečnostné-kontroly)
+  - [6.6 Technické kontroly životného cyklu](#66-technické-kontroly-životného-cyklu)
+  - [6.7 Kontroly sieťovej bezpečnosti](#67-kontroly-sieťovej-bezpečnosti)
+  - [6.8 Časové pečiatkovanie](#68-časové-pečiatkovanie)
+- [7. PROFILY CERTIFIKÁTOV, CRL A OCSP](#7-profily-certifikátov-crl-a-ocsp)
+  - [7.1 Profil certifikátu](#71-profil-certifikátu)
+  - [7.2 Profil CRL](#72-profil-crl)
+  - [7.3 Profil OCSP](#73-profil-ocsp)
+- [8.   AUDIT ZHODY A INÉ POSUDZOVANIA](#8---audit-zhody-a-iné-posudzovania)
+  - [8.1 Periodicita alebo okolnosti posudzovania](#81-periodicita-alebo-okolnosti-posudzovania)
+  - [8.2 Identita/kvalifikácia posudzovateľa](#82-identitakvalifikácia-posudzovateľa)
+  - [8.3 Vzťah posudzovateľa k posudzovanému subjektu](#83-vzťah-posudzovateľa-k-posudzovanému-subjektu)
+  - [8.4 Témy zahrnuté v posudzovaní](#84-témy-zahrnuté-v-posudzovaní)
+  - [8.5 Opatrenia prijaté v dôsledku nedostatku](#85-opatrenia-prijaté-v-dôsledku-nedostatku)
+  - [8.6 Oznamovanie výsledkov](#86-oznamovanie-výsledkov)
+  - [8.7 Vlastné audity](#87-vlastné-audity)
+  - [8.8 Preskúmanie poverených strán](#88-preskúmanie-poverených-strán)
+- [9.   OSTATNÉ OBCHODNÉ A PRÁVNE ZÁLEŽITOSTI](#9---ostatné-obchodné-a-právne-záležitosti)
+  - [9.1 Poplatky](#91-poplatky)
+  - [9.2 Finančná zodpovednosť](#92-finančná-zodpovednosť)
+  - [9.3 Dôvernosť obchodných informácií](#93-dôvernosť-obchodných-informácií)
+  - [9.4 Súkromie osobných informácií](#94-súkromie-osobných-informácií)
+  - [9.5 Práva duševného vlastníctva](#95-práva-duševného-vlastníctva)
+  - [9.6 Vyhlásenia a záruky](#96-vyhlásenia-a-záruky)
+  - [9.7 Vylúčenie záruk](#97-vylúčenie-záruk)
+  - [9.8 Obmedzenie zodpovednosti](#98-obmedzenie-zodpovednosti)
+  - [9.9 Odškodnenie](#99-odškodnenie)
+  - [9.10 Doba platnosti a ukončenie](#910-doba-platnosti-a-ukončenie)
+  - [9.11 Individuálne oznámenia a komunikácia s účastníkmi](#911-individuálne-oznámenia-a-komunikácia-s-účastníkmi)
+  - [9.12 Zmeny a doplnenia](#912-zmeny-a-doplnenia)
+  - [9.13 Ustanovenia o riešení sporov](#913-ustanovenia-o-riešení-sporov)
+  - [9.14 Rozhodné právo](#914-rozhodné-právo)
+  - [9.15 Súlad s platnými zákonmi](#915-súlad-s-platnými-zákonmi)
+  - [9.16 Rôzne ustanovenia](#916-rôzne-ustanovenia)
+  - [9.17 Ostatné ustanovenia](#917-ostatné-ustanovenia)
    
  
 # 1. Úvod
@@ -38,15 +116,17 @@ Poskytovateľ potvrdzuje, že tieto CP/CPS zohľadňujú všetky požiadavky akt
 
 V prípade akéhokoľvek nesúladu medzi týmito požiadavkami a týmito CP/CPS majú prednosť požiadavky aktuálnej verzie SMIME BR [1].
 
+Poskytovateľ výslovne uvádza, že verejne dôveryhodné hierarchie pokryté týmto CP/CPS nie sú určené ani používané pre výhradne podnikové (enterprise-only) alebo lokálne dôveryhodné (locally-trusted) prípady použitia. Pre interné, podnikové alebo neverejné účely CA prevádzkuje samostatné privátne hierarchie certifikačných autorít, ktoré sú prevádzkovo a logicky oddelené od verejne dôveryhodných hierarchií.
+
 ## 1.2 Názov dokumentu a jeho identifikácia
  
 | | |
 |:--- | :--- |
 |Názov:|**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania S/MIME certifikátov** |
 |Skratka názvu: | **SMIME CP/CPS** |
-|Verzia:|  **2.1** |
-|Schválené dňa:| **16. 4. 2026**   |
-|Platnosť od:| **21. 4. 2026**    |  
+|Verzia:|  **2.2** |
+|Schválené dňa:| **25. 8. 2026**   |
+|Platnosť od:| **4. 9. 2026**    |  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.11** |  
  
  
@@ -66,7 +146,7 @@ Tento OID (1.3.158.35975946.0.0.0.1.11) je zároveň uvádzaný aj vo vydávaný
 |OVCP: Organizational Validation  Certificate Policy|0.4.0.2042.1.7|ETSI EN 319 411-1 OVCP|
 |NCP:  Normalized Certificate Policy|0.4.0.2042.1.1|ETSI EN 319 411-1 NCP|  
  
-###  1.2.1 História zmien
+### 1.2.1 História zmien
  
 |Verzia  |Dátum revízie|Popis revízie; Revidoval|  
 |--------|-------------|------------------------|
@@ -74,9 +154,10 @@ Tento OID (1.3.158.35975946.0.0.0.1.11) je zároveň uvádzaný aj vo vydávaný
 |1.1     |01. 02. 2024|Doplnenie možnosti online zrušenia certifikátu (4.9.3); Miškovič|  
 |1.2     |18. 07. 2024|Zmena sídla spoločnosti Disig, a.s.; Miškovič|  
 |1.3     |16. 09. 2024|Doplnenie časti 4.2 v zmysle požiadaviek časti 2.2 aktuálnej verzie SMIME BR; Miškovič|  
-|1.4     |15. 03. 2025|Úprava časti 4.2.2 a 4.2.3 v zmysle požiadaviek aktuálnej verzie SMIME BR v. 1,0.8; Miškovič|  
-|2.0     |05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby vyhotovovanie verejne dôveryhodných S/MIME certifikátov, ktorá zahrňuje aj pravidlá pre poskytovanie tejto služby, ktoré boli pôvodne predmetom samostatného okumentu.|
-|2.1     |21. 04. 2026|Pridanie novej single-purpose CA Disig SMIME Root R4 a jej podriadenej CA Disig R4I1 SMIME Certification Service (1.3.1.2);Miškovič|
+|1.4     |15. 03. 2025|Úprava časti 4.2.2 a 4.2.3 v zmysle požiadaviek aktuálnej verzie SMIME BR v. 1,0.8;<br> Miškovič|  
+|2.0     |05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby<br> vyhotovovanie verejne dôveryhodných S/MIME certifikátov, ktorá zahrňuje aj pravidlá<br> pre poskytovanie tejto služby,ktoré boli pôvodne predmetom samostatného okumentu.; Miškovič|
+|2.1     |21. 04. 2026|Pridanie novej single-purpose CA Disig SMIME Root R4 a jej podriadenej CA Disig R4I1<br> SMIME Certification Service (1.3.1.2); Miškovič|
+|2.2     |04. 09. 2026|Aktualizácia CP/CPS na základe Apple Review Apple Review; Miškovič|
 
 ## 1.3 Účastníci PKI
 
@@ -85,7 +166,7 @@ Koreňová CA (Root CA) je najvyššia certifikačná autorita, ktorej koreňov�
 Podriadená CA (Subordinate CA) je certifikačná autorita, ktorej certifikát je podpísaný koreňovou CA alebo inou podriadenou CA.  
 SMIME CP/CPS (ďalej len „CP/CPS“) sa vzťahuje na poskytovanie dôveryhodných služieb podriadenými certifikačnými autoritami, ktoré spadajú pod jednu z hierarchií CA prevádzkovaných Poskytovateľom na vydávanie verejne dôveryhodných certifikátov, ako je popísané nižšie.
 
-####  1.3.1.1 Viacúčelová hierarchia CA
+#### 1.3.1.1 Viacúčelová hierarchia CA
 
 Táto hierarchia zahŕňa koreňovú CA a vydávajúcu podriadenú CA, ktorá predstavuje pôvodnú (legacy) štruktúru CA prevádzkovanú Poskytovateľom od jeho prijatia za poskytovateľa verejne dôveryhodných certifikátov v rámci príslušných programov koreňových autorít akceptovaných spoločnosťami Microsoft, Mozilla, Google a Apple.
 Hierarchia sa bude používať na vydávanie Certifikátov koncovým používateľom iba dovtedy, kým nebude nahradená novou jednoúčelovou hierarchiou (pozri 1.3.1.2).
@@ -112,7 +193,7 @@ Hierarchia sa bude používať na vydávanie Certifikátov koncovým používate
 |Poznámka:|**Vydáva koncovým používateľom SMIME certifikáty podpisu/pečate  v súlade s požiadavkami stanovenými v dokumente „Baseline Requirements for the Issuance and Management of Publicly‐Trusted S/MIME Certificates [1]“.**|
 
 
-####  1.3.1.2 Single-purpose SMIME CA
+#### 1.3.1.2 Single-purpose SMIME CA
 
 Táto hierarchia certifikačných autorít (CA) nahrádza staršiu hierarchiu CA (pozri 1.3.1.1), ktorá sa v súčasnosti používa na vydávanie certifikátov koncovým používateľom. Táto jednoúčelová hierarchia SMIME CA je teraz plne v súlade s požiadavkami aktuálnej verzie SMIME BR [1], kde sa od nových koreňových certifikačných autorít vyžaduje samostatná hierarchia CA na vydávanie certifikátov koncovým používateľom a sú obmedzené na vydávanie certifikátov obsahujúcich iba rozšírenie id-kp-emailProtection (OID: 1.3.6.1.5.5.7.3.4) v EKU.
 
@@ -220,6 +301,22 @@ Tieto subjekty:
 Poskytovateľ spolupracuje s týmito subjektmi v rozsahu vyžadovanom platnými právnymi predpismi, platnými pravidlami programov a týmito CP/CPS.
 
 ### 1.4 Používanie certifikátu
+
+Tento CP/CPS je výhradne vymedzený pre účel dôvery **„Secure Email“**.
+
+Certifikáty vydané podľa tohto CP/CPS sa vydávajú za účelom identifikácie držiteľa verejného kľúča z kryptografického páru kľúčov (verejný a súkromný kľúč) používaného v rámci infraštruktúry PKI.
+
+Kryptografické páry kľúčov a certifikáty vydané v rámci tejto hierarchie sú obmedzené výhradne na zabezpečenie elektronickej pošty (podpisovanie a/alebo šifrovanie e-mailov), vyhotovenie pokročilého elektronického podpisu a vyhotovenie pokročilej elektronickej pečate. Všetky certifikáty koncových používateľov vydané podľa tohto CP/CPS musia obsahovať povinné rozšírené použitie kľúča (EKU) `id-kp-emailProtection` (`1.3.6.1.5.5.7.3.4`). Certifikáty vydané podľa tohto CP/CPS sa nesmú používateľsky ani prevádzkovo používať na autentifikáciu TLS serverov, podpisovanie kódu ani na žiadne iné účely dôvery okrem ochrany e-mailovej komunikácie, ani pre výhradne podnikové/lokálne dôveryhodné interné prípady použitia (enterprise-only/locally-trusted).
+
+Poskytovateľ vydáva Odberateľom nasledujúce typy certifikátov:
+
+* **Verejne dôveryhodný certifikát:** Kryptografické kľúče spojené s týmto typom certifikátu sa viažu na identitu subjektu (fyzická osoba, právnická osoba alebo sponzorovaná identita) a overenú e-mailovú adresu, ktorú má subjekt pod kontrolou.
+
+  Vydané certifikáty deklarujú súlad s SMIME BR a v rozšírení `certificatePolicies` obsahujú príslušné identifikátory politík zvolené z nasledujúcich:
+  * **Organization-Validated (OV):** `2.23.140.1.5.2.2` *(Multipurpose)* alebo `2.23.140.1.5.2.3` *(Strict)*
+  * **Sponsor-Validated (SV):** `2.23.140.1.5.3.2` *(Multipurpose)* alebo `2.23.140.1.5.3.3` *(Strict)*
+  * **Individual-Validated (IV):** `2.23.140.1.5.4.3` *(Strict)*
+  * **Interný OID politiky Poskytovateľa:** `1.3.158.35975946.0.0.0.1.11`
 
 ### 1.4.1 Povolené spôsoby použitia certifikátu
 Certifikáty vydávané podľa týchto CP/CPS sa vydávajú na účely identifikácie držiteľa verejného kľúča z páru kryptografických kľúčov (verejný a súkromný), ktorý sa používa v rámci infraštruktúry PKI.
@@ -343,7 +440,7 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
 
 **Poskytovateľ dôveryhodných služieb** znamená fyzickú alebo právnickú osobu, ktorá poskytuje jednu alebo viacero dôveryhodných služieb buď ako kvalifikovaný
 
-###  1.6.2	Skratky 
+### 1.6.2	Skratky 
 
 |  | |
 | :--- | :--- |
@@ -368,7 +465,7 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
 |URL   |Uniform Resource Locator|  
 |UTC   |Coordinated Universal Time|  
 
-###  1.6.3	Referencie 
+### 1.6.3	Referencie 
 **[1]**   Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates [https://cabforum.org/working-groups/smime/documents/](https://cabforum.org/working-groups/smime/documents/)      
 **[2]**   RFC 5280 "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"    
 **[3]**   Regulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market in the wording of Regulation (EU) No1183/2024 of the European.  
@@ -580,28 +677,49 @@ Dodatočne (ak sú zahrnuté v certifikáte), RA získa a uchová dôkaz pre:
 #### 3.2.3.2 Validácia identity organizácie
 
 #### 3.2.3.2.1 Overenie názvu, adresy a jedinečného identifikátora
-RA Poskytovateľa overuje úplný názov a adresu (ak sú zahrnuté v predmete certifikátu) žiadajúcej právnickej osoby pomocou poskytnutej dokumentácie alebo komunikáciou s aspoň jedným z nasledujúcich subjektov:  
-**1.** Štátny orgán v rámci jurisdikcie založenia, existencie alebo uznania právnickej osoby;  
-**2.** Odkaz na údaje identifikátora právnickej osoby (LEI);  
-**3.** Overenie pracovníkom RA Poskytovateľa (alebo jeho zástupcom) v priestoroch Žiadateľa; alebo  
-**4.** Potvrdenie (attestation), ktoré obsahuje kópiu podpornej dokumentácie preukazujúcej právnu existenciu Žiadateľa (napr. osvedčenie o registrácii, stanovy, zriaďovacia zmluva, štatút alebo regulačný akt).
+Poskytovateľ používa nasledujúce autorizované overovacie zdroje, podľa toho, aká je jurisdikcia a právna forma žiadateľa:
 
-RA môže použiť dokumentáciu/komunikáciu popísanú v bodoch 1-4 na overenie identity a adresy Žiadateľa.  
-U organizácie so sídlom v Slovenskej republike RA overuje úplný názov a jedinečný identifikátor organizácie na základe:
-* originálu výpisu z Obchodného registra Slovenskej republiky (OR SR), alebo
-* ak Žiadateľ nie je zapísaný v OR SR, originálu výpisu z Registra právnických osôb, podnikateľov a orgánov verejnej moci vedeného Štatistickým úradom Slovenskej republiky (RPO SR).
+| Autorizovaný zdroj | Rozsah | Online umiestnenie |
+|---|---|---|
+| Obchodný register Slovenskej republiky (OR SR) | Obchodný názov, sídlo, registračné číslo, právna existencia a aktuálny stav | [https://sluzby.orsr.sk/Vyhladavanie](https://sluzby.orsr.sk/Vyhladavanie)|
+| Register právnických osôb, podnikateľov a verejných orgánov Slovenskej republiky (RPO SR) | Obchodný názov, sídlo, jedinečný identifikátor, právna existencia a aktuálny stav | [https://rpo.statistics.sk](https://rpo.statistics.sk)|
+| Global Legal Entity Identifier Foundation (GLEIF) | LEI, RegistrationStatus, EntityStatus and ValidationSources | [https://search.gleif.org](https://search.gleif.org) |
+| European e-Justice Portal – Business Registers Interconnection System (BRIS) | Informácie získané z prepojených obchodných registrov členských štátov EÚ, Islandu, Lichtenštajnska a Nórska | [https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en](https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en) |
+| Príslušný vládny register v jurisdikcii založenia, existencie alebo uznania | Právne založenie, existencia, uznanie, registrovaná adresa, jedinečný identifikátor a aktuálny právny stav | Oficiálne online sídlo príslušného vládneho orgánu pre príslušnú jurisdikciu |
 
-Ak právnická osoba nemôže preukázať svoju identitu výpisom z obchodného registra alebo registra právnických osôb, musí písomne preukázať (okrem identity) aj zákonnosť / „dôvod“ svojej existencie odkazom na príslušný zákon alebo iný predpis, zakladaciu listinu a pod.
+Pri každom overení RA zaznamená konkrétny použitý autorizovaný zdroj, URL adresu zdroja alebo iný identifikátor zdroja, dátum a čas overenia, získané informácie a príslušný výsledok validácie.
 
-Ak právnická osoba nemá sídlo v Slovenskej republike, jej identita sa overuje predložením výpisu zo štátneho registra v jurisdikcii založenia/existencie/uznania; RA následne potvrdí existenciu prostredníctvom webovej stránky „Business registers - vyhľadávanie spoločnosti v EÚ“.  
-Originálny dokument (alebo úradne overená kópia originálu) nesmie byť starší ako tri mesiace a musí obsahovať úplné obchodné meno/názov a identifikačnú hodnotu.  
-RA akceptuje aj elektronický výpis z použitého registra, ak je autorizovaný kvalifikovanou elektronickou pečaťou štátneho orgánu zodpovedného za vedenie registra.
+RA môže na overenie totožnosti a adresy žiadateľa použiť dokumentáciu/komunikáciu opísanú v tabuľke vyššie.
+V prípade organizácie so sídlom v Slovenskej republike RA overuje celý názov a jedinečný identifikátor organizácie na základe:
+* originálneho výpisu z Obchodného registra Slovenskej republiky (OR SR), alebo
+* ak žiadateľ nie je zapísaný v OR SR, originálneho výpisu z Registra právnických osôb, podnikateľov a verejných orgánov vedeného Štatistickým úradom Slovenskej republiky (RPO SR).
 
-#### 3.2.3.3 Overenie predpokladaného názvu (Assumed name)
+**Požiadavka na overenie právneho stavu**: Pri všetkých overeniach vykonaných podľa tejto časti (vrátane overení prostredníctvom OR SR, RPO SR, iných oficiálnych štátnych registrov, ako aj prostredníctvom podpornej dokumentácie alebo potvrdení) overí RA poskytovateľa, či stav žiadateľa nie je označený označeniami ako „zaniknutý“, „neaktívny“, „neplatný“, „v likvidácii“, „v konkurze“, „rozpustený“, „neaktuálny“ alebo ekvivalentom označujúcim neaktuálny, pozastavený alebo ukončený stav.
+
+Ak sa použije odkaz na údaje LEI (položka 2), RA poskytovateľa overí, či je stav registrácie „VYDANÉ“ a stav entity „AKTÍVNE“. Odkaz na LEI bude povolený iba vtedy, ak je položka ValidationSources „PLNE_POTVRDENÝ“.
+
+Ak právnická osoba nemôže preukázať svoju totožnosť výpisom z obchodného registra alebo registra právnických osôb, musí okrem totožnosti písomne ​​preukázať aj zákonnosť / „dôvod“ svojej existencie odkazom na príslušný zákon alebo iný predpis, zakladaciu listinu a pod.
+
+Ak právnická osoba nemá sídlo v Slovenskej republike, jej totožnosť sa overuje predložením výpisu z vládneho registra v jurisdikcii založenia/existencie/uznania; RA následne potvrdí existenciu prostredníctvom webovej stránky „Obchodné registre – vyhľadanie spoločnosti v EÚ“.
+Originál dokumentu (alebo úradne overená kópia originálu) nesmie byť starší ako tri mesiace a musí obsahovať celé obchodné meno/názov a identifikačnú hodnotu.
+
+RA akceptuje aj elektronický výpis z použitého registra, ak je autorizovaný kvalifikovanou elektronickou pečaťou vládneho orgánu zodpovedného za vedenie registra.
+
+#### 3.2.3.2.2 Overenie predpokladaného názvu (Assumed name)
 Poskytovateľ podporuje iba vydávanie certifikátov pod riadne registrovaným názvom.
 
-#### 3.2.3.4 Zverejnenie zdrojov overovania
-RA Poskytovateľa musí overiť jedinečný identifikátor použitý v certifikáte v registri vedenom alebo autorizovanom príslušným štátnym orgánom. Poskytovateľ musí tento autorizovaný zdroj zverejniť vhodnými a ľahko dostupnými online prostriedkami (pozri kapitolu 3.2.3.2.1).
+#### 3.2.3.3 Zverejnenie zdrojov overovania
+Poskytovateľ zverejňuje autorizované overovacie zdroje použité na overenie identity organizácie v časti 3.2.3.2.1 tohto CP/CPS.
+
+Zverejnenie identifikuje každý autorizovaný zdroj, jeho rozsah overenia a online miesto, kde je možné k zdroju získať prístup.
+
+Zverejnené zdroje zahŕňajú:
+- OR SR: [https://sluzby.orsr.sk/Vyhladavanie](https://sluzby.orsr.sk/Vyhladavanie)
+- RPO SR: [https://rpo.statistics.sk](https://rpo.statistics.sk)
+- GLEIF LEI Search: [https://search.gleif.org](https://search.gleif.org)
+- BRIS: [https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en](https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en)
+
+Tento CP/CPS, vrátane zverejnenia v časti 3.2.3.2.1, je verejne dostupný na adrese [https://github.com/disig/Policies/blob/main/SMIME/CP_CPS_SMIME.md](https://github.com/disig/Policies/blob/main/SMIME/CP_CPS_SMIME.md)
 
 ### 3.2.4 Autentifikácia identity jednotlivca
 Poskytovateľ musí zabezpečiť, aby identita Držiteľa certifikátu a verejný kľúč boli náležite prepojené, a musí vo svojich CP/CPS špecifikovať autentifikačné postupy. CA Poskytovateľa musí tento proces zaznamenať pre každý certifikát v písomnej alebo elektronickej forme. Dokumentácia o autentifikácii musí obsahovať aspoň:
@@ -1384,9 +1502,16 @@ Ak sa CA alebo ktorákoľvek z jej určených RA dozvie, že súkromný kľúč 
 Žiadne ustanovenia.
 
 ### 6.1.5 Veľkosti kľúčov
-Pre páry kľúčov RSA Poskytovateľ:
-* zabezpečí, aby veľkosť modulu (modulus) pri zakódovaní bola aspoň 2048 bitov; a
-* zabezpečí, aby veľkosť modulu v bitoch bola rovnomerne deliteľná 8.
+Podľa tohto CP/CPS sú povolené iba páry kľúčov RSA.
+
+Pre páry kľúčov RSA poskytovateľ:  
+- pre kľúče zodpovedajúce koreňovým CA, podriadeným CA a krížovým certifikátom podpísaným 15. septembra 2026 alebo neskôr zabezpečí, aby veľkosť modulu po zakódovaní bola aspoň 4096 bitov;
+- pre kľúče zodpovedajúce certifikátom predplatiteľa zabezpečí, aby veľkosť modulu po zakódovaní bola aspoň 2048 bitov; a
+- zabezpečí, aby veľkosť modulu v bitoch bola deliteľná číslom 8.
+
+Poskytovateľ nebude podľa tohto CP/CPS generovať, používať ani akceptovať ECDSA, EdDSA, ML-DSA, ML-KEM ani žiadny iný algoritmus verejného kľúča, ktorý nie je RSA.
+
+S účinnosťou od 15. septembra 2027 poskytovateľ nebude vydávať certifikáty predplatiteľa S/MIME od CA, ktorej kľúč RSA má veľkosť modulu po zakódovaní menšiu ako 3072 bitov.
 
 
 ### 6.1.6 Generovanie parametrov verejného kľúča a kontrola kvality
@@ -1601,11 +1726,10 @@ Tabuľka 8: Základné rozšírenia v certifikátoch Odberateľov
 |Certificate Policies<br>{id-ce-certificatePolicies}<br>{2.5.29.32}|Musí obsahovať presne jeden z vyhradených policyIdentifiers uvedených v časti 7.1.6.1.|MUSÍ BYŤ|NIE|
 |CRL Distribution Points<br>{id-ce-CRLDistributionPoints}<br>{2.5.29.31}|Profily Strict a Multipurpose musia obsahovať aspoň jeden distributionPoint, <br> ktorého hodnota fullName obsahuje GeneralName typu uniformResourceIdentifier, <br> ktorý zahŕňa URI, kde je možné získať CRL vydávajúcej CA.<br>Každý uniformResourceIdentifier musí mať URI schému HTTP. Iné schémy nesmú byť prítomné.|MUSÍ BYŤ|NIE|
 |AuthorityInfoAccess<br>{id-pe-authorityInfoAccess}<br>{1.3.6.1.5.5.7.1.1}|1. id-ad-ocsp<br> Rozšírenie môže obsahovať jednu alebo viac hodnôt accessMethod typu id-ad-ocsp, ktoré špecifikujú URI<br> OCSP respondera vydávajúcej CA. Profily Strict a Multipurpose musia mať pre každú accessMethod<br> URI schému HTTP. Iné schémy nesmú byť prítomné.<br> 2. id-ad-caIssuers<br> Rozšírenie by malo obsahovať aspoň jednu hodnotu accessMethod typu id-ad-caIssuers, ktorá špecifikuje<br> URI certifikátu vydávajúcej CA. Profily Strict a Multipurpose musia mať pre každú accessMethod<br> URI schému HTTP. Iné schémy nesmú byť prítomné.|MÁ BYŤ|NIE|
-|basicConstraints<br>{id-ce-basicConstraints}<br>{2.5.29.19}|Toto rozšírenie môže byť prítomné. Pole cA nesmie byť true. Pole pathLenConstraint nesmie byť prítomné.|MÁ BYŤ|NIE|
 |Key Usage<br>{id-ce-keyUsage}<br>{2.5.29.15}|Profil Strict: Len pre podpisovanie musia byť nastavené bity pre digitalSignature a môžu byť nastavené<br> pre nonRepudiation. Len pre správu kľúčov musia byť nastavené bity pre keyEncipherment.<br> Pre duálne použitie musia byť nastavené bity pre digitalSignature a keyEncipherment a môžu byť<br> nastavené pre nonRepudiation.<br> Profil Multipurpose: platí rovnako ako pre profil Strict s modifikáciou, že pre správu<br> kľúčov a duálne použitie môže byť nastavený bit pre dataEncipherment. Iné bity nesmú byť nastavené.|MUSÍ BYŤ|MÁ BYŤ|
 |Extended Key Usage<br>{id-ce-extKeyUsage}<br>{2.5.29.37}|Profil Strict: id-kp-emailProtection musí byť prítomný. Iné hodnoty nesmú byť prítomné.<br>Profil Multipurpose: id-kp-emailProtection musí byť prítomný. Iné hodnoty môžu byť prítomné.<br>Akýkoľvek profil: Hodnoty id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping,<br> a anyExtendedKeyUsage nesmú byť prítomné.|MUSÍ BYŤ|NIE|
 |Authority Key Identifier<br>{id-ce-authorityKeyIdentifier}<br>{2.5.29.35}|Pole keyIdentifier musí byť prítomné. Polia authorityCertIssuer a authorityCertSerialNumber<br> nesmú byť prítomné.|MUSÍ BYŤ|NIE|
-|subjectAltName<br>id-ce-subjectAltName<br>{2.5.29.32}|Hodnota tohto rozšírenia musí byť zakódovaná podľa špecifikácie v časti 7.1.4.2.1.|MUSÍ BYŤ|NIE|
+|subjectAltName<br>id-ce-subjectAltName<br>{2.5.29.17}|Hodnota tohto rozšírenia musí byť zakódovaná podľa špecifikácie v časti 7.1.4.2.1.|MUSÍ BYŤ|NIE|
 |Subject Key Identifier<br>{id-ce-subjectKeyIdentifier}<br>{2.5.29.14}|Malo by obsahovať hodnotu, ktorá je odvodená od verejného kľúča zahrnutého v certifikáte Odberateľa.|MÁ BYŤ|NIE|
 
 #### 7.1.2.4 Všetky certifikáty
@@ -1785,16 +1909,20 @@ Hodnota anyExtendedKeyUsage KeyPurposeId sa v tomto rozšírení nesmie objaviť
 ### 7.1.6 Identifikátor objektu politiky certifikátov
 Táto časť popisuje požiadavky na obsah pre certifikáty koreňovej CA, podriadenej CA a Odberateľa vo vzťahu k identifikácii politiky certifikátov.
 
-#### 7.1.6.1 Vyhradené identifikátory politík certifikátov
+### 7.1.6 Rozšírenie politík certifikátov
+
+Vydané certifikáty obsahujú nekritické rozšírenie `certificatePolicies`, ktoré obsahuje najmenej jeden štandardizovaný OID politiky SMIME BR zodpovedajúci úrovni overenia a profilu certifikátu, spolu s interným OID politiky Poskytovateľa:
+
 Tieto identifikátory politík certifikátov definované CA/Browser fórom sú vyhradené na použitie Poskytovateľom na potvrdenie, že certifikát spĺňa tieto požiadavky:
 |Typ certifikátu |Subtyp |Identifikátor politiky|
 |----------------------|:-------------------------------------------:|:---------------------------------:|
 |S/MIME certifikát pre digitálny podpis typu <br>„Individual-validated“|STRICT |2.23.140.1.5.4.3 |
-|S/MIME certifikát pre digitálny podpis typu <br>„Individual-validated“|MULTIPURPOSE |2.23.140.1.5.4.2 |
 |S/MIME certifikát pre digitálny podpis typu <br>„Sponsor-validated“ |STRICT |2.23.140.1.5.3.3 |
 |S/MIME certifikát pre digitálny podpis typu <br>„Sponsor-validated“ |MULTIPURPOSE |2.23.140.1.5.3.2 |
 |S/MIME digitálny certifikát pre pečať |STRICT |2.23.140.1.5.2.3 |
 |S/MIME digitálny certifikát pre pečať |MULTIPURPOSE |2.23.140.1.5.2.2 |
+
+Tieto identifikátory politík výslovne deklarujú úplný súlad s SMIME BR od CA/Browser Forum a zodpovedajú rámcu politík ETSI NCP/LCP podľa normy ETSI EN 319 411-1.
 
 #### 7.1.6.2 Certifikáty koreňovej CA
 Certifikát koreňovej CA (Root CA) by nemal obsahovať rozšírenie certificatePolicies. Ak je prítomné, rozšírenie musí spĺňať požiadavky stanovené pre certifikáty vydávané podriadeným CA v časti 7.1.6.3.
