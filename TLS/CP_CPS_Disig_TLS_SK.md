@@ -2,8 +2,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 7.4**  
-**Platné od 4. 9. 2026**  
+**Verzia 7.5**  
+**Platné od 18. 9. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**  
 
   
@@ -129,9 +129,9 @@ Poskytovateľ výslovne uvádza, že verejne dôveryhodné hierarchie CA, na kto
 | :--- | :--- |
 |Názov:         |**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
 |Skratka názvu: | **CA Disig TLS CP/CPS**|
-|Verzia:        |  **7.4** |
-|Schválené dňa: | **25. 8. 2026**|
-|Platnosť od:   | **4. 9. 2026**|  
+|Verzia:        |  **7.5** |
+|Schválené dňa: | **15. 9. 2026**|
+|Platnosť od:   | **18. 9. 2026**|  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 Popis použitého identifikátora objektu (OID):  
@@ -193,6 +193,8 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 |7.2|02. 06. 2026| Doplnenie informácií týkajúcich sa automatického vydávania TLS certifikátov prostredníctvom<br> ACME protokolu (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.6.1); Miškovič|  
 |7.3|20. 07. 2026| Zmena „Key Usage“ pre profil TLS certifikátu na kritické (7.1.2.7); Miškovič| 
 |7.4|04. 09. 2026| Aktualizácia CP/CPS na základe Apple Review; Miškovič|
+|7.5|18. 09. 2026| Prechod na novú jednofunkčnú TLS hierarchiu, ukončenie vydávania z pôvodnej hierarchie a stanovenie harmonogramu jej zrušenia (1.3.1.1; ,1.3.1.2; 5.8.1); Miškovič|
+
 
 ## 1.3 Účastníci PKI
 
@@ -205,9 +207,8 @@ Tieto CP/CPS sa vzťahujú na poskytovanie dôveryhodných služieb podriadeným
 Vydávajúce podriadené certifikačné autority podporujú automatizovanú správu životného cyklu certifikátov. Poskytovateľ prevádzkuje automatizované rozhranie pre programovanie aplikácií (API) založené na protokole ACME v prísnom súlade s RFC 8555 pre exkluzívne vydávanie certifikátov TLS overených organizáciou (OV).  
 Registrácia anonymných účtov je zakázaná; Poskytovateľ prísne presadzuje viazanie externých účtov (EAB), aby sa zabezpečilo, že automatické vydávanie je obmedzené výlučne na vopred preverené a autorizované organizácie predplatiteľov.
 
-#### 1.3.1.1 Viacúčelová hierarchia CA
+#### 1.3.1.1 Viacúčelová hierarchia CA (vo fáze ukončovania činnosti)
 Táto hierarchia zahŕňa koreňovú CA a vydávajúcu podriadenú CA, čo predstavuje pôvodnú štruktúru CA prevádzkovanú Poskytovateľom od jeho prijatia za poskytovateľa verejne dôveryhodných TLS certifikátov v rámci príslušných programov koreňových CA akceptovaných spoločnosťami Microsoft, Mozilla, Google a Apple.
-Táto hierarchia sa bude používať na vydávanie TLS certifikátov koncovým používateľom len dovtedy, kým nebude nahradená novou jednoúčelovou hierarchiou (pozri 1.3.1.2).
 
 | | |
 |:--- |:--- |
@@ -242,9 +243,14 @@ Táto hierarchia sa bude používať na vydávanie TLS certifikátov koncovým p
 | Platný do:                |**12. 04. 2029**|
 | Poznámka:                 |**Ide o krížový certifikát medzi CA Disig TLS Root R3 a CA Disig Root R2**|
 
+K **15. septembru 2026** bolo v rámci tejtoj viacúčelovej hierarchie trvalo ukončené vydávanie nových TLS certifikátov, ako aj ich opätovné vydanie s novým kľúčom (re-key).
+
+* **Podriadená CA Disig R2I2 Certification Service**: Podriadená CA Disig R2I2 Certification Service v tejto hierarchii zostáva až do **26. marca 2027** prevádzkovaná výhradne v režime údržby a správy statusu zrušenia (poskytovanie služieb CRL a OCSP) pre existujúce, dobiehajúce koncové TLS certifikáty.
+
+* **Plánované zrušenie**: Posledný koncový TLS certifikát vydaný z tejto hierarchie vyprší dňa **26. marca 2027**. K tomuto dátumu bude činnosť podriadenejCA Disig R2I2 Certification Service ukončená, jej certifikát bude zrušený a podriadená CA Disig R2I2 Certification Service bude oficiálne zrušená v súlade s článkom 5.8 tohto CP/CPS.
 
 #### 1.3.1.2 Single-purpose TLS CA  
-Táto hierarchia CA predstavuje náhradu „legacy“ hierarchie CA (pozri 1.3.1.1), ktorá je v súčasnosti využívaná na vydávanie TLS certifikátov pre koncových zákazníkov. Táto „single-purpose“ TLS CA hierarchia už plne spĺňa aktuálne požiadavky BR pre TLS [3], kde je pri nových koreňových CA vyžadovaná samostatná hierarchia CA pre účely vydávania TLS certifikátov koncovým zákazníkom a je obmedzená len na vydávanie certifikátov obsahujúcich v rozšírení EKU len id-kp-serverAuth (1.3.6.1.5.5.7.3.1)  
+Táto hierarchia CA predstavuje náhradu „legacy“ hierarchie CA (pozri 1.3.1.1). Táto „single-purpose“ TLS CA hierarchia už plne spĺňa aktuálne požiadavky TLS BR [3], kde je pri nových koreňových CA vyžadovaná samostatná hierarchia CA pre účely vydávania TLS certifikátov koncovým zákazníkom a je obmedzená len na vydávanie certifikátov obsahujúcich v rozšírení EKU len id-kp-serverAuth (1.3.6.1.5.5.7.3.1)  
 
 |  | |
 | :--- | :--- |
@@ -269,6 +275,8 @@ Táto hierarchia CA predstavuje náhradu „legacy“ hierarchie CA (pozri 1.3.1
 | Platný do:                |**12. 04. 2029**| 
 | Poznámka:                 |**Vydáva len TLS certifikáty pre koncových používateľov (pozri 3.1.4.1).**|
 
+
+S účinnosťou od **15. septembra 2026** prebrala táto hierarchia plnú zodpovednosť za overovanie žiadostí, spracovanie a vydávanie nových TLS certifikátov. Všetky nové žiadosti o vydanie TLS certifikátu sú spracovávané výhradne touto hierarchiou v súlade s požiadavkami TLS BR [3].
 
 ### 1.3.2 Registračné autority
 Registračná autorita („RA“) je subjekt, ktorý na základe zmluvy vykonáva určité vybrané činnosti pri poskytovaní dôveryhodných služieb v mene Poskytovateľa.
@@ -1786,6 +1794,21 @@ Pred ukončením poskytovania služieb Poskytovateľ:
 Po ukončení svojej činnosti Poskytovateľ nevydá žiadny certifikát a zabezpečí preukázateľné znemožnenie opätovného využitia súkromných kľúčov Poskytovateľa.  
 Pred ukončením svojej činnosti každá RA poskytne archivované dáta zložke Poskytovateľa podľa pokynu PMA.  
 Poskytovateľ musí mať riešenie na pokrytie všetkých nákladov spojených so splnením minimálnych požiadaviek pri ukončení činnosti v prípade bankrotu alebo inej príčiny, kedy nebude schopná pokryť náklady vlastnými prostriedkami, a to v súlade s platnou legislatívou o bankrote.
+
+### 5.8.1 Osobitný postup pri vyradení z prevádzky pôvodnej viacúčelovej podriadenej CA
+
+V súlade so všeobecnými zásadami ukončenia činnosti uvedenými vyššie vykoná Poskytovateľ plánované a riadne vyradenie z prevádzky podriadenej CA Disig R2I2 Certification Service patriacej do pôvodnej viacúčelovej hierarchie podľa nasledujúceho harmonogramu a podmienok:
+
+**1.** **Ukončenie vydávania**: S účinnosťou od 15. septembra 2026 podriadená CA Disig R2I2 Certification Service trvalo ukončila prijímanie žiadostí, vydávanie nových TLS certifikátov, ako aj vykonávanie opätovného vydania s novým kľúčom. Kontinuita vydávania TLS certifikátov je plne zabezpečená prostredníctvom novej jednofunkčnej hierarchii pre TLS (pozri 1.3.1.2).
+
+**2.** **Režim údržby a služby revokácie**: V období od 15. septembra 2026 do 26. marca 2027 je pôvodná podriadená CA Disig R2I2 Certification Service prevádzkovaná výhradne v režime údržby za účelom poskytovania služieb správy statusu zrušení (publikácia CRL a prevádzka OCSP responderov) pre dobiehajúce koncové TLS certifikáty v súlade s TLS BR [3].
+
+**3.** **Ukončenie platnosti a revokácia Sub-CA**: Po vypršaní posledného platného koncového TLS certifikátu dňa 26. marca 2027 sa bezodkladne zruší certifikát podriadenej CA Disig R2I2 Certification Service.
+
+**4.** **Záverečné CRL a likvidácia kľúča**: Bude vygenerovaný a publikovaný záverečný zoznam zrušených certifikátov (Final CRL). Po publikovaní Final CRL bude súkromný kľúč podriadenej CA Disig R2I2 Certification Service, vrátane všetkých jeho kópií, trvalo zničený v súlade s kapitolou 6.2.9 tak, aby sa zamedzilo jeho obnoveniu alebo opätovnému použitiu.
+
+**5.** **Archivácia a audit**: Všetka dokumentácia, záznamy o overení identity, auditné logy a prevádzkové archívy spojené s  podriadenou CA Disig R2I2 Certification Service budú zhromaždené a bezpečne uložené po dobu archivácie vyžadovanú TLS BR [3] a platnými právnymi predpismi.
+
 
 # 6. Technické bezpečnostné kontroly
 Technická časť infraštruktúry Poskytovateľa (hardvér a softvér) bude pozostávať iba z bezpečných systémov a oficiálneho softvéru. Architektúra infraštruktúry Poskytovateľa bude navrhnutá s komponentmi, ktoré spĺňajú bezpečnostné štandardy na úrovni súčasných poznatkov.

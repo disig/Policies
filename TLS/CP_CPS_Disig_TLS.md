@@ -1,10 +1,9 @@
-
 # Disig TLS Certificate Policy and Certification Practice Statement (CP/CPS)
 
 
 **Disig, a.s.**  
-**Version 7.4**  
-**Valid from September 4, 2026**  
+**Version 7.5**  
+**Valid from September 18, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
@@ -130,9 +129,9 @@ The Provider explicitly states that the publicly trusted CA hierarchies covered 
 | :--- | :--- |
 | Document Name:|**Disig TLS Certificate Policy and Certification Practice Statement (CP/CPS)** |
 | Name abbreviation: | **CA Disig TLS CP/CPS** |
-| Version:|  **7.4** |
-| Approved on:| **August 25, 2026**   |
-| Valid from:| **September 4, 2026**    |  
+| Version:|  **7.5** |
+| Approved on:| **September 15, 2026**   |
+| Valid from:| **September 18, 2026**    |  
 |This document is assigned to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 
@@ -195,6 +194,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |7.2|2026/06/15|Addition of information regarding automatic issuance of TLS certificates via the ACME protocol (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.2.1; 4.6.1) Miškovič|
 |7.3|2026/07/20| Change of "Key Usage" for Subscriber (Server) Certificate Profile to Critical (7.1.2.7); Miškovič|
 |7.4|2026/09/04| CP/CPS Update Based on Apple Review; Miškovič|
+|7.5|2026/09/18| Transition to the new single-purpose TLS hierarchy, discontinuation of issuance under the legacy hierarchy, and establishment of its decommissioning plan (1.3.1.1; 1.3.1.2; 5.8.1); Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -206,9 +206,8 @@ This CP/CPS applies to the provision of trust services by subordinate certificat
 Issuing subordinate certification authorities support automated certificate lifecycle management. The Provider operates an automated Application Programming Interface (API) based on the ACME protocol in strict compliance with RFC 8555 for the exclusive issuance of Organization Validated (OV) TLS certificates.   
 Anonymous account registration is prohibited; the Provider strictly enforces External Account Binding (EAB) to ensure that automated issuance is restricted solely to pre-vetted and authorized subscriber organizations.
 
-####  1.3.1.1 Multi-purpose CA Hierarchy  
+####  1.3.1.1 Multi-purpose CA Hierarchy (Phase-Out / Sunset)  
 This hierarchy includes root CA and issuing subordinate CA, which represents the legacy CA structure operated by the Provider since its acceptance as a publicly trusted TLS Certificate provider under the corresponding root CA programs accepted by Microsoft, Mozilla, Google, and Apple.   
-The hierarchy will be used to issue TLS Certificates to end users only until it is replaced by a new single-purpose hierarchy (see 1.3.1.2).
 
 
 | | |
@@ -240,9 +239,12 @@ The hierarchy will be used to issue TLS Certificates to end users only until it 
 |Thumbprint (sha256) (DER):  |**1E4CF8FA6ADA4DB81C33BB8E4BF73B8D29E99C119FF0B7A42D58032366F56509**|
 |Comment:                    |**It is Cross-Certificate between CA Disig TLS Root R3 and CA Disig Root R2**|
 
+As of **September 15, 2026**, the issuance of new TLS certificates, as well as re-key operations under the legacy multi-purpose hierarchy has been permanently discontinued.
+* **Subordinate CA Disig R2I2 Certification Service**: The Subordinate CA Disig R2I2 Certification Service in this hierarchy remains operational until **March 26, 2027**, solely in maintenance mode to provide revocation status services (CRL publication and OCSP responder operations) for remaining active end-entity certificates.
+* **Scheduled Decommissioning**: The final active end-entity TLS certificate issued under this hierarchy will expire on **March 26, 2027**. On this date, the Subordinate CA Disig R2I2 Certification Service operations will cease, its certificate will be revoked, and the Subordinate CA Disig R2I2 Certification Service will be formally decommissioned in accordance with Section 5.8 of this CP/CPS.
 
 #### 1.3.1.2 Single-purpose TLS CA  
-This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1) currently used to issue TLS Certificates to end users. This single-purpose TLS CA hierarchy already fully complies with the current TLS BR [3], where new root CAs are required to have a separate CA hierarchy for issuing TLS Certificates to end users and are limited to issuing Certificates containing only id-kp-serverAuth in the EKU extension (1.3.6.1.5.5.7.3.1).  
+This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1). This single-purpose TLS CA hierarchy already fully complies with the current TLS BR [3], where new root CAs are required to have a separate CA hierarchy for issuing TLS Certificates to end users and are limited to issuing Certificates containing only id-kp-serverAuth in the EKU extension (1.3.6.1.5.5.7.3.1).  
 
 |  | |
 | :--- | :--- |
@@ -265,6 +267,8 @@ This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1) currently used 
 | Valid from:               |**April 13, 2026**|
 | Valid to:                 |**April 12, 2029**| 
 | Comment:                  |**It issues only TLS Certificates to end users (see 3.1.4.3).**|  
+
+Effective **September 15, 2026**, this hierarchy assumed full responsibility for request validation, processing, and issuance of new TLS certificates. All new certificate applications are processed exclusively under this hierarchy in full compliance with TLS BR [3]  requirements.
 
 ###  1.3.2 Registration Authorities ### 
 The Registration Authority ("RA") is an entity that under contract conducts certain selected activities in the provision of trusted services on behalf of the Provider.
@@ -1840,6 +1844,20 @@ Before terminating providing the services, the Provider shall:
 Upon termination of its activity, the Provider will not issue any certificate and will guarantee impossibility to re-use the Provider's private keys.  
 Before terminating their activities, each RA will provide all archived data to the Provider as instructed by the PMA.  
 The Provider shall have a solution to cover all the costs associated with meeting the minimum termination requirements in the event of bankruptcy or any other cause when it will be unable to cover the costs by its own means, in accordance with applicable bankruptcy legislation.
+
+### 5.8.1 Specific Procedure for Decommissioning of the Legacy Multi-Purpose Subordinate CA
+
+In accordance with the general termination principles defined above, the Provider executes a planned, orderly decommissioning of the Subordinate CA Disig R2I2 Certification Service belonging to the legacy multi-purpose hierarchy, pursuant to the following schedule and conditions:
+
+**1.** **Discontinuation of Issuance**: Effective September 15, 2026, the legacy Subordinate CA Disig R2I2 Certification Service permanently ceased accepting applications and issuing new TLS certificates, as well as executing re-key operations. Continuity of TLS certificate issuance is fully maintained via the new single-purpose TLS hierarchy (see 1.3.1.2).
+
+**2.** **Maintenance Mode & Revocation Services**: Between September 15, 2026, and March 26, 2027, the legacy Subordinate CA Disig R2I2 Certification Service operates exclusively in maintenance mode to provide revocation management services (CRL publication and OCSP responder operations) for active end-entity TLS certificates in strict compliance with TLS BR [3].
+
+**3.** **Final Expiry & Revocation of Sub-CA**: Upon the expiration of the final active end-entity TLS certificate on March 26, 2027, the Root CA shall immediately revoke the certificate of the legacy Subordinate CA Disig R2I2 Certification Service.
+
+**4.** **Final CRL & Key Destruction**: A Final Certificate Revocation List (Final CRL) shall be generated and published. Following the publication of the Final CRL, the private key of the legacy Subordinate CA Disig R2I2 Certification Service, including all copies, shall be permanently destroyed in accordance with Section 6.2.9 to ensure it cannot be restored or re-used.
+
+**5.** **Archival & Audit**: All documentation, validation records, audit logs, and operational archives associated with the legacy Subordinate CA Disig R2I2 Certification Service shall be collected and securely stored for the retention period mandated by TLS BR [3] and applicable legal regulations.
 
 # 6. Technical Security Controls   
 The technical part of the Provider's infrastructure (hardware and software) shall consist only of secure systems and official software. The infrastructure architecture of the Provider shall be designed with components that meet safety standards at the level of current knowledge.  
