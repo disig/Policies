@@ -2,8 +2,8 @@
 
 
 **Disig, a.s.**  
-**Version 7.5**  
-**Valid from September 18, 2026**  
+**Version 7.6**  
+**Valid from October 30, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
@@ -129,9 +129,9 @@ The Provider explicitly states that the publicly trusted CA hierarchies covered 
 | :--- | :--- |
 | Document Name:|**Disig TLS Certificate Policy and Certification Practice Statement (CP/CPS)** |
 | Name abbreviation: | **CA Disig TLS CP/CPS** |
-| Version:|  **7.5** |
-| Approved on:| **September 15, 2026**   |
-| Valid from:| **September 18, 2026**    |  
+| Version:|  **7.6** |
+| Approved on:| **October 28, 2026**   |
+| Valid from:| **October 30, 2026**    |  
 |This document is assigned to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 
@@ -195,6 +195,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |7.3|2026/07/20| Change of "Key Usage" for Subscriber (Server) Certificate Profile to Critical (7.1.2.7); Miškovič|
 |7.4|2026/09/04| CP/CPS Update Based on Apple Review; Miškovič|
 |7.5|2026/09/18| Transition to the new single-purpose TLS hierarchy, discontinuation of issuance under the legacy hierarchy, and establishment of its decommissioning plan (1.3.1.1; 1.3.1.2; 5.8.1); Miškovič|
+|7.6|2026/10/30| Adjustment of links to test pages (2.2.4), refinement of the wording in section 7.2.2 regarding CRL; Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -564,18 +565,15 @@ Provider CRLs are available at the following HTTP URLs to avoid circular depende
 
 ### 2.2.4 Test Web Sites 
 To demonstrate the functionality of the issued certificates for Root Store inclusion purposes, the CA maintains the following test sites:
-|CA                                 |Site type       |Site address                                       |
-|-----------------------------------|:---------------|---------------------------------------------------|
-|CA Disig R2I2 Certification Service|Valid TLS Site  |https://testssl-valid-r2i2.disig.sk/index.en.html  |
-|                                   |Expired TLS Site|https://testssl-expire-r2i2.disig.sk/index.en.html |
-|                                   |Revoked TLS Site|https://testssl-revoked-r2i2.disig.sk/index.en.html|
+|Root CA                   |Site address                          |
+|--------------------------|--------------------------------------|
+|CA Disig Root R2 Hierarchy|https://testssl.disig.sk/#content_r2i2|
+                                   
 
-|CA                                 |Site type       |Site address                                       |
-|-----------------------------------|:---------------|---------------------------------------------------|
-|CA Disig R3I1 Certification Service|Valid TLS Site  |https://testssl-valid-r3i1.disig.sk/index.en.html  |
-|                                   |Expired TLS Site|https://testssl-expire-r3i1.disig.sk/index.en.html |
-|                                   |Revoked TLS Site|https://testssl-revoked-r3i1.disig.sk/index.en.html|
-
+|Root CA                       |Site address                           |
+|------------------------------|---------------------------------------|
+|CA Disig TLS Root R3 Hierarchy|https://testssl.disig.sk/#content_r3i1 |
+                                
 
 ## 2.3 Time or frequency of publication
 The TLS Certificate shall be published as soon as it is issued. Information on the TLS Certificate issued shall be available on the Provider's website. 
@@ -2349,13 +2347,20 @@ No stipulation.
 With effect from 15.3.2024, the Provider shall issue CRLs in accordance with the profile specified in Section 7.2 of TLS BR [3]. 
 
 ### 7.2.1 Version number  
-All CRLs issued by the Provider shall conform to RFC 5280 and shall be Version 2.
+All CRLs issued by the Provider shall be of type X.509 v2.
 
-### 7.2.2 CRL and CRL entry extensions  
-The CRL shall contain the AuthorityKeyIdentifier, CRLNumber, and IssuingDistributionPoint extensions as specified in RFC 5280. The CRLs are published in the Repository at the locations defined in Section 2.2.3.  
+### 7.2.2 CRL and CRL entry extensions 
+
+CRL Extensions:  
+| Extension |Presence |Critical|
+| :--- | :---: | :---: |
+| authorityKeyIdentifier|MUST|N|
+| CRLNumber|MUST|N|
+
+Revoked certificate component shall be as specified in Section 7.2.2 of TLS BR [3] in "Table 90: revokedCertificates Component". 
 
 #### 7.2.2.1 CRL Issuing Distribution Point
-We issuing full and complete CRLs only.
+We issuing full and complete CRLs only and this extension is not trecommended for full and complete CRLs.
 
 ## 7.3 OCSP profile  
 If the OCSP response refers to a root CA or a subordinate CA TLS Certificate, including cross-certified CA TLS Certificates, and this TLS Certificate has been revoked, then the reason for the revocation shall be specified in the RevokedInfo CertStatus field.  

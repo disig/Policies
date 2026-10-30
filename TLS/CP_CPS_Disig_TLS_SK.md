@@ -2,8 +2,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 7.5**  
-**Platné od 18. 9. 2026**  
+**Verzia 7.6**  
+**Platné od 30. 10. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**  
 
   
@@ -129,9 +129,9 @@ Poskytovateľ výslovne uvádza, že verejne dôveryhodné hierarchie CA, na kto
 | :--- | :--- |
 |Názov:         |**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
 |Skratka názvu: | **CA Disig TLS CP/CPS**|
-|Verzia:        |  **7.5** |
-|Schválené dňa: | **15. 9. 2026**|
-|Platnosť od:   | **18. 9. 2026**|  
+|Verzia:        |  **7.6** |
+|Schválené dňa: | **28. 10. 2026**|
+|Platnosť od:   | **30. 10. 2026**|  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 Popis použitého identifikátora objektu (OID):  
@@ -194,7 +194,7 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 |7.3|20. 07. 2026| Zmena „Key Usage“ pre profil TLS certifikátu na kritické (7.1.2.7); Miškovič| 
 |7.4|04. 09. 2026| Aktualizácia CP/CPS na základe Apple Review; Miškovič|
 |7.5|18. 09. 2026| Prechod na novú jednofunkčnú TLS hierarchiu, ukončenie vydávania z pôvodnej hierarchie a stanovenie harmonogramu jej zrušenia (1.3.1.1; ,1.3.1.2; 5.8.1); Miškovič|
-
+|7.6|30. 10. 2026| Úprava odkazov na testovacie stránky (2.2.4), spresnenie formulácie v časti 7.2.2 týkajúcej sa CRL; Miškovič|
 
 ## 1.3 Účastníci PKI
 
@@ -571,18 +571,15 @@ Zoznamy CRL sú k dispozícii na nasledujúcich URL adresách HTTP, aby sa predi
 ### 2.2.4 Testovacie webové stránky 
 Na demonštráciu funkčnosti vydaných certifikátov na účely zaradenia do koreňového úložiska certifikačná autorita udržiava nasledujúce testovacie lokality:  
 
-|CA                                 |Stav TLS certifikátu |Adresa                                             |
-|-----------------------------------|:--------------------|---------------------------------------------------|
-|CA Disig R2I2 Certification Service|Platný               |https://testssl-valid-r2i2.disig.sk/index.en.html  |
-|                                   |Exspirovaný          |https://testssl-expire-r2i2.disig.sk/index.en.html |
-|                                   |Zrušený              |https://testssl-revoked-r2i2.disig.sk/index.en.html|
+|Koreňová CA      |Adresa                                |
+|-----------------|--------------------------------------|
+|CA Disig Root R2 |https://testssl.disig.sk/#content_r2i2|
+                                  
 
-|CA                                 |Stav TLS certifikátu |Adresa                                             |
-|-----------------------------------|:--------------------|---------------------------------------------------|
-|CA Disig R3I1 Certification Service|Platný               |https://testssl-valid-r3i1.disig.sk/index.en.html  |
-|                                   |Exspirovaný          |https://testssl-expire-r3i1.disig.sk/index.en.html |
-|                                   |Zrušený              |https://testssl-revoked-r3i1.disig.sk/index.en.html|
-
+|Koreňová CA         |Adresa                                |
+|--------------------|--------------------------------------|
+|CA Disig TLS Root R3|https://testssl.disig.sk/#content_r3i1|
+                                   
 
 ## 2.3 Čas alebo periodicita zverejňovania
 TLS certifikát musí byť zverejnený ihneď po jeho vydaní. Informácie o vydanom TLS certifikáte musia byť dostupné na webovom sídle Poskytovateľa.
@@ -2292,10 +2289,17 @@ S účinnosťou od 15. 3. 2024 Poskytovateľ vydáva zoznamy CRL v súlade s pro
 Všetky zoznamy CRL vydané poskytovateľom musia byť v súlade s RFC 5280 a musia byť verzie 2.
 
 ### 7.2.2 Zoznam CRL a rozšírenia záznamov CRL
-Zoznam CRL musí obsahovať rozšírenia a , ako je uvedené v RFC 5280. Zoznamy CRL sú zverejnené v úložisku na miestach definovaných v časti 2.2.3.
+
+Rozšírenia CRL:  
+| Rozšírenie |Prítomnosť |Kritické|
+| :--- | :---: | :---: |
+| authorityKeyIdentifier|MUSÍ BYŤ|NIE|
+| CRLNumber|MUSÍ BYŤ|NIE|
+
+Časť týkajúca sa zrušených certifikátov musí byť v súlade s ustanoveniami v časti 7.2.2 dokumentu TLS BR [3], konkrétne v tabuľke "Table 90: revokedCertificates Component". 
 
 #### 7.2.2.1 Distribučný bod CRL
-Vydávame iba úplné a kompletné zoznamy CRL.
+Vydávame výlučne úplné zoznamy zrušených certifikátov (CRL) a toto rozšírenie sa pre úplné zoznamy CRL neodporúča uvádzať.
 
 ## 7.3 Profil OCSP
 
