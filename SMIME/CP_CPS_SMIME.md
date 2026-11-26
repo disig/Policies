@@ -2,8 +2,8 @@
  
  
 **Disig, a.s.**  
-**Version 2.2**  
-**Valid from September 4, 2026**  
+**Version 2.3**  
+**Valid from November 26, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.11**
 
 Copyright © 2026 Disig, a.s. 
@@ -107,25 +107,27 @@ The Provider's website for the provided trusted services is available here:
 ## 1.1 Overview
  
 This CP/CPS defines the creation and management of public key certificates (X.509 version 3), in accordance with the Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates [1] (hereinafter referred to as "SMIME BR").   
-It also takes into account the requirements of RFC 5280 "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile" [2], Regulation (EU) No. 910/2014 of 23 July 2014 on electronic identification and trustworthy services for electronic transactions in the internal market and repealing Directive 1999/93/EC as amended by Regulation No. 1183/2025 (hereinafter referred to as the "eIDAS Regulation") [3], and ETSI TS 119 411-6 "Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 6: Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates [4]. Certificates are issued in accordance with requirements of the ETSI EN 319 401 [5]  and ETSI EN 319 411-1 [6] standards.
+It also takes into account the requirements of RFC 5280 "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile" [2], Regulation (EU) No. 910/2014 of 23 July 2014 on electronic identification and trustworthy services for electronic transactions in the internal market and repealing Directive 1999/93/EC as amended by Regulation No. 1183/2024 (hereinafter referred to as the "eIDAS Regulation") [3], and ETSI TS 119 411-6 "Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 6: Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates [4]. Certificates are issued in accordance with requirements of the ETSI EN 319 401 [5]  and ETSI EN 319 411-1 [6] standards.
 
 This CP/CPS is structured in accordance with RFC 3647 [7].
  
 The Provider confirms that this CP/CPS takes account of all requirements of the current version of the SMIME BR [1], which is published at [https://cabforum.org/working-groups/smime/documents/](https://cabforum.org/working-groups/smime/documents/).
 
+The Provider explicitly states that the publicly trusted CA hierarchies covered by this CP/CPS adhere to the latest published versions of the CCADB Policy [23].
+
 In the event of any inconsistency between these requirements and this CP/CPS, the requirements of the current version of the SMIME BR [1] prevail.
 
-The Privider explicitly states that the publicly-trusted CA hierarchies covered under this CP/CPS are not used for enterprise-only or locally-trusted use cases. For internal, enterprise, or non-public deployment, the CA offers and maintains dedicated private PKI hierarchies that are operationally and logically segregated from its publicly-trusted hierarchies.
+The Provider explicitly states that the publicly-trusted CA hierarchies covered under this CP/CPS are not used for enterprise-only or locally-trusted use cases. For internal, enterprise, or non-public deployment, the CA offers and maintains dedicated private PKI hierarchies that are operationally and logically segregated from its publicly-trusted hierarchies.
  
 ## 1.2 Document Name and Identification
  
 |  | |
 |:--- | :--- |
 |Document Name:|**Disig S/MIME Certificate Policy and Certification Practice Statement (CP/CPS)** |
-|Skratka názvu: | **SMIME CP/CPS** |
-|Version:|  **2.2** |
-|Approved on:| **August 25, 2026**   |
-|Valid from:| **September 4, 2026**    |  
+|Name abbreviation: | **SMIME CP/CPS** |
+|Version:|  **2.3** |
+|Approved on:| **November 20, 2026**   |
+|Valid from:| **November 26, 2026**    |  
 |This document is assigned to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.11** |  
  
  
@@ -157,13 +159,14 @@ This OID (1.3.158.35975946.0.0.0.1.11) is also listed in issued Certificates and
 |2.0|2026/03/05|Transformation of the document into a new form of a combined policy for providing the service of issuing publicly trusted SMIME Certificates, which also includes the rules for providing this service, which were originally the subject of a separate document.; Miškovič|
 |2.1|2026/04/21|Addition of information about the issued subordinate CA Disig R4I1 SMIME Certification Service (1.3.1.12); Miškovič|
 |2.2|2026/09/04|CP/CPS Update Based on Apple Review; Miškovič|
+|2.3|2026/11/26|Addition the adherence statement with the CCADB policy (1.1); Editorial changes and linguistic proofreading; Miškovič|
 
 ## 1.3 PKI Participants
 
 ### 1.3.1 Certification Authorities
 Root CA is the top-level Certification Authority whose Root certificate is distributed by Application Software Suppliers. Root CA issues Subordinate CA certificates.
 Subordinate CA is a Certification Authority whose Certificate is signed by Root CA, or another Subordinate CA.
-SMIME CP/CPS (herain after only "CP/CPS") relates to the provision of trust services by subordinate certification authorities that fall under one of the CA hierarchies operated by the Provider for issuing publicly trusted Certificates as described below.
+SMIME CP/CPS (herein after only "CP/CPS") relates to the provision of trust services by subordinate certification authorities that fall under one of the CA hierarchies operated by the Provider for issuing publicly trusted Certificates as described below.
 
 #### 1.3.1.1 Multi-purpose CA Hierarchy
 
@@ -202,7 +205,7 @@ This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1) currently used 
 | Thumbprint (sha1)(DER):   | **33F3820A9838680BF90DA57815019E9FFDF31718**|
 | Thumbprint (sha256)(DER): | **6AF177B41E97D40C9EA25203533E55C408632E9BD8A4809551001DFF2DC9479B**|
 | Valid from:               | **September 18, 2025**|
-| Valid to:                 | **septamber 14, 2043**| 
+| Valid to:                 | **September 14, 2043**| 
 | Comment:                  | **It issues certificates only for the Provider's subordinate certification authorities reserved for issuing SMIME certificates.**|  
 
  
@@ -222,8 +225,8 @@ This CA hierarchy replaces the legacy CA hierarchy (see 1.3.1.1) currently used 
 The Registration Authority ("RA") is an entity that under contract conducts certain selected activities in the provision of trusted services on behalf of the Provider.
 The RA shall conduct its activities in accordance with this approved CP/CPS.
 Provider may establish following types of RA:
-* Commercial RA - is intended to mediate selected trustworthy services of the Provider to the general public and is operated by a third party, on the basis of a written agreement with the Provider see list at [https://eidas.disig.sk/sk/kontakt/registracne-autority/](https://eidas.disig.sk/sk/kontakt/registracne-autority/);
-* Enterprise RA - is intended to mediate selected trustworthy services exclusively for the own needs of a particular legal body, For the needs of its operated systems requiring the use of certificates and is operated on the basis of a written contract with the Provider;
+* Commercial RA - is intended to mediate selected trustworthy services of the Provider to the public and is operated by a third party, based on a written agreement with the Provider see list at [https://eidas.disig.sk/sk/kontakt/registracne-autority/](https://eidas.disig.sk/sk/kontakt/registracne-autority/);
+* Enterprise RA - is intended to mediate selected trustworthy services exclusively for the own needs of a particular legal body, For the needs of its operated systems requiring the use of certificates and is operated based on a written contract with the Provider;
 * Internal RA - is operated by the Provider and is intended to provide trusted services for all interested parties. This RA is not a separate legal body.
 If the term "RA of the Provider" is used in the text, it refers to all types of RA mentioned above.
 
@@ -242,7 +245,7 @@ The Certificate Holder may be:
 * **A legal person** (that can be an Organization or a unit, or a department identified in association with an Organization) - apply for Certificate for seal.  
 
 When a subscriber is the subject, it will be held solely responsible if its obligations are not correctly fulfilled.  
-When the subscriber is acting on behalf of one or more distinct subjects to whom it is linked (e.g. the Subscriber is a company requiring Certificates for its employees to allow them to participate in electronic business on behalf of the company), responsibilities of the subscriber and of the subject are addressed in the General Terms of Service and Use of the Trusted Certificate Issuance and Verification Service " (the "General Terms") [8] published at the Provider's website (see Chapter 1).  
+When the subscriber is acting on behalf of one or more distinct subjects to whom it is linked (e.g., the Subscriber is a company requiring Certificates for its employees to allow them to participate in electronic business on behalf of the company), responsibilities of the subscriber and of the subject are addressed in the General Terms of Service and Use of the Trusted Certificate Issuance and Verification Service " (the "General Terms") [8] published at the Provider's website (see Chapter 1).  
 
 This CP/CPS defines the requirement that the Subscriber/Holder meet.
 Formal Certificate Holder means a natural person who undertakes to use a corresponding private key and a Certificate in accordance with this CP/CPS.
@@ -263,7 +266,7 @@ Relying parties are a natural or legal person who relies, in their proceedings, 
 #### 1.3.5.1 Policy Management Authority
 Policy Management Authority - PMA is a component provided for the purpose:
 * Supervising the CP/CPS creation and updating including the evaluation of plans to implement any of the changes.
-* Reviewing CP/CPS to ensure that the Provider's practice complies with its requirements 
+* Reviewing CP/CPS to ensure that the Provider's practice complies with its requirements. 
 * Reviewing of audits findings, to determine whether Provider adequately comply with approved CP/CPS.
 * Giving recommendations for Provider regarding corrective actions and other appropriate measures.
 * Giving advice regarding the suitability of the Certificates associated with the CP/CPS for specific management applications and managing activities of the certification authority and registration authority.
@@ -275,7 +278,7 @@ PMA represents the top component, which shall decide finally on all matters and 
 
 #### 1.3.5.2 Conformity assessors (auditors)
 Conformity assessors are independent organizations that, based on accreditation, assess the Provider's compliance with:
-* relevant standards (e.g. ETSI EN 319 401[5], ETSI EN 319 411-1[6], or other relevant standards),
+* relevant standards (e.g., ETSI EN 319 401[5], ETSI EN 319 411-1[6], or other relevant standards),
 * this CP/CPS and related internal policies of the Provider,
 * requirements of the Trusted Root CA and/or CCADB programs.
 Conformity assessors:
@@ -288,12 +291,12 @@ The provider shall ensure that relations with conformity assessors are regulated
 #### 1.3.5.3 Supervisory bodies and operators of trusted root programs
 Supervisory bodies and operators of trusted root programs are entities that exercise statutory or programmatic supervision over the activities of the Provider, for example:
 * a national supervisory authority for trust services or electronic identification;
-* operators of trusted root CA programs (e.g. browser and OS manufacturers) who decide on the inclusion/removal of root CAs in the relevant program;
+* operators of trusted root CA programs (e.g., browser and OS manufacturers) who decide on the inclusion/removal of root CAs in the relevant program;
 * administrators and operators of CCADB.
 These entities:
 * may request information, documents, and explanations from the Provider regarding the operation of the CA and compliance with requirements;
 * may require the adoption of corrective measures, restrictions, or termination of Certificate issuance;
-* are not a contracting party or relying party but may affect the trustworthiness of issued Certificates (e.g. by removing the root CA from the program).  
+* are not a contracting party or relying party but may affect the trustworthiness of issued Certificates (e.g., by removing the root CA from the program).  
 
 The Provider shall cooperate with these entities to the extent required by applicable law, applicable program rules, and these CP/CPS.
 
@@ -317,30 +320,9 @@ The Provider issues the following types of S/MIME Certificates to Subscribers:
   * **Individual-Validated (IV):** `2.23.140.1.5.4.3` *(Strict)*
   * **Provider's Internal Policy OID:** `1.3.158.35975946.0.0.0.1.11`
 
-  *Note: The Provider's internal Policy OID and the SMIME BR policy OIDs incorporated in issued certificates correspond to and fulfill the requirements of the ETSI NCP/LCP policy framework (ETSI EN 319 411-1).*
+  *Note: The Provider's internal Policy OID and the SMIME BR policy OIDs incorporated in issued certificates correspond to and fulfil the requirements of the ETSI NCP/LCP policy framework (ETSI EN 319 411-1).*
 
 * **Infrastructure & Support Certificates:** The Provider issues management certificates necessary for its operational needs, limited exclusively to Subordinate CA Certificates (Issuing CAs) and OCSP Responder Certificates operating strictly within this Secure Email hierarchy.
-
-
-
-### 1.4.1	Appropriate Certificate Uses 
-Certificates issued under this CP/CPS are issued for purpose of identifying the public key holder from a cryptographic keys pair (public and private) which is used within the PKI infrastructure.
-The cryptographic key pair (private and public) and the Certificate issued by the Provider can generally be used primarily for:
-* E-mail security (signing and / or encryption of e-mails);
-* Signing of electronic documents with advanced electronic signature;
-* Creating an electronic seal.
-
-CAs of the Provider issue following types of Certificates to the Subscribers: 
-* S/MIME digital signature certificate or S/MIME digital certificate for seal - include public key associated with the email address and can also include the identity of natural person or legal person, which has control of the requested email address. The cryptographic keys associated with this type of Certificate are primarily intended for the security of electronic mail, the creation of an advanced electronic signature.   
-The issued Certificate will include, in accordance with SMIME BR [1], the following certification policy identifiers: 
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) organization-validated(2) multipurpose (2)} (2.23.140.1.5.2.2); 
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) organization-validated (2) strict (3)} (2.23.140.1.5.2.3);
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) sponsor-validated (3) multipurpose (2)} (2.23.140.1.5.3.2); and
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) sponsor-validated (3) strict (3)} (2.23.140.1.5.3.3); and
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) individual-validated (4) multipurpose (2)} (2.23.140.1.5.4.2); and
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) individual-validated (4) strict (3)} (2.23.140.1.5.4.3).
-
-The Provider issues management certificates for its needs (certificate for Subordinate CA, and certificate for OCSP Responders).
 
 ### 1.4.2	Prohibited Certificate Uses 
 Certificates issued under this CP/CPS are not EU Qualified certificates according to the eIDAS Regulation [3] and cannot be used where EU Qualified certificates are required.
@@ -418,7 +400,7 @@ The CP/CPS is published in accordance with the publication and notification poli
 
 **Key pair** means a part of a PKI system that uses an asymmetric cryptography and consists of a public key and a private key;  
 
-**Multi-purpose CA** - A root CA or subordinate CA that is in a hierarchy without restrictions on the type of certificate issued to the end holder, i.e. in the hierarchy it is possible to issue Certificates, TLS certificate, or other types of certificates, to end users;  
+**Multi-purpose CA** - A root CA or subordinate CA that is in a hierarchy without restrictions on the type of certificate issued to the end holder, i.e., in the hierarchy it is possible to issue Certificates, TLS certificate, or other types of certificates, to end users;  
 
 **PKCS#10*** means a format of messages sent to a Certification Authority to request certification of a public key;  
 
@@ -439,7 +421,7 @@ internal);
 
 **Publicly-Trusted Certificate** |means a certificate that is trusted by virtue of the fact that its corresponding root certificate is distributed as a trust anchor in widely-available application software.  
 
-**Single-purpose CA** - A root CA or subordinate CA that is in a hierarchy that is strictly limited to issuing exactly one type of certificate to an end user, i.e. in the hierarchy, only SMIME Certificates can be issued to end user;  
+**Single-purpose CA** - A root CA or subordinate CA that is in a hierarchy that is strictly limited to issuing exactly one type of certificate to an end user, i.e., in the hierarchy, only SMIME Certificates can be issued to end user;  
 
 **Subscriber** means a natural person or legal entity to whom a Certificate is issued and who is legally bound by a subscriber agreement or terms of use.  
 
@@ -497,6 +479,7 @@ internal);
 **[20]**   RFC 6818 "Updates to the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"   
 **[21]**   ETSI EN 319 412-1 "Electronic Signatures and Infrastructures (ESI);Certificate Profiles; Part 1: Overview and common data structures."     
 **[22]**   ISO 3166-1 "Codes for the representation of names of countries and their subdivisions - Part 1: Country code."   
+**[23]**   CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy).  
 
 ### 1.6.4 Conventions
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this CP/CPS shall be interpreted in accordance with RFC 2119.
@@ -671,7 +654,7 @@ The Provider does not support this method.
 When verifying the identity of a legal entity included in the Certificate profiles for an employee of a legal entity and seal Certificate, the requirements defined in the following subchapters must be met.
 
 #### 3.2.3.1 Attribute collection of organization identity
-The Provider's RA must obtain and retain evidence of the organization's (legal entity's) identity, if included in the Certificate::
+The Provider's RA must obtain and retain evidence of the organization's (legal entity's) identity, if included in the Certificate:
 * Formal name
 * Assumed name
 * Organizational unit
@@ -691,11 +674,11 @@ The Provider uses the following authorized verification sources, as applicable t
 
 | Authorized source | Scope | Online location |
 |---|---|---|
-| Commercial Register of the Slovak Republic (OR SR) | Legal name, registered office, registration number, legal existence and current status | [https://sluzby.orsr.sk/Vyhladavanie](https://sluzby.orsr.sk/Vyhladavanie)|
-| Register of Legal Entities, Entrepreneurs and Public Authorities of the Slovak Republic (RPO SR) | Legal name, registered office, unique identifier, legal existence and current status | [https://rpo.statistics.sk](https://rpo.statistics.sk)|
+| Commercial Register of the Slovak Republic (OR SR) | Legal name, registered office, registration number, legal existence, and current status | [https://sluzby.orsr.sk/Vyhladavanie](https://sluzby.orsr.sk/Vyhladavanie)|
+| Register of Legal Entities, Entrepreneurs and Public Authorities of the Slovak Republic (RPO SR) | Legal name, registered office, unique identifier, legal existence, and current status | [https://rpo.statistics.sk](https://rpo.statistics.sk)|
 | Global Legal Entity Identifier Foundation (GLEIF) | LEI, RegistrationStatus, EntityStatus and ValidationSources | [https://search.gleif.org/](https://search.gleif.org) |
-| European e-Justice Portal – Business Registers Interconnection System (BRIS) | Information obtained from interconnected business registers of EU Member States, Iceland, Liechtenstein and Norway | [https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en](https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en) |
-| Competent governmental register in the jurisdiction of incorporation, existence or recognition | Legal creation, existence, recognition, registered address, unique identifier and current legal status | The official online location of the competent governmental authority for the relevant jurisdiction |
+| European e-Justice Portal – Business Registers Interconnection System (BRIS) | Information obtained from interconnected business registers of EU Member States, Iceland, Liechtenstein, and Norway | [https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en](https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu/general-information-find-company_en) |
+| Competent governmental register in the jurisdiction of incorporation, existence, or recognition | Legal creation, existence, recognition, registered address, unique identifier, and current legal status | The official online location of the competent governmental authority for the relevant jurisdiction |
 
 For every verification, the RA records the particular authorized source used, the source URL or other source identifier, the date and time of verification, the information obtained and the applicable validation result.
 
@@ -720,7 +703,7 @@ Provider supports only issuing Certificates under a duly registered name.
 #### 3.2.3.3 Disclosure of verification sources
 The Provider discloses the authorized verification sources used for organization identity validation in Section 3.2.3.2.1 of this CP/CPS.
 
-The disclosure identifies each authorized source, its verification scope and the online location at which the source can be accessed.
+The disclosure identifies each authorized source, its verification scope, and the online location at which the source can be accessed.
 
 The disclosed sources include:  
 - OR SR: [https://sluzby.orsr.sk/Vyhladavanie](https://sluzby.orsr.sk/Vyhladavanie)
@@ -730,10 +713,10 @@ The disclosed sources include:
 
 This CP/CPS, including the disclosure in Section 3.2.3.2.1, is publicly available at [https://github.com/disig/Policies/blob/main/SMIME/CP_CPS_SMIME.md](https://github.com/disig/Policies/blob/main/SMIME/CP_CPS_SMIME.md)
 
-The Provider shall update the disclosure whenever an authorized verification source is added, removed or materially changed.
+The Provider shall update the disclosure whenever an authorized verification source is added, removed, or materially changed.
 
 ### 3.2.4	Authentication of individual identity 
- Provider must ensure that the Certificate Holder's identity and public key are appropriately bound, and must specify authentication procedures in its CP/CPS. The Provider's CA must record this process for each Certificate in written or electronic form. The authentication documentation must include at least:
+ Provider must ensure that the Certificate Holder's identity and public key are appropriately bound and must specify authentication procedures in its CP/CPS. The Provider's CA must record this process for each Certificate in written or electronic form. The authentication documentation must include at least:
 * the identity of the person performing the authentication,
 * unambiguous identification data from identity documents proving the Certificate Holder's identity,
 * the date the identification was performed.  
@@ -772,8 +755,8 @@ The Provider's RA must also record the following data from the documents:
 * Issuer of identity document;
 * Validity of identity document.  
 
-If a birth certificate, firearms licence, service ID card, or public health insurance card is provided, the Holder must also provide one of the following: identity card or passport.
-If a natural person represents another natural person, they must additionally present an officially certified power of attorney clearly authorizing the representative to act on behalf of the represented person, and containing all data listed in section 3.2.4.1.
+If a birth certificate, firearms license, service ID card, or public health insurance card is provided, the Holder must also provide one of the following: identity card or passport.
+If a natural person represents another natural person, they must additionally present an officially certified power of attorney clearly authorizing the representative to act on behalf of the represented person and containing all data listed in section 3.2.4.1.
 
 ##### 3.2.4.1.2 From a digital identity document
 The Provider currently does not support this method for initial natural-person identity verification. 
@@ -796,10 +779,10 @@ If the evidence has an explicit validity period, the CA shall verify that the ti
 The RA of the Provider may reuse existing evidence to validate Individual identity subject to the age restrictions in Section 4.2.1.  
 
 ##### 3.2.4.2.1 Validation of a physical identity document
-The physical identity document shall be presented in its original form. The RA of the Provider only accepts a personally submitted document and does not support its remote verification, e.g. through the video.  
+The physical identity document shall be presented in its original form. The RA of the Provider only accepts a personally submitted document and does not support its remote verification, e.g., through the video.  
 The RA registration agent shall make a visual comparison of the physical appearance of the Applicant and the face photo and/or other information on the physical identity document.
 The RA registration agent shall have access to authoritative sources of information on document appearance.  
-The Provider or RA of the Provider retains information sufficient to evidence the fulfillment of the identity validation process and the verified attributes. In addition to identity attributes, the Provider record the following information: issuer, validity period, and the document's unique identification number.
+The Provider or RA of the Provider retains information sufficient to evidence the fulfilment of the identity validation process and the verified attributes. In addition to identity attributes, the Provider record the following information: issuer, validity period, and the document's unique identification number.
 
 ##### 3.2.4.2.2 Validation of a digital identity document
 The Provider does not use this method of initial identity authentication at this moment. 
@@ -826,7 +809,7 @@ Before commencing to issue Organization-validated and Sponsor-validated Certific
 * assign duties to others to act in these roles.  
 
 The Provider may implement a process allowing the Applicant to designate individuals who may continuously act as Applicant representatives; likewise, the Provider will provide the Applicant with a list of its authorized Applicant Representatives based on a verified written request from the Applicant.
-The Provider may use the sources listed in section 3.2.3.2.1 to verify a reliable communication method. If a reliable communication method is used, the Provider may verify the authenticity of the Certificate request directly with the Applicant's representative or with a trusted source within the Applicant's organization (e.g., business units, HR, IT, or another department the Provider considers appropriate)..
+The Provider may use the sources listed in section 3.2.3.2.1 to verify a reliable communication method. If a reliable communication method is used, the Provider may verify the authenticity of the Certificate request directly with the Applicant's representative or with a trusted source within the Applicant's organization (e.g., business units, HR, IT, or another department the Provider considers appropriate).
 
 ### 3.2.7	Criteria for Interoperation
 The Provider must publish all cross-certificates that identify the Provider as the certificate Subject.
@@ -855,7 +838,7 @@ No stipulation.
 This section describes the operational requirements of the Certificate life cycle starting with applying for issuance.
 
 ### 4.1.1	Who can submit a Certificate application
-The Provider may be requested to issue::
+The Provider may be requested to issue:
 * A signing Certificate for a natural person (Individual-validated):
    * The natural person
 *  A signing Certificate for an employee of a legal entity (Sponsor-validated):
@@ -867,9 +850,9 @@ The Provider may be requested to issue::
 ### 4.1.2	Enrollment process and responsibilities
 
 #### 4.1.2.1 Preparation
-As preparation for visiting the Provider's RA, the Subscriber/Holder shall
+As preparation for visiting the Provider's RA, the Subscriber/Holder shall:
 * Familiarize themselves with the "General Terms and Conditions for the Provision and Use of the Trusted Service for Issuance and Verification of Certificates" ("General Terms and Conditions") [8] and with the personal data protection regulations, i.e., Regulation (EU) 2016/679 of the European Parliament and of the Council (GDPR) and Act No. 18/2018 Coll. on personal data protection and Act No. 18/2018 Coll. on the Protection of Personal Data (hereinafter referred to as the "Regulations on the Protection of Personal Data") [14] , which must be available in readable form via a durable communication channel (see [https://eidas.disig.sk/sk/documents/](https://eidas.disig.sk/sk/documents/));  
-* Familiarize themselves with this procedure and/or the principles and instructions for obtaining a Certificate;;  
+* Familiarize themselves with this procedure and/or the principles and instructions for obtaining a Certificate;  
 * Prepare a Certificate request in PKCS#10 format and send it in advance by email to the Provider's RA (see paragraph 4.1.2.3);  
 * Prepare the selected identity documents and/or other required supporting documents (e.g., extract from the commercial register, powers of attorney, etc.);  
 * Arrange an appointment date.
@@ -877,7 +860,7 @@ As preparation for visiting the Provider's RA, the Subscriber/Holder shall
 #### 4.1.2.2 Request generation 
 
 ##### 4.1.2.2.1 Certificate Request generation 
-A request for a Certificate for a natural person or a legal entity may be submitted only on the basis of a PKCS#10 request. The Subscriber/Holder must generate the request on their computer using a suitable browser and the Provider's website (see the URL in Section 1) and save it to an appropriate medium.  
+A request for a Certificate for a natural person or a legal entity may be submitted only based on a PKCS#10 request. The Subscriber/Holder must generate the request on their computer using a suitable browser and the Provider's website (see the URL in Section 1) and save it to an appropriate medium.  
 A Certificate request for a natural person must be sent to the relevant RA of the Provider in advance by email from the email address that is stated in the Certificate request in the email field "subject:emailAddress". 
 
 A Certificate request for a legal entity must also be sent to the relevant RA of the Provider in advance by email from the email address that is stated in the Certificate request in the email field "subject:emailAddress". The email address in a legal-entity Certificate request must not be an individual's email address. The Provider's RA accepts only a general/shared email address of the legal entity, such as <obchod@disig.sk>, <faktury@disig.sk> etc.
@@ -899,7 +882,7 @@ Before issuing a Certificate, the Provider's RA shall:
 * inform the present natural person about the General Terms and Conditions [8];
 * check the completeness and correctness of the data in the received Certificate application;
 * verify the identity of the future Certificate Holder and enter their personal data into the Provider's information system (IS), while completing all mandatory fields required by the Provider's system;
-* verify additional documents supporting any identification data to be included in the Certificate.. 
+* verify additional documents supporting any identification data to be included in the Certificate. 
 
 If the Certificate is for a natural person or a legal entity where the cryptographic keys are not in a QSCD, the Provider's RA staff member shall, before verifying the Certificate Holder's identity, review the delivered Certificate request, which may be in PKCS#10 format. For the content of the request fields and the obligation to complete them, see Section 7.  
 The Provider's RA staff member shall verify that the electronically submitted Certificate request of a given Subscriber/Holder does include "subject:emailAddress" field and that it was sent from the same e-mail address as stated in the Certificate request. If differences are found, the RA personnel may refuse to issue the Certificate.
@@ -915,7 +898,7 @@ In case of an in-person visit of the Applicant or an authorized representative t
 * verifies additional documents supporting any identification data to be included in the Certificate, e.g., the identity of an organization in accordance with Section 3.2.3.2. 
 
 If differences are found, the RA stuff member may refuse to issue the Certificate. 
-When verifying the identity of a natural person or a legal entity, existing identity verification may be reused, provided it meets the time limits specified in Sections 4.2.1.3 and 4.2.1.2 respectively.
+When verifying the identity of a natural person or a legal entity, existing identity verification may be reused, provided it meets the time limits specified in Sections 4.2.1.3 and 4.2.1.2, respectively.
 
 #### 4.2.1.1 Validation of mailbox authorization or control
 Verification of ownership and control of the email address via the domain, or verification of the Applicant as the operator of the corresponding mail servers, successfully completed in accordance with the requirements of Section 3.2.2.1 or Section 3.2.2.3, may be obtained no earlier than 398 days prior to Certificate issuance.
@@ -923,7 +906,7 @@ Verification of ownership and control of the email address, successfully complet
 
 #### 4.2.1.2 Authentication of organization identity 
 Verification of control, successfully completed in accordance with the requirements of Section 3.2.3, may be obtained no earlier than 825 days prior to Certificate issuance.
-Confirmation of authority in accordance with the requirements of Section 3.2.6 may be obtained no earlier than 825 days prior to Certificate issuance, unless the contract between the Provider and the Subscriber/Holder specifies a different period. 
+Confirmation of authority in accordance with the requirements of Section 3.2.6 may be obtained no earlier than 825 days prior to Certificate issuance unless the contract between the Provider and the Subscriber/Holder specifies a different period. 
 
 #### 4.2.1.3 Authentication of individual identity 
 Full verification of a natural person's identity in accordance with Article 3.2.4 may be obtained no earlier than 825 days prior to Certificate issuance. A previous validation must not be reused if any data or documents used in the previous validation were obtained earlier than the permitted reuse period.
@@ -942,7 +925,7 @@ To confirm the primary network perspective, the response to the remote network p
 
 If the Provider issues a Certificate after a CAA check, it must do so within the TTL of the CAA record or within 8 hours, whichever is longer. This provision does not prevent the CA from checking CAA records at any other time.
 
-The Provider must document in sufficient detail potential issuances prevented by an existing CAA record in order to provide feedback to the CA/Browser Forum about the circumstances, and should send reports about such issuance requests to the contacts listed in the CAA iodef records, if present.
+The Provider must document in sufficient detail potential issuances prevented by an existing CAA record to provide feedback to the CA/Browser Forum about the circumstances and should send reports about such issuance requests to the contacts listed in the CAA iodef records, if present.
 The Provider is not expected to support URL schemes in the iodef record other than mailto: or https:.
 
 #### 4.2.2.2 Multi-perspective issuance corroboration
@@ -962,8 +945,8 @@ Issuance of a certificate by a Root CA requires the presence of at least two per
 Prior to Certificate issuance, an automated validation of the Certificate to be issued is performed for compliance with the SMIME BR and this CP/CPS. If non-compliance is detected during the validation, Certificate issuance will be rejected by the Provider's issuing system.
 
 #### 4.3.1.3 Linting of issued Certificates
-The Provider uses the validation process to test compliance with these requirements for every Certificate it issues.
-After issuance of an Certificate, an automated validation of the issued Certificate is performed for compliance with the SMIME BR and this CP/CPS. If non-compliance is detected during the validation, an analysis of the causes of the non-compliance must be performed.
+The Provider uses the validation process to evaluate compliance with these requirements for every Certificate it issues.
+After issuance of a Certificate, an automated validation of the issued Certificate is performed for compliance with the SMIME BR and this CP/CPS. If non-compliance is detected during the validation, an analysis of the causes of the non-compliance must be performed.
 
 ### 4.3.2	Notification to subscriber by the CA of issuance of Certificate 
 Subscriber is notified when the certificate is issued. Basic information about the certificate and instructions how to download and install it are in the notification. 
@@ -987,7 +970,7 @@ See Section 9.6.3, provisions 2. and 4.
 No stipulation.
 
 ## 4.6	Certificate renewal 
-Every Certificate is issued for newly generated keys, and the procedure is carried out in accordance with the provisions set out in Sections 4.1 to 4.5.
+Every Certificate is issued for newly generated keys, and the procedure is conducted in accordance with the provisions set out in Sections 4.1 to 4.5.
 
 ### 4.6.1	Circumstance for Certificate renewal 
 No stipulation.
@@ -1082,7 +1065,7 @@ The Provider should revoke the Certificate within 24 hours and must revoke it wi
 * the Provider terminates its activities for any reason and does not contractually ensure that another Provider will provide information about revoked Certificates on its behalf,
 * the Provider's right to issue Certificates under this CP/CPS has ceased, or has been revoked, or issuance has been terminated, unless the Provider has taken measures to ensure continuity of CRL/OCSP repository services,
 * revocation is required by the provisions of this CP/CPS,
-* the Provider is informed, based on a demonstrable or validated method, that the Holder's private key is exposed to compromise, or there is clear evidence that the specific key generation method used was faulty.  
+* the Provider is informed, based on a demonstrable or validated method, that the Holder's private key is exposed to compromise, or there is unambiguous evidence that the specific key generation method used was faulty.  
 
 Whenever the Provider becomes aware of any of the circumstances listed above or receives a Problem Report, it shall immediately initiate an investigation. The Certificate must be revoked and added to the Certificate Revocation List ("CRL") with the appropriate RFC 5280 CRLReason code extension. A revoked Certificate shall not be reinstated under any circumstances.
 
@@ -1110,7 +1093,7 @@ Subscribers, Relying Parties, application software suppliers, and other third pa
 ### 4.9.3	Procedure for revocation request 
 If the authentication requirements for the Certificate Holder requesting revocation are met, a Certificate revocation request may be submitted as follows:
 * In person at an RA office, using the "Certificate Revocation Request" form available at the RA - the RA staff member may request the Certificate revocation password if the person requesting revocation is not the Certificate Holder but an authorized representative;
-* By email - by sending an signed email message using the private key that forms the key pair with the Certificate being revoked. The message must contain an unambiguous intent to revoke the Certificate expressed by the sentence: "I hereby request revocation of my certificate with serial number XXXXXX";
+* By email - by sending a signed email message using the private key that forms the key pair with the Certificate being revoked. The message must contain an unambiguous intent to revoke the Certificate expressed by the sentence: "I hereby request revocation of my certificate with serial number XXXXXX";
 * By email - by sending an email message (it does not have to be signed). The message must contain an unambiguous intent to revoke the certificate expressed by the sentence:
 "I hereby request revocation of my certificate with serial number XXXXXX".
 For a message submitted in this way, the email must also include the Certificate revocation password;
@@ -1129,7 +1112,7 @@ Within 24 hours of notification of a problem with a Certificate, the Provider sh
 After reviewing the facts and circumstances, the Provider, in cooperation with the Subscriber/Holder and the end entity that reported the problem, shall decide whether the Certificate will be revoked and, if so, within what timeframe.
 
 The time between receiving the report of a Certificate problem and publishing the revocation information must not exceed the timeframe specified in Section 4.9.1.1. 
-When determining the deadline, the Provider shall take into account the following:
+When determining the deadline, the Provider shall consider the following:
 * the nature of the alleged problem (scope, context, severity, risk of harm to affected parties),
 * the consequences of revocation (direct and indirect impacts on Subscribers/Holders),
 * the number of reported problems relating to the Certificate in question,
@@ -1225,7 +1208,7 @@ The Provider does not escrow or recover the Subscriber's Private Key.
 No stipulation. 
 
 # 5.	MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
-The security of the Provider must be based on a set of security measures in the area of Physical, Object, Personnel and Operational Security. These security measures must be designed, documented, and applied based on security rules and approved by the Provider's management.  
+The security of the Provider must be based on a set of security measures in Physical, Object, Personnel and Operational Security. These security measures must be designed, documented, and applied based on security rules and approved by the Provider's management.  
 Security measures shall be available to staff concerned.  
 Provider shall
 * Take full responsibility for the compliance of its activities with the procedures defined in the security policy, including their fulfilling by his registration authorities;  
@@ -1277,23 +1260,23 @@ For each task, the number of individuals assigned to perform each task must be i
 Each role must have a defined way of identifying and authenticating when accessing the IS of the Provider.
 
 ### 5.2.4	Roles requiring separation of duties 
-Each role must have set criteria that take into account the need for separation of functions in terms of the role itself i.e. there must be roles that cannot be performed by the same individuals. 
+Each role must have set criteria that consider the need for separation of functions in terms of the role itself i.e., there must be roles that cannot be performed by the same individuals. 
 
 ## 5.3	Personnel controls 
 Provider personnel shall be formally appointed to the trusted role by executive management responsible for security.
 
 ### 5.3.1	Qualifications, experience, and clearance requirements 
-Employees in trusted roles must meet the qualification requirements, professional experience requirements, and have security clearance at the specified level or shall be in the process of requesting a security clearance respectively. Requirements for each role are described in separate sheets used to recruit new staff.
+Employees in trusted roles must meet the qualification requirements, professional experience requirements, and have security clearance at the specified level or shall be in the process of requesting a security clearance, respectively. Requirements for each role are described in separate sheets used to recruit inexperienced staff.
 Persons in managerial positions shall
 * Have appropriate training or experience in the field of trusted services provided by the Provider;  
 * Be familiar with security measures for safety roles;  
 * Have experience of information security and risk assessment to the extent necessary for the performance of managerial functions.  
 
 ### 5.3.2	Background check procedures 
-Employee can only be included in the trusted role of the Provider if he/she has a security clearance of the specified level i.e. at least to the "Confidential" classification level or is in the process of requesting such a review respectively. 
+Employee can only be included in the trusted role of the Provider if he/she has a security clearance of the specified level i.e., at least to the "Confidential" classification level or is in the process of requesting such a review, respectively. 
 
 ### 5.3.3	Training Requirements and Procedures 
-Some special training requirements may be specified for certain trustworthy roles of the Provider, which should be completed before or during the assignment. Topics should include the functioning of CMA software and hardware, operating and security procedures, the provisions of this CP/CPS, and so on.
+Special training requirements may be specified for certain trustworthy roles of the Provider, which should be completed before or during the assignment. Topics should include the functioning of CMA software and hardware, operating and security procedures, the provisions of this CP/CPS, and so on.
 
 ### 5.3.4	Retraining frequency and requirements 
 For roles where the requirements for passing the prescribed training are set, it is possible to determine the need to repeat them after completing the primary training.
@@ -1312,7 +1295,7 @@ Employees in trusted roles must have the documents needed to perform the functio
 
 ## 5.4	Audit logging procedures 
 The Provider must record and have available all-important information regarding the issued Certificates during the necessary time and even after termination of operation.
-Provider has to record accurate time in the trust service concerning key management, and clock synchronization. The time recorded for each event must be synchronized with UTC at least every 24 hours.
+Provider must record accurate time in the trust service concerning key management, and clock synchronization. The time recorded for each event must be synchronized with UTC at least every 24 hours.
 
 ### 5.4.1	Types of events recorded 
 The CA shall record at least the following events.
@@ -1418,7 +1401,7 @@ The Root CA private key may be used only for signing certificates for subordinat
 
 ### 5.7.1	Incident and compromise handling procedures 
 Provider shall have an Incident Response Plan and a Disaster Recovery Plan.  
-The Provider shall document business continuity and disaster recovery procedures designed to notify and reasonably protect Application Software Suppliers, Subscribers, and Relying Parties in the event of a disaster, security compromise, or business failure. The Provider is not required to publicly disclose its business continuity plans but shall make its business continuity plan and security plans available to the Provider 's auditors upon request. The Provider shall annually test, review, and update these procedures.
+The Provider shall document business continuity and disaster recovery procedures designed to notify and reasonably protect Application Software Suppliers, Subscribers, and Relying Parties in the event of a disaster, security compromise, or business failure. The Provider is not required to publicly disclose its business continuity plans but shall make its business continuity plan and security plans available to the Provider 's auditors upon request. The Provider shall annually evaluate, review, and update these procedures.
 The business continuity plan shall include:
 1. The conditions for activating the plan;
 2. Emergency procedures;
@@ -1498,7 +1481,7 @@ No stipulation.
 #### 6.1.1.3 Subscriber key pair generation
 The Provider’s RA must reject a Certificate issuance request if one or more of the following conditions are met:
 * the key pair does not meet the requirements set out in Section 6.1.5 and/or Section 6.1.6;
-* there is clear evidence that the method used to generate the key pair is flawed;
+* there is unambiguous evidence that the method used to generate the key pair is flawed;
 * the Provider has been informed that the private key has been compromised, for example as described in Section 4.9.1.1.
 
 The Provider’s RA does not generate a key pair on behalf of the Holder.
@@ -1604,11 +1587,11 @@ The validity of the Certificate issued by the Provider and the usability of the 
 | Certificate type| Validity <br> (minimum)    | Validity<br>(maximum)|
 |-----------------|:--------------------------:|:--------------------:|
 | Root CA         | 2922 days                  |  9132 days           |
-| Subordinate CA  | -                          |  2560 days           |
-| STRICT or MULTIPURPOSE<br> S/MIME certificate |-|825 days            |
+| Subordinate CA  |                            |  2560 days           |
+| OCSP responder  |                            |  735 days            |
+| STRICT or MULTIPURPOSE<br> S/MIME certificate||825 days            |
 
 For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day.
-
 
 ## 6.4	Activation data 
 ### 6.4.1	Activation data generation and installation 
@@ -1652,7 +1635,7 @@ The CA/Browser Forum's Network and Certificate System Security Requirements [19]
 ### 6.8	Time-stamping 
 No stipulation.
 
-## 7.	CERTIFICATE, CRL, AND OCSP PROFILES 
+# 7.	CERTIFICATE, CRL, AND OCSP PROFILES 
 
 ## 7.1	Certificate profile 
 The Provider shall meet the technical requirements set forth in Section 2.2 , Section 6.1.5, and Section 6.1.6.
@@ -1663,7 +1646,7 @@ The Provider shall generate non-sequential Certificate serial numbers greater th
 This CP/CPS only allows issuing Certificates conforming to X.509 version 3.
 
 ### 7.1.2	Certificate content and extensions; application of RFC 6818 
-This section specifies the additional requirements for Certificate content and extensions for Certificates, taking into account the wording of RFC 6818 [20]
+This section specifies the additional requirements for Certificate content and extensions for Certificates, considering the wording of RFC 6818 [20]
 
 #### 7.1.2.1 Root CA certificates
 Algorithms and key lengths applied in the Root Certificate of the Provider
@@ -1682,7 +1665,7 @@ Table 4: Content of items in the Root Certificate of the Provider
 |O         |2.5.4.10|organizationName|Disig a.s.|
 |CN        |2.5.4.3 |commonName  |depending on the CA type ¹ |
 
-¹ The CN shall contain the business name of the certification authority t. j. CA Disig complemented as required root distinguishing name of CA Disig with e.g. Root R4 etc.
+¹ The CN shall contain the business name of the certification authority e.g., CA Disig complemented as required root distinguishing name of CA Disig with e.g., Root R4 etc.
 
 Table 5: Certificate extensions in root CA SMIME Certificates  
 
@@ -1691,6 +1674,7 @@ Table 5: Certificate extensions in root CA SMIME Certificates
 |basicConstraints / 2.5.29.19|YES|YES|
 |keyUsage / 2.5.29.15|YES|YES|
 |subjectKeyIdentifier / 2.5.29.14|YES|NO|
+|authorityKeyIdentifier / 2.5.29.35|YES|NO|
 
 #### 7.1.2.2 Subordinate CA certificates
 
@@ -1736,7 +1720,7 @@ Table 8: Basic extensions in subscriber Certificates
 |Certificate Policies<br>{id-ce-certificatePolicies}<br>{2.5.29.32}|It shall include exactly one of the reserved policyIdentifiers listed in Section 7.1.6.1.|SHALL|NO|
 |CRL Distribution Points<br>{id-ce-CRLDistributionPoints}<br>{2.5.29.31}|Strict and Multipurpose profiles shall contain at least one distributionPoint <br> whose fullName value includes a GeneralName of type uniformResourceIdentifier <br> that includes a URI where the Issuing CA's CRL can be retrieved.<br>Every uniformResourceIdentifier shall have the URI scheme HTTP. Other schemes shall not be present.|SHALL|NO|
 |AuthorityInfoAccess<br>{id-pe-authorityInfoAccess}<br>{1.3.6.1.5.5.7.1.1}|1.	id-ad-ocsp<br> The extension may contain one or more accessMethod values of type id-ad-ocsp that specifies the URI<br> of the Issuing CA's OCSP responder. Strict and Multipurpose profiles shall for every accessMethod<br> have the URI scheme HTTP. Other schemes shall not be present.<br> 2.	id-ad-caIssuers<br> The extension should contain at least one accessMethod value of type id-ad-caIssuers that specifies<br> the URI of the Issuing CA's Certificate. Strict and Multipurpose profiles shall for every accessMethod<br> have the URI scheme HTTP. Other schemes shall not be present.|SHOULD|NO|
-|Key Usage<br>{id-ce-keyUsage}<br>{2.5.29.15}|Strict profile: For signing only, bit positions shall be set for digitalSignature and may be set<br> for nonRepudiation. For key management only, bit positions shall be set for keyEncipherment.<br> For dual use, bit positions shall be set for digitalSignature and keyEncipherment and may be<br> set for nonRepudiation.<br> Multipurpose profile: applies same as for Strict profil with modification that for key<br> management and dual use may be set for dataEncipherment. Other bit positions shall not be set.|SHALL|SHOULD|
+|Key Usage<br>{id-ce-keyUsage}<br>{2.5.29.15}|Strict profile: For signing only, bit positions shall be set for digitalSignature and may be set<br> for nonRepudiation. For key management only, bit positions shall be set for keyEncipherment.<br> For dual use, bit positions shall be set for digitalSignature and keyEncipherment and may be<br> set for nonRepudiation.<br> Multipurpose profile: applies same as for Strict profile with modification that for key<br> management and dual use may be set for dataEncipherment. Other bit positions shall not be set.|SHALL|SHOULD|
 |Extended Key Usage<br>{id-ce-extKeyUsage}<br>{2.5.29.37}|Strict profile: id-kp-emailProtection shall be present. Other values shall not be present<br>Multipurpose profile: id-kp-emailProtection shall be present. Other values may be present.<br>Any profile: The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping,<br> and anyExtendedKeyUsage shall not be present.|SHALL|NO|
 |Authority Key Identifier<br>{id-ce-authorityKeyIdentifier}<br>{2.5.29.35}|The keyIdentifier field shall be present. authorityCertIssuer and authorityCertSerialNumber<br> fields shall not be present.|SHALL|NO|
 |subjectAltName<br>id-ce-subjectAltName<br>{2.5.29.17}|The value of this extension shall be encoded as specified in Section 7.1.4.2.1.|SHALL|NO|
@@ -1806,7 +1790,7 @@ For every valid Certification Path (as defined by RFC 5280 [2], Section 6):
 * For each CA Certificate in the Certification Path, the encoded content of the “Subject Distinguished Name” field of a Certificate shall be byte-for-byte identical among all Certificates whose “Subject Distinguished Names” can be compared as equal according to RFC 5280 [2], Section 7.1, and including expired and revoked Certificates.
 
 #### 7.1.4.2	Subject information - subscriber Certificates
-By issuing the Certificate, the CA of the Provider represents that it followed the procedure set forth in this CP/CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
+By issuing the Certificate, the CA of the Provider represents that it followed the procedure set forth in this CP/CPS to verify that, as of the Certificate's issuance date, all the Subject Information was accurate.
 
 The Provider shall not include a Mailbox Address in a Mailbox Field except as verified in accordance with Section 3.2.2.
 Subject attributes shall not contain only metadata such as '.', '-', and ' ' (i.e., space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
@@ -1861,14 +1845,14 @@ RA of the provider may include information in this field that differs slightly f
 The provider does not include this field in SMIME Certificates.
 
 **d)** Certificate Field: “_subject:organizationIdentifier (2.5.4.97)_”  
-If present, the field shall contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
+If present, the field shall contain a Registration Reference for a Legal Entity assigned in accordance with the identified Registration Scheme.
 
 The “_subject:organizationIdentifier_” shall be encoded as a PrintableString or UTF8String.
 
 The Registration Scheme identified in the Certificate shall be the result of the verification performed in accordance with Section 3.2.3. 
 
 The Registration Scheme shall be identified using the following structure in the presented order:
-* 3-character Registration Scheme identifier (e.g. NTR);
+* 3-character Registration Scheme identifier (e.g., NTR);
 * 2-character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is operated globally ISO 3166 code "XG" shall be used.
 
 The following Registration Schemes are recognized as valid under SMIME BR [1]  for use in the “subject:organizationIdentifier” attribute :
@@ -1914,17 +1898,17 @@ The Provider does not include this field in SMIME Certificates.
 If present, it shall contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.3 for “Organization-validated” and “Sponsor-validated” Certificate Types or Section 3.2.4 for “Individual-validated” Certificate Types.
 
 #### 7.1.4.3	Subject information - root certificates and subordinate CA certificates
-By issuing a Subordinate CA Certificate, the Provider represents that it followed the procedure set forth in this CP/CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.  
+By issuing a Subordinate CA Certificate, the Provider represents that it followed the procedure set forth in this CP/CPS to verify that, as of the Certificate's issuance date, all the Subject Information was accurate.  
 
 ##### 7.1.4.3.1	Subject distinguished name fields  
 **a)** Certificate Field: “_subject:commonName (OID 2.5.4.3)_”  
-This field shall be present and it should contain an identifier for the Certificate such that the Certificate's Name is unique across all Certificates issued by the Issuing CA.   
+This field shall be present, and it should contain an identifier for the Certificate such that the Certificate's Name is unique across all Certificates issued by the Issuing CA.   
 
 **b)** Certificate Field: “_subject:organizationName (OID 2.5.4.10)_”  
-This field shall be present and it shall contain either the Subject CA's name or DBA as verified under Section 3.2.3.2.2. The Provider may include information in this field that differs slightly from the verified name, such as common variations or abbreviations.  
+This field shall be present, and it shall contain either the Subject CA's name or DBA as verified under Section 3.2.3.2.2. The Provider may include information in this field that differs slightly from the verified name, such as common variations or abbreviations.  
 
 **c)** Certificate Field: “_subject:countryName (OID: 2.5.4.6)_”  
-This field shall be present and it shall contain the two‐letter ISO 3166‐1 [22] country code for the country in which the Provider's place of business is located.  
+This field shall be present, and it shall contain the two‐letter ISO 3166‐1 [22] country code for the country in which the Provider's place of business is located.  
 
 **d)** Other Subject Attributes  
 Other attributes may be present within the subject field. If present, other attributes shall contain information that has been verified by the Provider
@@ -2008,7 +1992,7 @@ The CRLReason indicated SHALL contain a value permitted for CRLs, as specified i
 No stipulation.
 
 ### 7.3.2	OCSP extensions 
-Table 10 contains possible extensions in the OCSP responses of the Provider's OCSP Responder, their reporting obligation, and their criticality.
+Table 10 contains extensions in the OCSP responses of the Provider's OCSP Responder, their reporting obligation, and their criticality.
 
 Table 10: OCSP response extensions
 |Extension name                                  |Required|Critical|
@@ -2019,7 +2003,7 @@ The “singleExtensions” of an OCSP response shall not contain the “reasonCo
 
 # 8.	COMPLIANCE AUDIT AND OTHER ASSESSMENTS 
 The purpose of the compliance audit is to ensure that the Provider has a satisfactory system of work that guarantees the quality of the trusted services provided by the Provider and guarantees that he is acting in compliance with all the requirements of this CP/CPS, eIDAS Regulation [3] and SMIME BR [1]. All aspects of the CA operation relating to this CP are to be subject to compliance audits.
-The Provider shall at all times:  
+The Provider shall always:  
 * Issue Certificates and operates its PKI in accordance with all law applicable to its business and the Certificates it issues in every jurisdiction in which it operates;  
 * Comply with Requirements of this CP/CPS;  
 *	Comply with the audit requirements set forth in this section; and  
@@ -2061,7 +2045,7 @@ When an auditor identifies a discrepancy between the CA’s operations and the p
 The PMA shall determine the appropriate corrective action, potentially up to and including revocation of the CA’s certificate.
 
 ## 8.6	Communication of results 
-The Audit Report shall states explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The Provider shall make the Audit Report publicly available.
+The Audit Report shall state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The Provider shall make the Audit Report publicly available.
 
 The Provider shall make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, the Provider shall provide an explanatory letter signed by the Qualified Auditor.
 
@@ -2069,7 +2053,7 @@ The Audit Report shall contain at least the following clearly-labelled informati
 *  Name of the organization being audited;
 * Name and address of the organization performing the audit;
 * The SHA-256 fingerprint of all Roots and Subordinate CA Certificates, including Cross Certificates, which were in-scope of the audit;
-* Audit criteria, with version number(s), that were used to audit each of the Certificates (and associated keys);
+* Audit criteria, with version number(s), which were used to audit each of the Certificates (and associated keys);
 * A list of the Provider policy documents, with version numbers, referenced during the audit;
 * Whether the audit assessed a period of time or a point in time;
 * The start date and end date of the Audit Period, for those that cover a period of time;
@@ -2175,25 +2159,25 @@ The Provider represents and warrants to the Certificate Beneficiaries that, duri
 
 The Certificate Warranties specifically include, but are not limited to, the following:
 
-**[1]** Right to Use Mailbox Address: That, at the time of issuance, the Provider:  
-**i.)** 	implemented a procedure for verifying that the Applicant either had the right to use, or had control of, the Mailbox Addresses listed in the Certificate's subject field and subjectAltName extension (or was delegated such right or control by someone who had such right to use or control);  
-**ii.)** 	followed the procedure when issuing the Certificate; and  
-**iii.)** 	accurately described the procedure in the Provider 's CP/CPS;
-
-**[2]** Authorization for Certificate: That, at the time of issuance, the Provider:  
-**i.)** 	implemented a procedure for verifying that the Subject authorized the issuance of the Certificate and that the Applicant Representative is authorized to request the Certificate on behalf of the Subject;   
-**ii.)** 	followed the procedure when issuing the Certificate; and   
-**iii.)** 	accurately described the procedure in the Provider 's CP/CPS;
-
-**[3]** Accuracy of Information: That, at the time of issuance, the Provider:  
-**i.)** 	implemented a procedure for verifying the accuracy of all of the information contained in the Certificate (with the exception of the “subject:serialNumber” attribute);   
-**ii.)** 	followed the procedure when issuing the Certificate; and   
+**[1]** Right to Use Mailbox Address: That, at the time of issuance, the Provider:    
+**i.)** 	implemented a procedure for verifying that the Applicant either had the right to use, or had control of, the Mailbox Addresses listed in the Certificate's subject field and subjectAltName extension (or was delegated such right or control by someone who had such right to use or control);    
+**ii.)** 	followed the procedure when issuing the Certificate; and    
 **iii.)** 	accurately described the procedure in the Provider 's CP/CPS;  
 
-**[4]** Identity of Applicant: That, if the Certificate contains Subject Identity Information, the Provider:
-**i.)** 	implemented a procedure to verify the identity of the Applicant in accordance with Section 3.2 and Section 7.1.4.2.2;   
-**ii.)** 	followed the procedure when issuing the Certificate; and   
+**[2]** Authorization for Certificate: That, at the time of issuance, the Provider:    
+**i.)** 	implemented a procedure for verifying that the Subject authorized the issuance of the Certificate and that the Applicant Representative is authorized to request the Certificate on behalf of the Subject;     
+**ii.)** 	followed the procedure when issuing the Certificate; and     
 **iii.)** 	accurately described the procedure in the Provider 's CP/CPS;  
+
+**[3]** Accuracy of Information: That, at the time of issuance, the Provider:    
+**i.)** 	implemented a procedure for verifying the accuracy of all the information contained in the Certificate (except for “subject:serialNumber” attribute);     
+**ii.)** 	followed the procedure when issuing the Certificate; and     
+**iii.)** 	accurately described the procedure in the Provider 's CP/CPS;    
+
+**[4]** Identity of Applicant: That, if the Certificate contains Subject Identity Information, the Provider:  
+**i.)** 	implemented a procedure to verify the identity of the Applicant in accordance with Section 3.2 and Section 7.1.4.2.2;     
+**ii.)** 	followed the procedure when issuing the Certificate; and     
+**iii.)** 	accurately described the procedure in the Provider 's CP/CPS;    
 
 **[5]** Subscriber Agreement: That, if the Provider and Subscriber are not Affiliated, the Subscriber and Provider are parties to a legally valid and enforceable Subscriber Agreement that satisfies these   Requirements, or, if the Provider and Subscriber are the same entity or are Affiliated, the       Applicant Representative acknowledged the Terms of Use;  
 
@@ -2205,7 +2189,7 @@ The Certificate Warranties specifically include, but are not limited to, the fol
 No stipulation.
 
 ### 9.6.3	Subscriber representations and warranties 
-Subscriber/Holder uses the trusted services of the Provider on his own responsibility and carries all the costs of remote means of communication or other technical means necessary for the use of these services (e.g. the software needed for making the electronic signature / seal, software for the authentication of the website etc.);
+Subscriber/Holder uses the trusted services of the Provider on his own responsibility and carries all the costs of remote means of communication or other technical means necessary for the use of these services (e.g., the software needed for making the electronic signature / seal, software for the authentication of the website etc.);
 
 Subscriber/Holder comply with all provisions regarding commitments and warranties as stated in Terms of Use [8].
 
@@ -2256,7 +2240,7 @@ The Provider is not liable for damages incurred to the Relying party because, wh
 
 ## 9.9	Indemnities 
 Any person who violates his or her obligation or any obligation under this CP/CPS, The Agreement, and the General Terms shall be liable to compensate for damage caused to the other party, except in cases where the liability of the entity is excluded for damages. Damage shall be deemed actual damage, loss of earnings and costs incurred by the injured party in respect of the damage event.  
-Whoever violates his or her obligation or any obligation under this CP/CPS, The Contract, and the General Terms may be relieved of liability for damages only if it proves that a breach of duty or any obligation has occurred as a result of circumstances excluding responsibility e.g. Force Majeure.
+Whoever violates his or her obligation or any obligation under this CP/CPS, The Contract, and the General Terms may be relieved of liability for damages only if it proves that a breach of duty or any obligation has occurred as a result of circumstances excluding responsibility e.g., Force Majeure.
 
 Notwithstanding any limitations on its liability to Subscribers and Relying Parties, the Provider understands and acknowledges that the Application Software Suppliers who have agreed to distribute the Root CA Certificate do not assume any obligation or potential liability of the CA under these Requirements or that otherwise might exist because of the issuance or maintenance of Certificates or reliance thereon by Relying Parties or others.   
 Thus, except in the case where the Provider is a government entity, the Provider shall defend, indemnify, and hold harmless each Application Software Supplier for any and all claims, damages, and losses suffered by such Application Software Supplier related to a Certificate issued by the Provider, regardless of the cause of action or legal theory involved. This does not apply, however, to any claim, damages, or loss suffered by such Application Software Supplier related to a Certificate issued by the CA where such claim, damage, or loss was directly caused by such Application Software Supplier's software displaying as not trustworthy a Certificate that is still valid, or displaying as trustworthy:   
@@ -2266,13 +2250,13 @@ Thus, except in the case where the Provider is a government entity, the Provider
 ## 9.10	Term and termination
 
 ### 9.10.1	Term 
-This version of the CP/CPS is effective from the effective date specified in Section 1.2 and is valid until superseded by a new version. For details on the revision history of this CP/CPS, see the “Revision” section in Section 1.2.1.
+This version of the CP/CPS is effective from the effective date specified in Section 1.2 and is valid until superseded by a an updated version. For details on the revision history of this CP/CPS, see the “Revision” section in Section 1.2.1.
 
 ### 9.10.2	Termination
-This version of the CP/CPS will expire on the date the new version comes into effect (See section 9.10.1) or upon termination of the Provider's trusted service. 
+This version of the CP/CPS will expire on the date the updated version comes into effect (See section 9.10.1) or upon termination of the Provider's trusted service. 
 
 ### 9.10.3	Effect of termination and survival
-In the event that this document is not replaced by a new version and its validity expires after the finishing of providing trustworthy service by Provider, all provisions of this CP/CPS relating to the Provider, which he is obliged to observe after termination of his activity shall be fulfilled. (See section 9).
+In the event that this document is not replaced by an updated version and its validity expires after the finishing of providing trustworthy service by Provider, all provisions of this CP/CPS relating to the Provider, which he is obliged to observe after termination of his activity shall be fulfilled. (See section 9).
 
 ## 9.11	Individual notices and communications with participants
 No stipulation.
@@ -2280,13 +2264,13 @@ No stipulation.
 ## 9.12	Amendments 
 
 ### 9.12.1	Procedure for amendment 
-The CP/CPS update is based on its review, which must be done at least once a year from the approval of the current valid version. An authorized person of Provider who, based on the results of the review, must prepare a written proposal for any proposed changes and must perform the review.
+The CP/CPS update is based on its review, which must be done at least once a year from the approval of the current valid version. An authorized person of Provider who, based on the results of the review, must prepare a written proposal for any proposed changes, and must perform the review.
 
-An authorized PMA member must do approval of proposed changes. The proposed changes must be considered within 14 days of their delivery. After the deadline for reviewing the change proposal, the PMA has to accept the proposed change, accept it or refuse it.
+An authorized PMA member must do approval of proposed changes. The proposed changes must be considered within 14 days of their delivery. After the deadline for reviewing the change proposal, the PMA must accept the proposed change, accept it, or refuse it.
 
-Errors, update requests, or proposed CP/CPS changes must be communicated to the contact listed in section 1.5.2. Such communication must include a description of the change, the reason for the change, and the contact details of the person requesting the change or suggesting the change respectively.
+Errors, update requests, or proposed CP/CPS changes must be communicated to the contact listed in section 1.5.2. Such communication must include a description of the change, the reason for the change, and the contact details of the person requesting the change or suggesting the change, respectively.
 
-All approved CP/CPS changes must be notified tby the entities concerned within one week prior to their entry into force through the channel for publishing and notifying (see section 2).
+All approved CP/CPS changes must be notified by the entities concerned within one week prior to their entry into force through the channel for publishing and notifying (see section 2).
 Each modified version of this CP/CPS must be numbered and registered, so the newer version must have a higher version number than the one it replaces.
 
 Corrections of clutter, grammar and stylistic errors are not considered as changes initiating a change to the version of this CP/CPS.
@@ -2294,14 +2278,14 @@ Corrections of clutter, grammar and stylistic errors are not considered as chang
 ### 9.12.2	Notification mechanism and period 
 Provider must publish information about the current version of CP/CPS through its website (see section 1.5.2). 
 
-The Authorized Representative of the Provider must inform all contractually bound RAs of the Provider about the approval of the new version of the CP/CPS, by sending a new version by e-mail before it enters into force in accordance with section 9.12.1. The Provider shall request feedback from the RA in the form of a confirmation e-mail message about the download of the electronic version of the Provider's CP.  
-Current version of CP/CPS must be available on each contractually bound RA of the Provider at least in electronic form. Internal employees must be equally informed about the new version of this CP/CPS. 
+The Authorized Representative of the Provider must inform all contractually bound RAs of the Provider about the approval of the updated version of the CP/CPS, by sending an updated version by e-mail before it enters into force in accordance with section 9.12.1. The Provider shall request feedback from the RA in the form of a confirmation e-mail message about the download of the electronic version of the Provider's CP.  
+Current version of CP/CPS must be available on each contractually bound RA of the Provider at least in electronic form. Internal employees must be equally informed about the updated version of this CP/CPS. 
 
 ### 9.12.3	Circumstances under which OID must be changed 
 Every policy must have its OID assigned by the Provider. The OID of this policy is listed in section1.2 and for each new CP/CPS version remains unchanged.
 
 ## 9.13	Dispute resolution provisions 
-The Subscriber/Holder has the right to send to the Provider a complaint about the provided trusted service by email at <radisig@disig.sk>. The Provider shall process the complaint no later than 30 days after its receipt, unless otherwise agreed by the parties. Complaint process refers only to a description of the defect referred to by the Subscriber/Holder. The Provider has to respond within 30 days of complaint receipt. The Provider reserves the right to extend this period in case of more complicated complaints.
+The Subscriber/Holder has the right to send to the Provider a complaint about the provided trusted service by email at <radisig@disig.sk>. The Provider shall process the complaint no later than 30 days after its receipt, unless otherwise agreed by the parties. Complaint process refers only to a description of the defect referred to by the Subscriber/Holder. The Provider must respond within 30 days of complaint receipt. The Provider reserves the right to extend this period in case of more complicated complaints.
 
 The courts of the Slovak Republic have exclusive jurisdiction to settle any disputes between the Provider and the Subscriber/Holder of the Certificate. If the Subscriber/Holder is a consumer, any dispute may also be settled out of court. In such a case, it is entitled to contact an out-of-court dispute resolution body, Slovak trade inspection or other legal entity registered in the list pursuant to Article 5 2 of Act no. 391/2015 Coll. on alternative dispute resolution of consumer disputes, as amended. Prior to joining a court or out-of-court dispute settlement, the parties are required to try to resolve this dispute by mutual agreement first.
 
@@ -2325,9 +2309,9 @@ The Subscriber/Holder may not assign, transfer or transfer (or otherwise deal wi
 If any provision of this CP/CPS is, or becomes, invalid or unenforceable, it will not cause invalidity or unenforceability of the entire CP/CPS if it is completely separable from the other provisions of this CP/CPS. The Provider will immediately replace the invalid or unenforceable provision of the CP/CPS with new valid and enforceable provisions, the subject of which will be as close as possible to the subject matter of the original provision while preserving the purpose of this CP/CPS and the content of the individual provisions of this CP/CSP.
 
 ### 9.16.4	Enforcement 
-In the event that a certain right is not exercised during the duration of the contractual relationship between the parties, this right shall not be terminated due to its non-application unless otherwise stated.
+If a certain right is not exercised during the duration of the contractual relationship between the parties, this right shall not be terminated due to its non-application unless otherwise stated.
 
-Because of the cancellation of contractual relationship between the Contracting Parties, The parties are not deprived of the obligation to fulfill all the obligations arising from the rights exercised so far and to take all necessary legal acts which do not delay the delay, and which are indispensable to prevent damage.
+Because of the cancellation of contractual relationship between the Contracting Parties, the parties are not deprived of the obligation to fulfill all the obligations arising from the rights exercised so far and to take all necessary legal acts which do not delay the delay, and which are indispensable to prevent damage.
 
 ### 9.16.5	Force Majeure 
 Provider, Subscriber/Holder are not responsible for delaying the fulfillment of their obligations due to circumstances excluding liability (Force Majeure).

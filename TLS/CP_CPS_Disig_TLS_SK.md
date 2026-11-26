@@ -2,8 +2,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 7.6**  
-**Platné od 30. 10. 2026**  
+**Verzia 7.7**  
+**Platné od 26. 11. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**  
 
   
@@ -129,9 +129,9 @@ Poskytovateľ výslovne uvádza, že verejne dôveryhodné hierarchie CA, na kto
 | :--- | :--- |
 |Názov:         |**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania verejne dôveryhodných TLS certifikátov** |
 |Skratka názvu: | **CA Disig TLS CP/CPS**|
-|Verzia:        |  **7.6** |
-|Schválené dňa: | **28. 10. 2026**|
-|Platnosť od:   | **30. 10. 2026**|  
+|Verzia:        |  **7.7** |
+|Schválené dňa: | **17. 11. 2026**|
+|Platnosť od:   | **26. 11. 2026**|  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 Popis použitého identifikátora objektu (OID):  
@@ -189,12 +189,13 @@ Tento OID (1.3.158.35975946.0.0.0.1.1) je zároveň uvádzaný aj vo vydávanýc
 |6.3|10. 01. 2025|Ukončenie používania metód na overenie domény v zmysle časti 3.2.2.4.2 a 3.2.4.15 k 15.1.2025;<br> zavedenie do používania nových metód  na overovanie domény (3.2.2.4.13 a 3.2.2.4.14);<br> doplnenie dokumentu o časť „Multiperspektívne potvrdenie vydania“ (3.2.2.9);<br> Úprava časti 4.9.9;  Miškovič|
 |6.4|01. 09. 2025|Zmena v používaných metódach pre overenie domény (3.2.2.4); Zohľadnenie požiadaviek časti<br> 6.1.3 Mozilla Root Store Policy v. 3.0 (4.9.5); Plány hromadného rušenia (5.7.1.2); Miškovič|
 |7.0|05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby<br> vyhotovovanie verejne dôveryhodných TLS certifikátov, ktorá zahrňuje aj pravidlá<br> pre poskytovanie tejto služby, ktoré boli pôvodne predmetom samostatného dokumentu.<br> Pridanie novej single-purpose CA Disig TLS Root R3 a jej podriadenej CA Disig R3I1<br> TLS Certificate Service (1.3.1.2); Doplnenie informácii a profilov týkajúcich sa cross-certifikátov. (7);<br> Doplnenie novej metódy overovanie vlastníctva domény- ACME (3.2.2.4.19); Miškovič|
-|7.1|21. 04. 2026| Doplnenie informácií o vydanom certifikáte podriadenej certifikačnej outority CA Disig R3I1<br> TLS Certification Service a krížovom certifikáte CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12);<br> Doplnenie odkazov na testovaciu webovú stránku pre platné, expirované a zrušené TLS certifikáty (2.2.4); <br>Doplnenie časových rámcov do kapitoly 4.2.1;<br> Aktualizácie doby platnosti TLS certifikátov pre koncových používateľov (6.3.2); Miškovič|
+|7.1|21. 04. 2026| Doplnenie informácií o vydanom certifikáte podriadenej certifikačnej outority CA Disig R3I1<br> TLS Certification Service a krížovom certifikáte CA Disig TLS Root R3 - CA Disig Root R2 (1.3.1.12);<br> Doplnenie odkazov na testovaciu webovú stránku pre platné, exspirované a zrušené TLS certifikáty (2.2.4); <br>Doplnenie časových rámcov do kapitoly 4.2.1;<br> Aktualizácie doby platnosti TLS certifikátov pre koncových používateľov (6.3.2); Miškovič|
 |7.2|02. 06. 2026| Doplnenie informácií týkajúcich sa automatického vydávania TLS certifikátov prostredníctvom<br> ACME protokolu (1.3.1;1.3.3; 2.2; 3.2.2.8; 4.1.2; 4.1.2.1; 4.1.2.2; 4.1.2.3; 4.6.1); Miškovič|  
 |7.3|20. 07. 2026| Zmena „Key Usage“ pre profil TLS certifikátu na kritické (7.1.2.7); Miškovič| 
 |7.4|04. 09. 2026| Aktualizácia CP/CPS na základe Apple Review; Miškovič|
-|7.5|18. 09. 2026| Prechod na novú jednofunkčnú TLS hierarchiu, ukončenie vydávania z pôvodnej hierarchie a stanovenie harmonogramu jej zrušenia (1.3.1.1; ,1.3.1.2; 5.8.1); Miškovič|
+|7.5|18. 09. 2026| Prechod na novú jedno funkčnú TLS hierarchiu, ukončenie vydávania z pôvodnej hierarchie a stanovenie harmonogramu jej zrušenia (1.3.1.1; ,1.3.1.2; 5.8.1); Miškovič|
 |7.6|30. 10. 2026| Úprava odkazov na testovacie stránky (2.2.4), spresnenie formulácie v časti 7.2.2 týkajúcej sa CRL; Miškovič|
+|7.7|26. 11. 2026| Úprava obsahu kapitoly 3.2.2.4.7, ktorá bola v konflikte s kapitolou 4.2.1; Redakčné zmeny a jazyková korektúra; Miškovič|
 
 ## 1.3 Účastníci PKI
 
@@ -243,11 +244,11 @@ Táto hierarchia zahŕňa koreňovú CA a vydávajúcu podriadenú CA, čo preds
 | Platný do:                |**12. 04. 2029**|
 | Poznámka:                 |**Ide o krížový certifikát medzi CA Disig TLS Root R3 a CA Disig Root R2**|
 
-K **15. septembru 2026** bolo v rámci tejtoj viacúčelovej hierarchie trvalo ukončené vydávanie nových TLS certifikátov, ako aj ich opätovné vydanie s novým kľúčom (re-key).
+K **15. septembru 2026** bolo v rámci tejto viacúčelovej hierarchie trvalo ukončené vydávanie nových TLS certifikátov, ako aj ich opätovné vydanie s novým kľúčom (re-key).
 
 * **Podriadená CA Disig R2I2 Certification Service**: Podriadená CA Disig R2I2 Certification Service v tejto hierarchii zostáva až do **26. marca 2027** prevádzkovaná výhradne v režime údržby a správy statusu zrušenia (poskytovanie služieb CRL a OCSP) pre existujúce, dobiehajúce koncové TLS certifikáty.
 
-* **Plánované zrušenie**: Posledný koncový TLS certifikát vydaný z tejto hierarchie vyprší dňa **26. marca 2027**. K tomuto dátumu bude činnosť podriadenejCA Disig R2I2 Certification Service ukončená, jej certifikát bude zrušený a podriadená CA Disig R2I2 Certification Service bude oficiálne zrušená v súlade s článkom 5.8 tohto CP/CPS.
+* **Plánované zrušenie**: Posledný koncový TLS certifikát vydaný z tejto hierarchie vyprší dňa **26. marca 2027**. K tomuto dátumu bude činnosť podriadenej CA Disig R2I2 Certification Service ukončená, jej certifikát bude zrušený a podriadená CA Disig R2I2 Certification Service bude oficiálne zrušená v súlade s článkom 5.8 tohto CP/CPS.
 
 #### 1.3.1.2 Single-purpose TLS CA  
 Táto hierarchia CA predstavuje náhradu „legacy“ hierarchie CA (pozri 1.3.1.1). Táto „single-purpose“ TLS CA hierarchia už plne spĺňa aktuálne požiadavky TLS BR [3], kde je pri nových koreňových CA vyžadovaná samostatná hierarchia CA pre účely vydávania TLS certifikátov koncovým zákazníkom a je obmedzená len na vydávanie certifikátov obsahujúcich v rozšírení EKU len id-kp-serverAuth (1.3.6.1.5.5.7.3.1)  
@@ -304,7 +305,7 @@ Pri žiadosti o TLS certifikát pre zariadenie alebo systém prevádzkovaný fyz
 * Akýkoľvek subjekt, ktorému príslušný právny systém umožňuje zastupovať právnickú osobu; alebo
 * Právny zástupca právnickej osoby, ktorý objednáva služby pre svoje dcérske spoločnosti.
 
-Zákazníci, ktorí môžu využívať automatizovaný pracovný postup vydávania prostrednítvom ACME protokolu, sú prísne obmedzení len na právnické osoby (organizácie), ktoré, pred zašatím využívania ACME protokolu, úspešne dokončili proces overenia identity u Poskytovateľa a ktorým boli poskytnuté platné prihlasovacie údaje EAB.
+Zákazníci, ktorí môžu využívať automatizovaný pracovný postup vydávania prostredníctvom ACME protokolu, sú prísne obmedzení len na právnické osoby (organizácie), ktoré, pred zašatím využívania ACME protokolu, úspešne dokončili proces overenia identity u Poskytovateľa a ktorým boli poskytnuté platné prihlasovacie údaje EAB.
 
 ### 1.3.4 Spoliehajúce sa strany (Relying Parties)
 Spoliehajúce sa strany sú fyzické alebo právnické osoby, ktoré sa vo svojom konaní spoliehajú na elektronickú identifikáciu alebo dôveryhodné služby Poskytovateľa.
@@ -359,7 +360,7 @@ Tento CP/CPS je výhradne vymedzený pre účel dôvery **„Server Authenticati
 
 Certifikáty vydané v rámci tohto CP/CPS sa vydávajú za účelom identifikácie držiteľa verejného kľúča z kryptografického páru kľúčov (verejný a súkromný kľúč) používaného v rámci infraštruktúry PKI.
 
-Kryptografické páry kľúčov a TLS certifikátyydané v rámci tejto hierarchie sú obmedzené výhradne na autentifikáciu webových serverov v rámci verejných sietí (vrátane verejného internetu) a musia obsahovať povinné rozšírené použitie kľúča (EKU) `id-kp-serverAuth` (`1.3.6.1.5.5.7.3.1`). Certifikáty vydané podľa tohto CP/CPS sa nesmú používať na žiadne iné účely dôvery (napr. S/MIME, podpisovanie kódu) ani pre výhradne podnikové/lokálne dôveryhodné interné prípady použitia.
+Kryptografické páry kľúčov a TLS certifikáty vydané v rámci tejto hierarchie sú obmedzené výhradne na autentifikáciu webových serverov v rámci verejných sietí (vrátane verejného internetu) a musia obsahovať povinné rozšírené použitie kľúča (EKU) `id-kp-serverAuth` (`1.3.6.1.5.5.7.3.1`). Certifikáty vydané podľa tohto CP/CPS sa nesmú používať na žiadne iné účely dôvery (napr. S/MIME, podpisovanie kódu) ani pre výhradne podnikové/lokálne dôveryhodné interné prípady použitia.
 
 Poskytovateľ vydáva Odberateľom nasledujúce typy TLS certifikátov:
 
@@ -374,7 +375,7 @@ Poskytovateľ vydáva Odberateľom nasledujúce typy TLS certifikátov:
 * **Infraštruktúrne a podporné certifikáty:** Poskytovateľ vydáva riadiace certifikáty potrebné pre svoje prevádzkové potreby, obmedzené výhradne na certifikáty podriadených certifikačných autorít (Subordinate CAs / Issuing CAs) a certifikáty TLS/OCSP Responderov, ktoré prevádzkujú služby striktne v rámci tejto hierarchie pre autentifikáciu serverov.
 
 ### 1.4.2 Zakázané spôsoby použitia certifikátov
-TLS certifikáty vydávané podľa týchto CP/CPS nie sú kvalifikovanými certifikátmi EÚ pre autentifikáciu webových síd podľa nariadenia eIDAS [8] a nemôžu sa používať tam, kde sa vyžadujú kvalifikované TLS certifikáty EÚ pre autentifikáciu webových sídiel.
+TLS certifikáty vydávané podľa týchto CP/CPS nie sú kvalifikovanými certifikátmi EÚ pre autentifikáciu webových sídiel podľa nariadenia eIDAS [8] a nemôžu sa používať tam, kde sa vyžadujú kvalifikované TLS certifikáty EÚ pre autentifikáciu webových sídiel.
 Certifikáty vydávané podľa týchto CP/CPS sa nesmú používať na:
 * podpisovanie kódu, dokumentov alebo e-mailov;
 * vydávanie iných TLS certifikátov (netýka sa certifikátov pre CA);
@@ -428,7 +429,7 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
 
 **Dôveryhodná služba** znamená elektronickú službu bežne poskytovanú za odplatu, ktorá pozostáva z:
   **a|** vyhotovovania, overovania a potvrdzovania elektronických podpisov, elektronických pečatí alebo elektronických časových pečiatok, služieb elektronického doporučeného doručovania a TLS certifikátov súvisiacich s týmito službami,
-  **b|** vyhotovovania, overovania a potvrdzovania TLS certifikátov pre autentifikáciu webových síd,
+  **b|** vyhotovovania, overovania a potvrdzovania TLS certifikátov pre autentifikáciu webových sídiel,
   **c|** uchovávania elektronických podpisov, pečatí alebo TLS certifikátov súvisiacich s týmito službami.
 
 **Držiteľ certifikátu** znamená subjekt identifikovaný v TLS certifikáte ako držiteľ súkromného kľúča patriaceho k verejnému kľúču obsiahnutému v TLS certifikáte.
@@ -489,7 +490,7 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
  **[5]** Mozilla Root Store Policy [https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/)    
  **[6]** Apple Root Certificate Program [https://www.apple.com/certificateauthority/ca_program.html](https://www.apple.com/certificateauthority/ca_program.html).   
  **[7]** Chrome Root Program Policy [https://www.chromium.org/Home/chromium-security/root-ca-policy/](https://www.chromium.org/Home/chromium-security/root-ca-policy/).    
- **[8]** Nariadenie Európskeho parlamentu a Rady (EÚ) č. 910/2014 z 23. júla 2014 o elektronickej identifikácii a dôveryhodných službách pre elektronické transakcie na vnútornom trhu a o zrušení smernice 1999/93/ES, v znení Natiadenia EP a Rady (EÚ) č. 1183/2024.   
+ **[8]** Nariadenie Európskeho parlamentu a Rady (EÚ) č. 910/2014 z 23. júla 2014 o elektronickej identifikácii a dôveryhodných službách pre elektronické transakcie na vnútornom trhu a o zrušení smernice 1999/93/ES, v znení Nariadenia EP a Rady (EÚ) č. 1183/2024.   
  **[9]** ETSI EN 319 401 Electronic Signatures and Infrastructures (ESI); General Policy Requirements for Trust Service Providers.   
  **[10]** ETSI EN 319 411-1 Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing TLS Certificates; Part 1: General requirements.   
  **[11]** RFC 3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.   
@@ -505,8 +506,8 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
  **[21]** RFC 8954 Online Certificate Status Protocol (OCSP) Nonce Extension.   
  **[22]** Network and Certificate System Security Requirements [https://cabforum.org/working-groups/netsec/documents/](https://cabforum.org/working-groups/netsec/documents/)  
  **[23]** RFC 6962 Certificate Transparency.  
- **[24]** CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy). 
- **[25]** ACME Renewal Information (ARI) Extension
+ **[24]** CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy).   
+ **[25]** ACME Renewal Information (ARI) Extension.
 
 ### 1.6.4 Konvencie 
 Kľúčové slová „MUSÍ“, „NESMIE“, „POVINNÉ“, „MAL BY“, „NEMALO BY“, „ODPORÚČANÉ“, „MÔŽE“ a „VOLITEĽNÉ“ v týchto CP/CPS sa musia interpretovať v súlade s RFC 2119.
@@ -537,7 +538,7 @@ Ak CA nedodrží akúkoľvek požiadavku aktuálnej verzie politiky „Mozilla R
 
 Ak nie sú splnené podmienky stanovené v aktuálnej politike „Mozilla Root Store Policy“, za nahlásenie incidentu zodpovedá manažér certifikačnej autority Poskytovateľa vymenovaný do roly PMA.  
 
-Poskytovateľ verejne zverejňuje dostupnosť a konfiguráciu svojich automatizovaných rozhraní pre správu životného cyklu TLS certiifkátu.
+Poskytovateľ verejne zverejňuje dostupnosť a konfiguráciu svojich automatizovaných rozhraní pre správu životného cyklu TLS certifikátu.
 URL koncových bodov ACME API je oficiálne zverejnená a spravovaná na adrese:  
 * Pre CA Disig R2I2 Cerification Service: [https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r2i2/tls/acme/v2/OV/directory);  
 * Pre CA Disig R3I1 TLS Certification Service: [https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory](https://onlineissue.disig.sk/r3i1/tls/acme/v2/OV/directory).  
@@ -746,10 +747,10 @@ Poskytovateľ nevydáva TLS certifikáty pre doménové názvy na špeciálne po
 
 **Požiadavky na validáciu DNSSEC:**
 
-Validácia DNSSEC až po koreňový kotevný bod dôvery IANA DNSSEC musíÍ byť vykonaná pri všetkých DNS dopytoch spojených s overovaním autorizácie alebo kontroly nad doménou z Primárneho sieťového pohľadu (Primary Network Perspective), vrátane vyhľadávaní CNAME vykonávaných počas určovania Autorizovaného názvu domény (ADN).
+Validácia DNSSEC až po koreňový kotevný bod dôvery IANA DNSSEC musí byť vykonaná pri všetkých DNS dopytoch spojených s overovaním autorizácie alebo kontroly nad doménou z Primárneho sieťového pohľadu (Primary Network Perspective), vrátane vyhľadávaní CNAME vykonávaných počas určovania Autorizovaného názvu domény (ADN).
 
 DNS resolver použitý pre všetky DNS dopyty spojené s overovaním autorizácie alebo kontroly nad doménou z Primárneho sieťového pohľadu MUSÍ:
-1. Vykonávať validáciu DNSSEC použitím algoritmu definovaného v normé RFC 4035, sekcii 5;
+1. Vykonávať validáciu DNSSEC použitím algoritmu definovaného v štandarde RFC 4035, sekcii 5;
 2. Podporovať NSEC3 v súlade s RFC 5155;
 3. Podporovať SHA-2 v súlade s RFC 4509 a RFC 5702; a
 4. Riadne ošetrovať bezpečnostné riziká a aspekty uvedené v RFC 6840, sekcii 4.
@@ -794,7 +795,7 @@ Po overení FQDN touto metódou MÔŽE CA vydávať certifikáty aj pre iné FQD
 
 Táto metóda je k dispozícii pre RA ako automatizovaný spôsob overovania vlastníctva a kontroly nad doménou, kde systém používaný na generovanie TLS certifikátov posiela jedinečnú náhodne vygenerovanú hodnotu pre každé FQDN, u ktorého sa očakáva, že bude v SAN vydaného certifikátu, s podmienkou, že táto hodnota musí byť zaregistrovaná v zázname DNS TXT pre každé FQDN a musí byť zaregistrovaná aj pre všetky nižšie úrovne až po druhú úroveň daných FQDN.
 
-Následne systém CA automaticky skontroluje prítomnosť TXT hodnoty v záznamoch DNS. Overenie náhodne vygenerovanej jedinečnej hodnoty pre dané FQDN sa použije na overenie maximálne do 30 dní od jej odoslania. Údaje o overení získané touto metódou možno použiť na overenie vlastníctva a kontroly nad rovnakým FQDN, ak nie sú staršie ako 398 dní.
+Následne systém CA automaticky skontroluje prítomnosť TXT hodnoty v záznamoch DNS. Overenie náhodne vygenerovanej jedinečnej hodnoty pre dané FQDN sa použije na overenie maximálne do 30 dní od jej odoslania.
 
 ##### 3.2.2.4.8 IP adresa
 Poskytovateľ túto metódu nepoužíva.
@@ -847,7 +848,7 @@ Potvrdenie kontroly Žiadateľa nad FQDN sa vykonáva overením kontroly nad dom
 
 1. **Umiestnenie výzvy a odpoveď**: Poskytovateľ musí overiť, že dopyt na `http://<FQDN>/.well-known/acme-challenge/<TOKEN>` vráti očakávanú hodnotu autorizačného kľúča sprevádzanú úspešnou odpoveďou HTTP (stavový kód HTTP 2xx).
 2. **Platnosť tokenu**: Token (definovaný v RFC 8555, sekcii 8.3) nesmie byť použitý dlhšie ako 30 dní od jeho vytvorenia.
-3. **Spracovanie presmerovaní**: Ak Poskytovateľ pri vyžadovaní odpovede na výzvu nasledovuje presmerovania, platia nasledujúce pravidlá:
+3. **Spracovanie presmerovaní**: Ak Poskytovateľ pri vyžadovaní odpovede na výzvu nasleduje presmerovania, platia nasledujúce pravidlá:
    - **a. Vrstva protokolu HTTP**: Presmerovania musia byť iniciované na vrstve protokolu HTTP ako výsledok odpovede so stavovým kódom HTTP 301, 302 alebo 307 (RFC 7231, sekcia 6.4) alebo stavovým kódom HTTP 308 (RFC 7538, sekcia 3). Presmerovania musia smerovať na konečnú hodnotu uvedenú v HTTP hlavičke `Location`.
    - **b. Obmedzenie schémy**: Presmerovania musia smerovať na URL zdrojov výhradne so schémou "http" alebo "https".
    - **c. Autorizované porty**: Presmerovania musia smerovať na URL zdrojov pristupované cez Autorizované porty (port 80 pre http, port 443 pre https).
@@ -870,7 +871,7 @@ Poskytovateľ nevydáva TLS certifikáty, ak je v poli commonName alebo v rozš�
 
 Pred vydaním TLS certifikátu so znakom divokej karty (`*`) v položke Bežný názov (CN) alebo v rozšírení SAN typu `dNSName` MUSÍ Poskytovateľ vytvoriť a dodržiavať zdokumentovaný postup, ktorý určuje, či sa znak divokej karty nachádza na pozícii prvej návestnej značky (label) vľavo od "registrom spravovanej" značky alebo "verejnej prípony" (public suffix, napr. `*.com`, `*.co.uk`, pozri RFC 6454, sekciu 8.2).
 
-Ak sa znak divokej karty nachádza na pozícii prvej návestnej značky vľavo od registrom spravovanej značky alebo verejnej prípony, Poskytovateľ NESMIE vydat TLS certifikát, pokiaľ Žiadateľ nepreukáže svoje vlastníctvo alebo kontrolu nad celou touto registrom spravovanou značkou alebo verejnou príponou.
+Ak sa znak divokej karty nachádza na pozícii prvej návestnej značky vľavo od registrom spravovanej značky alebo verejnej prípony, Poskytovateľ NESMIE vydať TLS certifikát, pokiaľ Žiadateľ nepreukáže svoje vlastníctvo alebo kontrolu nad celou touto registrom spravovanou značkou alebo verejnou príponou.
 
 Poskytovateľ MUSÍ overiť, že:
 1. Znak divokej karty (`*`) sa nachádza výhradne ako najľavejšia návestná značka v FQDN (napr. `*.example.com`); a
@@ -1059,7 +1060,7 @@ Po zrušení TLS certifikátu musí žiadateľ o následný TLS certifikát abso
 
 ### 4.1.1 Kto môže podať žiadosť o TLS certifikát  
 O TLS certifikát môže požiadať fyzická alebo právnická osoba prevádzkujúca zariadenie alebo systém, ktorá v žiadosti o TLS certifikát preukáže, že je oprávnená žiadať o TLS certifikát s FQDN a že všetky FQDN sú uvedené v SAN TLS certifikátu.
-Poskytovateľ vedie internú databázu všetkých zrušenýchatnených TLS certifikátov a zamietnutých žiadostí z dôvodu podozrenia z phishingu alebo inej podvodnej aktivity.  
+Poskytovateľ vedie internú databázu všetkých zrušených TLS certifikátov a zamietnutých žiadostí z dôvodu podozrenia z phishingu alebo inej podvodnej aktivity.  
 
 ### 4.1.2 Proces registrácie a zodpovednosti
 
@@ -1154,7 +1155,7 @@ V prípade akejkoľvek opodstatnenej pochybnosti o identite Odberateľa, tiež v
 Žiadosť sa zamietne aj vtedy, ak jej formát alebo obsah nespĺňa požiadavky uvedené v časti 3.1.4.  
 
 Poskytovateľ nesmie vydávať certifikáty pre FQDN, ktoré obsahuje najvyššiu doménu (gTLD), ktorá nie je uvedená v databáze „Root Zone Database“ spravovanej úradom IANA (Internet Assigned Numbers Authority) ([https://www.iana.org/domains/root/db](https://www.iana.org/domains/root/db)).
-Akákoľvek žiadosť spĺňajúca požiadavky týchto CP/CPS bude spracovaná bezodkladne, ak sa vydanie uskutoční v prítomnosti Odberateľa alebo najneskôr v čase dohodnnutom s Odberateľom v procese žiadosti o TLS certifikát.  
+Akákoľvek žiadosť spĺňajúca požiadavky týchto CP/CPS bude spracovaná bezodkladne, ak sa vydanie uskutoční v prítomnosti Odberateľa alebo najneskôr v čase dohodnutom s Odberateľom v procese žiadosti o TLS certifikát.  
 
 Poskytovateľ nebude vydávať TLS certifikáty obsahujúce interné mená alebo rezervované IP adresy.  
 Poskytovateľ nesmie vydať TLS certifikát na žiadosť obsahujúcu doménové meno, ak sa pri overovaní DNS záznamu CAA podľa časti 3.2.2.8 zistí, že takýto záznam existuje a neoprávňuje Poskytovateľa ako oprávneného na vydávanie TLS certifikátov.
@@ -1178,12 +1179,12 @@ Poskytovateľ musí vyhodnotiť vlastnosti `issue` a `issuewild` nájdené v mno
    - Vlastnosť `issuewild` oprávňuje Poskytovateľa vydať certifikát s divokou kartou (Wildcard Certificate) pre určený názov domény.
 2. **Autorizované doménové identifikátory**: Autorizované doménové identifikátory Poskytovateľa, ktoré sa musia zhodovať v hodnote parametra záznamu CAA, sú: `disig.sk`.
 3. **Obmedzenia vydávania**:
-   - Ak množina záznamov CAA existuje a obsahuje vlastnosť `issue` alebo `issuewild`, Poskytovateľ nsmie vydať certifikát, pokiaľ daná vlastnosť explicitne neoprávňuje Poskytovateľa.
+   - Ak množina záznamov CAA existuje a obsahuje vlastnosť `issue` alebo `issuewild`, Poskytovateľ nesmie vydať certifikát, pokiaľ daná vlastnosť explicitne neoprávňuje Poskytovateľa.
    - Ak sa žiadna množina záznamov CAA nenájde (napr. odpoveď NOERROR bez záznamov alebo NXDOMAIN), Poskytovateľ môže certifikát vydať.
    - Ak záznam CAA obsahuje neznámy kritický príznak (critical flag), Poskytovateľ nesmie vydať certifikát.
 
 ##### 4.2.2.1.3 Validácia DNSSEC pri záznamoch CAA (DNSSEC Validation of CAA Records)
-1. **Primárny sieťový pohľad**: Validácia DNSSEC až po koreňový kotevný bod dôvery IANA DNSSEC misí byť vykonaná pri všetkých dopytoch DNS smerujúcich na kontrolu záznamov CAA spojených s overovaním autorizácie alebo kontroly nad doménou z Primárneho sieťového pohľadu.
+1. **Primárny sieťový pohľad**: Validácia DNSSEC až po koreňový kotevný bod dôvery IANA DNSSEC musí byť vykonaná pri všetkých dopytoch DNS smerujúcich na kontrolu záznamov CAA spojených s overovaním autorizácie alebo kontroly nad doménou z Primárneho sieťového pohľadu.
 2. **Obmedzenie lokálnych pravidlá**: Poskytovateľ nesmie použiť lokálne pravidlá (local policy) na zakázanie validácie DNSSEC pri žiadnom dopyte DNS na záznamy CAA.
 3. **Zlyhanie validácie**: Akékoľvek zlyhanie validácie DNSSEC počas dopytovania záznamov CAA Primárnym sieťovým pohľadom musí mať za následok neúspešnú kontrolu CAA a až do úspešného dokončenia spracovania záznamov CAA s platným DNSSEC sa nevydá žiaden certifikát.
 
@@ -1251,7 +1252,7 @@ Odberateľ vo vzťahu k súkromnému kľúču a TLS certifikátu:
 * Používa pár kľúčov v súlade s obmedzeniami, ktoré mu oznámil Poskytovateľ;  
 * Neustále chráni svoje súkromné kľúče v súlade s týmito CP/CPS a v súlade s ustanoveniami Všeobecných podmienok [12];  
 * Používa súkromný kľúč až po získaní TLS certifikátu k verejnému kľúču, s ktorým tvoria jedinečné páry;  
-* Okamžite informuje Poskytovateľa, ak TLS certifikát ešte neexpiroval, pri podozrení, že jeho súkromný kľúč bol stratený, odcudzený alebo kompromitovaný;  
+* Okamžite informuje Poskytovateľa, ak TLS certifikát ešte neexspiroval, pri podozrení, že jeho súkromný kľúč bol stratený, odcudzený alebo kompromitovaný;  
 * Okamžite požiada o zrušenie TLS certifikátu v prípade, že sa akákoľvek informácia v TLS certifikáte entity stane neplatnou;  
 * Dodržiava všetky termíny, podmienky a obmedzenia kladené na jeho súkromný kľúč a TLS certifikát, t. j. prestane používať súkromný kľúč po exspirácii alebo zrušení TLS certifikátu k verejnému kľúču.  
 
@@ -1374,14 +1375,14 @@ Poskytovateľ by mal zrušiť TLS certifikát do 24 hodín a musí zrušiť TLS 
 * Poskytovateľ sa dozvie o demonštrovanej alebo preukázanej metóde, ktorá vystavuje súkromný kľúč Odberateľa/Subjektu kompromitácii, boli vyvinuté metódy, ktoré ho dokážu ľahko vypočítať na základe verejného kľúča (napríklad slabý kľúč Debian, pozri [http//wiki.debian.org/SSLkeys](http//wiki.debian.org/SSLkeys)), alebo ak existuje jasný dôkaz, že špecifická metóda použitá na generovanie súkromného kľúča bola chybná.  
 * Poskytovateľ sa dozvie o podstatnej zmene informácií obsiahnutých v TLS certifikáte.  
 * CA určí alebo sa dozvie, že akákoľvek informácia uvedená v TLS certifikáte je nepresná.  
-* Poskytovateľ ukončí činnosť z akéhokoľvek dôvodu a nezabezpečí, aby iná CA poskytovala informácie o zzrušených TLS certifikátoch v jeho mene.  
+* Poskytovateľ ukončí činnosť z akéhokoľvek dôvodu a nezabezpečí, aby iná CA poskytovala informácie o zrušených TLS certifikátoch v jeho mene.  
 * Technické parametre alebo formát TLS certifikátu by mohli viesť k neprijateľnému riziku z pohľadu predajcov softvéru alebo spoliehajúcich sa strán (zmena kryptografických algoritmov na podpisovanie, dĺžka kryptografických kľúčov atď.).  
 * Odberateľ/Subjekt zomrel v prípade fyzickej osoby alebo zanikol v prípade právnickej osoby a Poskytovateľ bude o tejto skutočnosti informovaný,  
 * Zneplatnenie je vyžadované týmito CP/CPS.  
 
-Vždy, keď sa Poskytovateľ dozvie o niektorej z vyššie uvedených okolností, TLS certifikát bude zrušený a zaradený do zoznamu zzrušených certifikátov („CRL“).  
-Zneplatnený TLS certifikát bude prítomný vo všetkých nových CRL aspoň dovtedy, kým nevyprší platnosť TLS certifikátu.  
-Zneplatnený TLS certifikát nemôže byť za žiadnych okolností obnovený.  
+Vždy, keď sa Poskytovateľ dozvie o niektorej z vyššie uvedených okolností, TLS certifikát bude zrušený a zaradený do zoznamu zrušených certifikátov („CRL“).  
+Zrušený TLS certifikát bude prítomný vo všetkých nových CRL aspoň dovtedy, kým nevyprší platnosť TLS certifikátu.  
+Zrušený TLS certifikát nemôže byť za žiadnych okolností obnovený.  
 
 Keď je TLS certifikát koncovej entity zrušený z jedného z nižšie uvedených dôvodov, v rozšírení reasonCode položky CRL zodpovedajúcej TLS certifikátu koncovej entity sa uvedie špecifikovaný dôvod CRLReason. Ak kód CRLReason nie je jedným z nasledujúcich, rozšírenie reasonCode sa neposkytne:  
 * keyCompromise (RFC 5280 CRLReason #1).  
@@ -1669,7 +1670,7 @@ Pred tým, ako je Pracovníkovi RA - Validačnému špecialistovi umožnené vyk
 
 Poskytovateľ vedie úplné záznamy o všetkých školeniach a kvalifikáciách. Poskytovateľ formálne zdokumentuje, že každý Pracovníkovi RA - Validačný špecialista disponuje potrebnými zručnosťami a odbornosťou vyžadovanou pre danú úlohu ešte pred tým, ako ho autorizuje na jej výkon, a zabezpečí udržiavanie vysokej úrovne odbornosti pre uspokojivý výkon týchto úloh.
 
-Pred autorizáciou na výkon overovacích povinností musia všetci Pracovnci RA - Validační špecialisti úspešne zložiť formálnu skúšku (test) zabezpečovanú Poskytovateľom, ktorá preverí ich znalosti požiadaviek na overovanie informácií stanovených v TLS BR a tejto CP/CPS.
+Pred autorizáciou na výkon overovacích povinností musia všetci Pracovníci RA - Validační špecialisti úspešne zložiť formálnu skúšku (test) zabezpečovanú Poskytovateľom, ktorá preverí ich znalosti požiadaviek na overovanie informácií stanovených v TLS BR a tejto CP/CPS.
 
 ### 5.3.4 Periodicita a požiadavky na preškoľovanie
 PMA rozhoduje o potrebe opakovania školení pre pracovníkov RA v prípadoch významných zmien v legislatíve alebo v softvéri RA.
@@ -1796,11 +1797,11 @@ Poskytovateľ musí mať riešenie na pokrytie všetkých nákladov spojených s
 
 V súlade so všeobecnými zásadami ukončenia činnosti uvedenými vyššie vykoná Poskytovateľ plánované a riadne vyradenie z prevádzky podriadenej CA Disig R2I2 Certification Service patriacej do pôvodnej viacúčelovej hierarchie podľa nasledujúceho harmonogramu a podmienok:
 
-**1.** **Ukončenie vydávania**: S účinnosťou od 15. septembra 2026 podriadená CA Disig R2I2 Certification Service trvalo ukončila prijímanie žiadostí, vydávanie nových TLS certifikátov, ako aj vykonávanie opätovného vydania s novým kľúčom. Kontinuita vydávania TLS certifikátov je plne zabezpečená prostredníctvom novej jednofunkčnej hierarchii pre TLS (pozri 1.3.1.2).
+**1.** **Ukončenie vydávania**: S účinnosťou od 15. septembra 2026 podriadená CA Disig R2I2 Certification Service trvalo ukončila prijímanie žiadostí, vydávanie nových TLS certifikátov, ako aj vykonávanie opätovného vydania s novým kľúčom. Kontinuita vydávania TLS certifikátov je plne zabezpečená prostredníctvom novej jedno funkčnej hierarchii pre TLS (pozri 1.3.1.2).
 
-**2.** **Režim údržby a služby revokácie**: V období od 15. septembra 2026 do 26. marca 2027 je pôvodná podriadená CA Disig R2I2 Certification Service prevádzkovaná výhradne v režime údržby za účelom poskytovania služieb správy statusu zrušení (publikácia CRL a prevádzka OCSP responderov) pre dobiehajúce koncové TLS certifikáty v súlade s TLS BR [3].
+**2.** **Režim údržby a služby rušenia**: V období od 15. septembra 2026 do 26. marca 2027 je pôvodná podriadená CA Disig R2I2 Certification Service prevádzkovaná výhradne v režime údržby za účelom poskytovania služieb správy statusu zrušení (publikácia CRL a prevádzka OCSP responderov) pre dobiehajúce koncové TLS certifikáty v súlade s TLS BR [3].
 
-**3.** **Ukončenie platnosti a revokácia Sub-CA**: Po vypršaní posledného platného koncového TLS certifikátu dňa 26. marca 2027 sa bezodkladne zruší certifikát podriadenej CA Disig R2I2 Certification Service.
+**3.** **Ukončenie platnosti a zrušenie Sub-CA**: Po vypršaní posledného platného koncového TLS certifikátu dňa 26. marca 2027 sa bezodkladne zruší certifikát podriadenej CA Disig R2I2 Certification Service.
 
 **4.** **Záverečné CRL a likvidácia kľúča**: Bude vygenerovaný a publikovaný záverečný zoznam zrušených certifikátov (Final CRL). Po publikovaní Final CRL bude súkromný kľúč podriadenej CA Disig R2I2 Certification Service, vrátane všetkých jeho kópií, trvalo zničený v súlade s kapitolou 6.2.9 tak, aby sa zamedzilo jeho obnoveniu alebo opätovnému použitiu.
 
@@ -1859,9 +1860,9 @@ Verejný kľúč je bezpečne doručený certifikačnej autorite prostredníctvo
 Spoliehajúce sa strany si môžu stiahnuť certifikáty CA z webovej stránky poskytovateľa: [https://eidas.disig.sk/en/certificates/ca/](https://eidas.disig.sk/en/certificates/ca/).
 
 ### 6.1.5 Veľkosti kľúčov
-Táto CP/CPS povoĺuje iba RSA kľúčové páry.
+Táto CP/CPS povoľuje iba RSA kľúčové páry.
 
-Pre RSA kúčové páry RSA poskytovateľ:
+Pre RSA kľúčové páry RSA poskytovateľ:
 - zabezpečí, aby veľkosť modulu pri kódovaní bola minimálne 2048 bitov; a
 - zabezpečí, aby veľkosť modulu v bitoch bola deliteľná číslom 8.
 
@@ -1908,8 +1909,7 @@ V prípade operácií so súkromnými kľúčmi Poskytovateľa (napr. generovani
 Žiadne ustanovenie.
 
 ### 6.2.4 Zálohovanie súkromného kľúča
-Súkromné ​​kľúče Poskytovateľa sa generujú a ukladajú v hardvérových kryptografických moduloch.
-Súkromné ​​kľúče sa vždy šifrujú v prípade, že oprávnení pracovníci v zmysle článku 6.2.2 vykonávajú ich prenos na účely zálohovania a obnovy, prenos súkromných kľúčov a ich obnovenie do iného hardvérového kryptografického modulu je možné len týmto spôsobom.
+Súkromné kľúče Poskytovateľa musia byť generované a uložené v hardvérových kryptografických moduloch. Tam, kde je prenos nevyhnutný na účely zálohovania a obnovy, súkromné kľúče musia byť vždy prenášané v zašifrovanej forme. Prenos súkromných kľúčov a ich obnova do iného hardvérového kryptografického modulu môžu vykonávať len autorizovaní zamestnanci v súlade s pravidlami stanovenými v časti 6.2.2.
 
 ### 6.2.5 Archivácia súkromného kľúča
 Žiadne ustanovenie.
@@ -1947,7 +1947,8 @@ Pozri časť 6.2.1.
 | :--- | :---: | :---: |
 | Koreňová CA (Root CA) | 2922 dní | 9132 dní |
 | Podriadená CA (Subordinate CA) | | 1095 dní |
-| TLS certifikát | - | 200 dní od 15. 3. 2026 do 14. 3. 2027<br> 100 dní od 15. 3. 2027 do 14.3.2029<br> 47 dní od 15. 3. 2029|
+| OCSP responder                 | |  735 dní |
+| TLS certifikát |  | 200 dní od 15. 3. 2026 do 14. 3. 2027<br> 100 dní od 15. 3. 2027 do 14.3.2029<br> 47 dní od 15. 3. 2029|
 
 Pri výpočtoch sa deň počíta ako 86 400 sekúnd.
 
@@ -2029,6 +2030,7 @@ Tabuľka 4: Rozšírenia certifikátu v certifikátoch koreňovej CA
 | basicConstraints / 2.5.29.19 | ÁNO | ÁNO |
 | keyUsage / 2.5.29.15 | ÁNO | ÁNO |
 | subjectKeyIdentifier / 2.5.29.14 | ÁNO | NIE |
+| authorityKeyIdentifier / 2.5.29.35| ÁNO | NIE |
 
 Od 15. 9. 2023 môžu rozšírenia certifikátu koreňovej CA obsahovať len položky uvedené v časti 7.1.2.1.2 TLS BR [3].
 
@@ -2087,7 +2089,7 @@ Algoritmy a dĺžky kľúčov použité v podriadenej CA:
 | | |
 | :--- | :--- |
 | Názov algoritmu podpisu:| **sha256RSA** |
-| Verejný kľúč:| **RSA, dĺžka 2 048 bitov** |
+| Verejný kľúč:| **RSA, minimálna dĺžka 2 048 bitov** |
 | Platnosť podriadenej CA:| maximálne 7 rokov |
 
 Tabuľka 7: Obsah položiek v certifikáte podriadenej CA
@@ -2130,6 +2132,9 @@ Nasledujúca tabuľka uvádza rozšírenia použité vo vydaných TLS certifiká
 | subjectAltName | {id-ce-subjectAltName} {2.5.29.17} Obsahuje jedno alebo viac alternatívnych mien entity (napr. FQDN). | ÁNO | NIE |
 | Key Usage | {id-ce-keyUsage} {2.5.29.15} Indikuje účel, na ktorý sa používa certifikovaný verejný kľúč. | ÁNO | ÁNO |
 | CRL Distribution Points | {id-ce-cRLDistributionPoints} {2.5.29.31} Identifikuje body distribúcie CRL pre zistenie, či certifikát nebol zrušený. | ÁNO | NIE |
+|Signed Certificate Timestamp List|{id-ce-embeddedSCT-CTv1}<br>{1.3.6.1.4.1.11129.2.4.2}<br>This extension contains a list of Signed Certificate Timestamps (SCTs) demonstrating that the certificate was logged in one or more Certificate Transparency logs| ÁNO |NIE|  
+
+Rozšírenie cRLDistributionPoints obsahuje HTTP URL adresu služby CRL certifikačnej autority, ako je uvedené v časti 2.2.3 tejto CP/CPS.
 
 ##### 7.1.2.7.1 Typy certifikátov odberateľov
 Podľa týchto CP/CPS Poskytovateľ vydáva iba TLS certifikáty typu „Organization Validated“ (OV).
@@ -2425,7 +2430,7 @@ Dôvernými informáciami podliehajúcimi príslušnej ochrane sú:  
 * osobné údaje držiteľov TLS certifikátov podliehajúce ochrane podľa Predpisov o ochrane osobných údajov [15].   
 
 TLS certifikát môže obsahovať len informácie, ktoré sú dôležité a nevyhnutné na vykonávanie bezpečnej komunikácie s TLS certifikátom.  
-Zoznam zzrušených TLS certifikátov (CRL) sa nepovažuje za dôverný.  
+Zoznam zrušených TLS certifikátov (CRL) sa nepovažuje za dôverný.  
 
 ### 9.3.2 Informácie, ktoré nespadajú do rozsahu dôverných informácií  
 Poskytovateľ nesmie zverejniť informácie týkajúce sa Odberateľa alebo Držiteľa certifikátu žiadnej tretej strane. Zverejnenie je možné len vtedy, ak:
@@ -2500,7 +2505,7 @@ Záruky za certifikát špecificky zahŕňajú okrem iného nasledujúce záväz
 
 6. **Úložisko stavu certifikátov**: Že Poskytovateľ prevádzkuje nepretržite 24/7 verejne dostupné Úložisko s aktuálnymi informáciami o stave (platný alebo odvolaný) všetkých certifikátov, ktorých platnosť dosiaľ neuplynula.
 
-7. **Odvolanie certifikátu (Revokácia)**: Že Poskytovateľ odvolá certifikát z ktoréhokoľvek z dôvodov uvedených v týchto Požiadavkách a v sekcii 4.9 tejto CP/CPS.
+7. **Odvolanie certifikátu (Zrušenie)**: Že Poskytovateľ odvolá certifikát z ktoréhokoľvek z dôvodov uvedených v týchto Požiadavkách a v sekcii 4.9 tejto CP/CPS.
 
 Poskytovateľ je zodpovedný za výkon a záruky akejkoľvek podriadenej CA pôsobiacej v hierarchii svojej koreňovej CA, za dodržiavanie týchto požiadaviek podriadenou CA a za všetky záväzky a odškodnenia podriadenej CA podľa týchto požiadaviek, ako keby koreňová CA bola podriadenou CA vydávajúcou certifikáty.
 
@@ -2522,7 +2527,7 @@ Poskytovateľ musí implementovať postup na zabezpečenie toho, aby každá zml
 
 Poskytovateľ môže použiť elektronickú zmluvu alebo zmluvu uzavretú (odsúhlasením kliknutím), za predpokladu, že Poskytovateľ overil, že takéto zmluvy sú právne vymáhateľné. Pre každú žiadosť o certifikát môže byť použitá samostatná zmluva, alebo môže byť použitá jediná zmluva pokrývajúca viaceré budúce žiadosti o certifikát a z nich vyplývajúce TLS certifikáty, pokiaľ je každý TLS certifikát, ktorý Poskytovateľ vydá Žiadateľovi, jednoznačne pokrytý touto zmluvou o vydaní certifikátu alebo podmienkami používania.
 
-Zmluva o vydaní certifikátu alebo podmienky používaniamusia obsahovať ustanovenia ukladajúce samotnému Žiadateľovi nasledujúce povinnosti a záruky:
+Zmluva o vydaní certifikátu alebo podmienky používania musia obsahovať ustanovenia ukladajúce samotnému Žiadateľovi nasledujúce povinnosti a záruky:
 
 1. **Presnosť informácií**: Povinnosť a záruku poskytovať Poskytovateľovi vždy presné a úplné informácie, a to ako v žiadosti o certifikát, tak aj na základe iných požiadaviek Poskytovateľa v súvislosti s vydaním TLS certifikátu (certifikátov), ktoré má Poskytovateľ dodať;
 2. **Ochrana Súkromného kľúča**: Povinnosť a záruku Žiadateľa prijať všetky primerané opatrenia na zabezpečenie kontroly, zachovanie dôvernosti a riadnu ochranu súkromného kľúča zodpovedajúceho verejnému kľúču, ktorý má byť uvedený v požadovanom TLS certifikáte (certifikátoch) a akýchkoľvek súvisiacich aktivačných údajov alebo zariadení (napr. hesla alebo hardvérového tokenu);
@@ -2533,13 +2538,13 @@ Zmluva o vydaní certifikátu alebo podmienky používaniamusia obsahovať ustan
    - **b.** bezodkladne požiadať o zrušenie TLS certifikátu a prestať ho používať, ak akákoľvek informácia v TLS certifikáte je alebo sa stane nesprávnou alebo nepresnou;
 6. **Ukončenie používania certifikátu**: Povinnosť a záruku bezodkladne ukončiť akékoľvek používanie súkromného kľúča zodpovedajúceho verejnému kľúču uvedenému v TLS certifikáte po zrušení tohto TLS certifikátu z dôvodu kompromitácie kľúča (Key Compromise);
 7. **Súčinnosť a reakčný čas**: Povinnosť reagovať na pokyny Poskytovateľa týkajúce sa kompromitácie kľúča alebo zneužitia TLS certifikátu v stanovenom časovom rámci; a
-8. **Uznanie a akceptovanie práv na odvolanie**: Uznanie a akceptovanie skutočnosti, že Poskytovateľ je oprávnený okamžite zrušiť TLS certifikát, ak Žiadateľ poruší podmienky zmluvy o vydaní certifikátu alebo pPodmienok používania, alebo ak je zrušenie vyžadované CP/CPS Poskytovateľa alebo požiadavkami TLS BR.  
+8. **Uznanie a akceptovanie práv na odvolanie**: Uznanie a akceptovanie skutočnosti, že Poskytovateľ je oprávnený okamžite zrušiť TLS certifikát, ak Žiadateľ poruší podmienky zmluvy o vydaní certifikátu alebo Podmienok používania, alebo ak je zrušenie vyžadované CP/CPS Poskytovateľa alebo požiadavkami TLS BR.  
 
 ### 9.6.4 Vyhlásenia a záruky spoliehajúcej sa strany  
 
 Pred spoliehaním sa na TLS certifikát vydaný Poskytovateľom musí Spoliehajúca sa strana vyhlásiť a zaručiť sa, že:
 
-1. **Primerané spoliehanie sa**: Nese plnú zodpovednosť za rozhodnutie, či sa bude spoliehať na TLS certifikát, a na certifikát sa spolieha len v rozsahu, v akom je takéto spoliehanie sa za daných okolností primerané a odôvodnené;
+1. **Primerané spoliehanie sa**: Nesie plnú zodpovednosť za rozhodnutie, či sa bude spoliehať na TLS certifikát, a na certifikát sa spolieha len v rozsahu, v akom je takéto spoliehanie sa za daných okolností primerané a odôvodnené;
 2. **Overenie stavu certifikátu**: Pred spoliehaním sa na TLS certifikát overí jeho platnosť a jeho stav (zrušenie) preskúmaním aktuálneho zoznamu zrušených certifikátov (CRL) alebo odpovede OCSP protokolu poskytovaných Poskytovateľom;
 3. **Validácia reťazca dôvery**: Riadne overí celý reťazec certifikátov až po dôveryhodný koreňový certifikát Poskytovateľa;
 4. **Použitie kľúča a účel**: Vyhodnotí a dodržiava obmedzenia použitia kľúča (Key Usage), rozšíreného použitia kľúča (Extended Key Usage) a akékoľvek prevádzkové obmedzenia uvedené v TLS certifikáte a v tejto CP/CPS; a
@@ -2572,7 +2577,7 @@ Poskytovateľ nezodpovedá za škody vzniknuté spoliehajúcej sa strane preto, 
 Každá osoba, ktorá poruší svoju povinnosť alebo akúkoľvek povinnosť podľa tejto CP/CPS, Zmluvy a Všeobecných obchodných podmienok, je povinná nahradiť škodu tým spôsobenú druhej zmluvnej strane, okrem prípadov, kedy je zodpovednosť subjektu za škodu vylúčená. Škoda zahŕňa skutočnú škodu, ušlý zisk a účelne vynaložené náklady poškodenej strany v súvislosti so vznikom škodovej udalosti. Ten, kto poruší svoju povinnosť alebo akúkoľvek povinnosť podľa tejto CP/CPS, Zmluvy a Všeobecných obchodných podmienok, sa môže zbaviť zodpovednosti za škodu len vtedy, ak preukáže, že k porušeniu povinnosti došlo v dôsledku okolností vylučujúcich zodpovednosť (napr. vyššia moc).
 
 ### 9.9.2 Odškodnenie dodávateľov aplikačného softvéru
-Poskytovate sa zaväzuje obhajovať, odškodniť a zbaviť zodpovednosti v plnom rozsahu každého Dodávateľa aplikačného softvéru za akékoľvek a všetky nároky, škody a straty, ktoré takýto Dodávateľ aplikačného softvéru utrpí v súvislosti s TLS Certifikátom vydaným Poksytovate2om, a to bez ohľadu na právny titul, právny dôvod alebo právnu teóriu, na ktorej je nárok založený.
+Poskytovateľ sa zaväzuje obhajovať, odškodniť a zbaviť zodpovednosti v plnom rozsahu každého Dodávateľa aplikačného softvéru za akékoľvek a všetky nároky, škody a straty, ktoré takýto Dodávateľ aplikačného softvéru utrpí v súvislosti s TLS Certifikátom vydaným Poksytovate2om, a to bez ohľadu na právny titul, právny dôvod alebo právnu teóriu, na ktorej je nárok založený.
 
 ## 9.10 Doba platnosti a ukončenie  
 
@@ -2631,16 +2636,16 @@ Poskytovateľ poskytuje dôveryhodné služby v súlade s platnými právnymi pr
 ### 9.16.2 Postúpenie  
 Odberateľ / Držiteľ nesmie postúpiť, previesť alebo inak nakladať s právami, povinnosťami alebo nárokmi tretej strany podľa Zmluvy alebo Všeobecných podmienok bez písomného súhlasu Poskytovateľa.    
 
-### 9.16.3 Oddeľteľnosť ustanovení a rozpor s právnymi predpismi  
+### 9.16.3 Oddeliteľnosť ustanovení a rozpor s právnymi predpismi  
 
-#### 9.16.3.1 Oddeľteľnosť ustanovení    
+#### 9.16.3.1 Oddeliteľnosť ustanovení    
 Ak sa akékoľvek ustanovenie tejto CP/CPS stane neplatným alebo nevymáhateľným, nespôsobuje to neplatnosť alebo nevymáhateľnosť celej CP/CPS, ak je úplne oddeliteľné od ostatných ustanovení tejto CP/CPS. Poskytovateľ okamžite nahradí neplatné alebo nevymáhateľné ustanovenie CP/CPS novým platným a vymáhateľným ustanovením, ktorého predmet bude čo najviac zodpovedať predmetu pôvodného ustanovenia a zároveň bude zachovaný účel tejto CP/CPS a obsah jednotlivých ustanovení tejto CP/CPS.  
 
 #### 9.16.3.2 Rozpor s právnymi predpismi (Conflict with Law)  
 V prípade rozporu medzi požiadavkami TLS BR a zákonom, nariadením alebo vládnym príkazom (ďalej len „Zákon“) akejkoľvek jurisdikcie, v ktorej Poskytovateľ pôsobí alebo vydáva TLS Certifikáty, je Poskytovateľ oprávnený upraviť dotknutú požiadavku v minimálnom nevyhnutnom rozsahu tak, aby bola v danej jurisdikcii platná a zákonná. Toto ustanovenie sa vzťahuje výlučne na operácie a vydávanie TLS Certifikátov, ktoré podliehajú tomuto Zákonu.  
 Ak nastane takýto rozpor, Poskytovateľ postupuje nasledovne:
 1. Úprava CP/CPS a zverejnenie: Poskytovateľ okamžite (a pred vydaním akéhokoľvek TLS Certifikátu podľa upravenej požiadavky) doplní do tejto Sekcie 9.16.3 podrobný odkaz na Zákon vyžadujúci úpravu požiadaviek TLS BR, ako aj presnú úpravu týchto požiadaviek, ktorú Poskytovateľ vyhotovil.  
-2. Oznámenie CA/Browser Forum: Pred vydaním TLS Certifikátu podľa upravenej požiadavky Poskytovayteľ oznámi túto zmenu CA/Browser Forum zaslaním správy na e-mailovú adresu [questions@cabforum.org](questions@cabforum.org) a počká na potvrdenie o jej zverejnení vo verejnom archíve e-mailov.  
+2. Oznámenie CA/Browser Forum: Pred vydaním TLS Certifikátu podľa upravenej požiadavky Poskytovateľ oznámi túto zmenu CA/Browser Forum zaslaním správy na e-mailovú adresu [questions@cabforum.org](questions@cabforum.org) a počká na potvrdenie o jej zverejnení vo verejnom archíve e-mailov.  
 3. Ukončenie úpravy a 90-dňová lehota: Ak Zákon prestane platiť alebo ak sa požiadavky TLS BR upravia tak, že umožnia súčasný súlad so Zákonom aj TLS BR, Poskytovateľ uplatňovanie takejto úpravy okamžite ukončí. Príslušná zmena v praxi, úprava CP/CPS a oznámenie CA/Browser Forum sa musia vykonať najneskôr do 90 dní od nastania tejto skutočnosti.
 
 K dátumu poslednej revízie tejto CP/CPS nebola identifikovaná žiadna výnimka z dôvodu rozporu s právnymi predpismi.

@@ -3,8 +3,8 @@
  
  
 **Disig, a.s.**  
-**Verzia 2.2**  
-**Platná od 4. 9. 2026**  
+**Verzia 2.3**  
+**Platná od 26. 11. 2026**  
 **OID 1.3.158.35975946.0.0.0.1.11**  
 
 Copyright © 2026 Disig, a.s. 
@@ -94,7 +94,7 @@ Obsah:
  
 # 1. Úvod
 
-Tento dokument predstavuje kombinovaný dokument, ktorý zahŕňa politiku poskytovania dôveryhodných služieb a pravidlá poskytovania dôveryhodných služieb (ďalej aj „CP/CPS“) spoločnosti Disig, a.s., so sídlom Galvaniho 17/C, 821 04 Bratislava, IČO: 35975946, zapísanú v Obchodnom registri Mestského súdu Bratislava III, odd. Sa, vložka č. 3794/B, ako poskytovateľa dôveryhodných služieb (ďalej len „Poskytovateľ“) a platí pre koreňové certifikačné autority a k nim podriadené certifikačné autority uvedené v kapitole 1.4.1, prevádzkované Poskytovateľom, prostredníctvom ktorých poskytuje dôveryhodnú službu vyhotovovania verejne dôveryhodných S/MIME Certificates (ďalej len „Certifikát).  
+Tento dokument predstavuje kombinovaný dokument, ktorý zahŕňa politiku poskytovania dôveryhodných služieb a pravidlá poskytovania dôveryhodných služieb (ďalej aj „CP/CPS“) spoločnosti Disig, a.s., so sídlom Galvaniho 17/C, 821 04 Bratislava, IČO: 35975946, zapísanú v Obchodnom registri Mestského súdu Bratislava III, odd. Sa, vložka č. 3794/B, ako poskytovateľa dôveryhodných služieb (ďalej len „Poskytovateľ“) a platí pre koreňové certifikačné autority a k nim podriadené certifikačné autority uvedené v kapitole 1.4.1, prevádzkované Poskytovateľom, prostredníctvom ktorých poskytuje dôveryhodnú službu vyhotovovania verejne dôveryhodných S/MIME certifikátov (ďalej len „Certifikát).  
 
 Definuje:  
 Politiku (CP) – politiky a pravidlá, podľa ktorých sú certifikáty vydávané, spravované a používané, a  
@@ -108,11 +108,13 @@ Webové sídlo Poskytovateľa pre poskytované dôveryhodné služby je dostupn�
 ## 1.1 Prehľad
 
 Tieto CP/CPS definujú vytváranie a správu certifikátov verejných kľúčov (X.509 verzia 3) v súlade s dokumentom „Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates“ [1] (ďalej len „SMIME BR“).  
-Zohľadňujú tiež požiadavky RFC 5280 „Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile“ [2], nariadenia (EÚ) č. 910/2014 z 23. júla 2014 o elektronickej identifikácii a dôveryhodných službách pre elektronické transakcie na vnútornom trhu a o zrušení smernice 1999/93/ES v znení nariadenia č. 1183/2025 (ďalej len „nariadenie eIDAS“) [3] a ETSI TS 119 411-6 „Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 6: Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates“ [4]. Certifikáty sú vydávané v súlade s požiadavkami noriem ETSI EN 319 401 [5] a ETSI EN 319 411-1 [6].
+Zohľadňujú tiež požiadavky RFC 5280 „Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile“ [2], nariadenia (EÚ) č. 910/2014 z 23. júla 2014 o elektronickej identifikácii a dôveryhodných službách pre elektronické transakcie na vnútornom trhu a o zrušení smernice 1999/93/ES v znení nariadenia č. 1183/2024 (ďalej len „nariadenie eIDAS“) [3] a ETSI TS 119 411-6 „Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 6: Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates“ [4]. Certifikáty sú vydávané v súlade s požiadavkami noriem ETSI EN 319 401 [5] a ETSI EN 319 411-1 [6].
 
 Tieto CP/CPS sú štruktúrované v súlade s RFC 3647 [7].
 
 Poskytovateľ potvrdzuje, že tieto CP/CPS zohľadňujú všetky požiadavky aktuálnej verzie SMIME BR [1], ktorá je zverejnená na adrese [https://cabforum.org/working-groups/smime/documents/](https://cabforum.org/working-groups/smime/documents/).
+
+Poskytovateľ výslovne uvádza, že hierarchie certifikačných autorít (CA) s verejnou dôverou, na ktoré sa vzťahuje tento dokument CP/CPS, sú v súlade s najnovšími zverejnenými verziami politiky CCADB [23].
 
 V prípade akéhokoľvek nesúladu medzi týmito požiadavkami a týmito CP/CPS majú prednosť požiadavky aktuálnej verzie SMIME BR [1].
 
@@ -124,9 +126,9 @@ Poskytovateľ výslovne uvádza, že verejne dôveryhodné hierarchie pokryté t
 |:--- | :--- |
 |Názov:|**Politika a pravidlá poskytovania dôveryhodnej služby vyhotovovania a overovania S/MIME certifikátov** |
 |Skratka názvu: | **SMIME CP/CPS** |
-|Verzia:|  **2.2** |
-|Schválené dňa:| **25. 8. 2026**   |
-|Platnosť od:| **4. 9. 2026**    |  
+|Verzia:|  **2.3** |
+|Schválené dňa:| **20. 11. 2026**   |
+|Platnosť od:| **26. 11. 2026**    |  
 |Tomuto dokumentu je priradený identifikátor objektu (OID):|**1.3.158.35975946.0.0.0.1.11** |  
  
  
@@ -155,9 +157,10 @@ Tento OID (1.3.158.35975946.0.0.0.1.11) je zároveň uvádzaný aj vo vydávaný
 |1.2     |18. 07. 2024|Zmena sídla spoločnosti Disig, a.s.; Miškovič|  
 |1.3     |16. 09. 2024|Doplnenie časti 4.2 v zmysle požiadaviek časti 2.2 aktuálnej verzie SMIME BR; Miškovič|  
 |1.4     |15. 03. 2025|Úprava časti 4.2.2 a 4.2.3 v zmysle požiadaviek aktuálnej verzie SMIME BR v. 1,0.8;<br> Miškovič|  
-|2.0     |05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby<br> vyhotovovanie verejne dôveryhodných S/MIME certifikátov, ktorá zahrňuje aj pravidlá<br> pre poskytovanie tejto služby,ktoré boli pôvodne predmetom samostatného okumentu.; Miškovič|
+|2.0     |05. 03. 2026|Transformácia dokumentu na novú formu kombinovanej politiky pre poskytovanie služby<br> vyhotovovanie verejne dôveryhodných S/MIME certifikátov, ktorá zahrňuje aj pravidlá<br> pre poskytovanie tejto služby, ktoré boli pôvodne predmetom samostatného dokumentu.; Miškovič|
 |2.1     |21. 04. 2026|Pridanie novej single-purpose CA Disig SMIME Root R4 a jej podriadenej CA Disig R4I1<br> SMIME Certification Service (1.3.1.2); Miškovič|
 |2.2     |04. 09. 2026|Aktualizácia CP/CPS na základe Apple Review Apple Review; Miškovič|
+|2.3     |26. 11. 2026|Doplnenie vyhlásenia o súlade s pravidlami CCADB (1.1); Redakčné zmeny a jazyková korektúra; Miškovič|
 
 ## 1.3 Účastníci PKI
 
@@ -320,22 +323,24 @@ Poskytovateľ vydáva Odberateľom nasledujúce typy certifikátov:
 
 ### 1.4.1 Povolené spôsoby použitia certifikátu
 Certifikáty vydávané podľa týchto CP/CPS sa vydávajú na účely identifikácie držiteľa verejného kľúča z páru kryptografických kľúčov (verejný a súkromný), ktorý sa používa v rámci infraštruktúry PKI.
-Kryptografický pár kľúčov (súkromný a verejný) a certifikát vydaný Poskytovateľom sa vo všeobecnosti môžu používať predovšetkým na:
-* zabezpečenie e-mailu (podpisovanie a/alebo šifrovanie e-mailov);
-* podpisovanie elektronických dokumentov zdokonaleným elektronickým podpisom;
-* vytváranie elektronickej pečate.
 
-CA Poskytovateľa vydávajú Odberateľom nasledujúce typy certifikátov:
-* S/MIME certifikát pre digitálny podpis alebo S/MIME digitálny certifikát pre pečať – obsahujú verejný kľúč spojený s e-mailovou adresou a môžu obsahovať aj identitu fyzickej osoby alebo právnickej osoby, ktorá má kontrolu nad požadovanou e-mailovou adresou. Kryptografické kľúče spojené s týmto typom certifikátu sú primárne určené na zabezpečenie elektronickej pošty a vytváranie zdokonaleného elektronického podpisu.
-Vydaný certifikát bude v súlade so SMIME BR [1] obsahovať nasledujúce identifikátory certifikačných politík:
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) organization-validated(2) multipurpose (2)} (2.23.140.1.5.2.2);
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) organization-validated (2) strict (3)} (2.23.140.1.5.2.3);
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) sponsor-validated (3) multipurpose (2)} (2.23.140.1.5.3.2); a
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) sponsor-validated (3) strict (3)} (2.23.140.1.5.3.3); a
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) individual-validated (4) multipurpose (2)} (2.23.140.1.5.4.2); a
-   * {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) smime-baseline(5) individual-validated (4) strict (3)} (2.23.140.1.5.4.3).
+Páry kryptografických kľúčov a S/MIME certifikáty vydané v rámci tejto hierarchie sú obmedzené výlučne na zabezpečenie elektronickej pošty (podpisovanie a/alebo šifrovanie e-mailov), vytváranie pokročilých elektronických podpisov a vytváranie pokročilých elektronických pečatí. 
 
-Poskytovateľ vydáva manažérske certifikáty pre svoje potreby (certifikát pre podriadenú CA a certifikát pre OCSP respondery).
+Všetky certifikáty koncových entít vydané v rámci tejto CP/CPS musia obsahovať povinné rozšírené používanie kľúča (EKU) `id-kp-emailProtection` (`1.3.6.1.5.5.7.3.4`).
+
+Certifikáty vydané v rámci tejto CP/CPS sa nesmú používať na autentifikáciu servera TLS, podpisovanie kódu ani na žiadne iné účely dôveryhodnosti okrem ochrany e-mailov, ani na prípady interného použitia iba v podniku/lokálne dôveryhodné.
+
+* **Verejne dôveryhodný certifikát S/MIME:** Kryptografické kľúče spojené s týmto typom certifikátu sú viazané na identitu subjektu (fyzická osoba, právnická osoba alebo sponzorovaná identita) a overenú e-mailovú adresu, ktorú má pod kontrolou.
+
+Vydané certifikáty S/MIME potvrdzujú súlad s dokumentom SMIME BR a v rozšírení `certificatePolicies` obsahujú príslušné identifikátory politík, vybrané z nasledujúcich možností:
+* **Overené na úrovni organizácie (OV):** `2.23.140.1.5.2.2` *(Multipurpose)* alebo `2.23.140.1.5.2.3` *(Strict)*
+* **Overené na úrovni sponzora (SV):** `2.23.140.1.5.3.2` *(Multipurpose)* alebo `2.23.140.1.5.3.3` *(Strict)*
+* **Overené na úrovni jednotlivca (IV):** `2.23.140.1.5.4.3` *(Strict)*
+* **OID internej politiky poskytovateľa:** `1.3.158.35975946.0.0.0.1.11`
+
+*Poznámka: OID internej politiky poskytovateľa a OID politík podľa SMIME BR, ktoré sú zahrnuté vo vydaných certifikátoch, zodpovedajú požiadavkám rámca politík ETSI NCP/LCP (norma ETSI EN 319 411-1) a spĺňajú ich.*
+
+* **Certifikáty pre infraštruktúru a podporu:** Poskytovateľ vydáva certifikáty na účely správy, ktoré sú nevyhnutné pre jeho prevádzkové potreby. Tieto certifikáty sú obmedzené výlučne na certifikáty podriadených certifikačných autorít (vydávajúce CA) a certifikáty pre odpovedače OCSP, ktoré fungujú striktne v rámci tejto hierarchie pre zabezpečenú elektronickú poštu.
 
 ### 1.4.2 Zakázané spôsoby použitia certifikátu
 Certifikáty vydávané podľa týchto CP/CPS nie sú kvalifikovanými certifikátmi EÚ podľa nariadenia eIDAS [3] a nemôžu sa používať tam, kde sa vyžadujú kvalifikované certifikáty EÚ.
@@ -467,15 +472,15 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
 
 ### 1.6.3	Referencie 
 **[1]**   Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates [https://cabforum.org/working-groups/smime/documents/](https://cabforum.org/working-groups/smime/documents/)      
-**[2]**   RFC 5280 "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"    
-**[3]**   Regulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market in the wording of Regulation (EU) No1183/2024 of the European.  
-**[4]**   ETSI TS 119 411-6 "Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 6: Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates."  
-**[5]**   ETSI EN 319 401 "Electronic Signatures and Infrastructures (ESI); General Policy Requirements for Trust Service Providers."   
-**[6]**   ETSI EN 319411-1 "Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements."   
-**[7]**   RFC 3647  "Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework"   
-**[8]**   Všeobecné podmienky poskytovania a používania dôveryhodnej služby vyhotovovania a overovania certifikátov Disig, a.s. [https://eidas.disig.sk/pdf/vp_tsp_disig.pdf](https://eidas.disig.sk/pdf/vp_tsp_disig.pdf)         
-**[9]**   X.500 "Information technology - Open Systems Interconnection - The Directory: Overview of concepts, models and services", 10/2012, ITU-T.  
-**[10]**  X.501 "Information technology - Open Systems Interconnection - The Directory: Models.", 10/2012,  ITU-T.  
+**[2]**  RFC 5280 "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"    
+**[3]**  Regulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market in the wording of Regulation (EU) No1183/2024 of the European.  
+**[4]**  ETSI TS 119 411-6 "Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 6: Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates."  
+**[5]**  ETSI EN 319 401 "Electronic Signatures and Infrastructures (ESI); General Policy Requirements for Trust Service Providers."   
+**[6]**  ETSI EN 319411-1 "Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements."   
+**[7]**  RFC 3647  "Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework"   
+**[8]**  Všeobecné podmienky poskytovania a používania dôveryhodnej služby vyhotovovania a overovania certifikátov Disig, a.s. [https://eidas.disig.sk/pdf/vp_tsp_disig.pdf](https://eidas.disig.sk/pdf/vp_tsp_disig.pdf)         
+**[9]**  X.500 "Information technology - Open Systems Interconnection - The Directory: Overview of concepts, models and services", 10/2012, ITU-T.  
+**[10]**  X.501 "Information technology - Open Systems Interconnection - The Directory: Models.", 10/2012,  ITU-T.  
 **[11]**  X.520 "Information technology - Open Systems Interconnection - The Directory: Selected attribute types", 10/2016, ITU-T.     
 **[12]**  RFC 5322 "Internet Message Format".   
 **[13]**  Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS certificates [https://cabforum.org/baseline-requirements-documents/](https://cabforum.org/baseline-requirements-documents/).  
@@ -487,7 +492,8 @@ CP/CPS sú zverejnené v súlade s politikou zverejňovania a oznamovania na web
 **[19]**  Network and Certificate System Security Requirements [https://cabforum.org/working-groups/netsec/documents/](https://cabforum.org/working-groups/netsec/documents/)   
 **[20]**  RFC 6818 "Updates to the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"   
 **[21]**  ETSI EN 319 412-1 "Electronic Signatures and Infrastructures (ESI);Certificate Profiles; Part 1: Overview and common data structures."     
-**[22]**  ISO 3166-1 "Codes for the representation of names of countries and their subdivisions - Part 1: Country code."   
+**[22]**  ISO 3166-1 "Codes for the representation of names of countries and their subdivisions - Part 1: Country code."    
+**[23]**  CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy).     
 
 ### 1.6.4 Konvencie
 Kľúčové slová „MUSÍ“, „NESMIE“, „POVINNÉ“, „MAL BY“, „NEMALO BY“, „ODPORÚČANÉ“, „MÔŽE“ a „VOLITEĽNÉ“ v týchto CP/CPS sa musia interpretovať v súlade s RFC 2119.
@@ -1589,9 +1595,10 @@ Poskytovateľ musí prostredníctvom technických a organizačných opatrení za
 Platnosť certifikátu vydaného Poskytovateľom a použiteľnosť páru kľúčov nesmie presiahnuť nasledujúce:
 | Typ certifikátu | Platnosť (minimum) | Platnosť (maximum) |
 | :--- | :---: | :---: |
-| Koreňová CA (Root CA) | 2922 dní | 9132 dní |
+| Koreňová CA (Root CA)          | 2922 dní | 9132 dní |
 | Podriadená CA (Subordinate CA) | 1825 dní | 2560 dní |
-| STRICT alebo MULTIPURPOSE S/MIME certifikát | - | 825 dní |
+| OCSP responder                 |          |  735 dní |
+| STRICT alebo MULTIPURPOSE S/MIME certifikát |  | 825 dní |
 
 Na účely výpočtov sa deň meria ako 86 400 sekúnd. Akékoľvek množstvo času väčšie ako toto, vrátane zlomkov sekúnd a/alebo priestupných sekúnd, predstavuje ďalší deň.
 
@@ -1677,6 +1684,7 @@ Tabuľka 5: Rozšírenia certifikátu v certifikátoch koreňovej CA
 | basicConstraints / 2.5.29.19 | ÁNO | ÁNO |
 | keyUsage / 2.5.29.15 | ÁNO | ÁNO |
 | subjectKeyIdentifier / 2.5.29.14 | ÁNO | NIE |
+| authorityKeyIdentifier / 2.5.29.35| ÁNO | NIE |
 
 #### 7.1.2.2 Podriadená certifikačná autorita Poskytovateľa
 
@@ -2148,25 +2156,25 @@ Poskytovateľ vyhlasuje a zaručuje oprávneným z certifikátu, že počas obdo
 
 Záruky vyplývajúce z certifikátu konkrétne zahŕňajú, okrem iného, nasledujúce:
 
-**[1] Právo používať e-mailovú adresu:** Že v čase vydania Poskytovateľ:
-**i.)** implementoval postup na overenie, či Žiadateľ mal buď právo na používanie, alebo mal pod kontrolou e-mailové adresy uvedené v poli predmetu certifikátu a v rozšírení subjectAltName (alebo mu takéto právo alebo kontrola boli delegované niekým, kto takéto právo na používanie alebo kontrolu mal);
-**ii.)** dodržal tento postup pri vydávaní certifikátu; a
-**iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;
+**[1] Právo používať e-mailovú adresu:** Že v čase vydania Poskytovateľ:    
+  **i.)** implementoval postup na overenie, či Žiadateľ mal buď právo na používanie, alebo mal pod kontrolou e-mailové adresy uvedené v poli predmetu certifikátu a v rozšírení subjectAltName (alebo mu takéto právo alebo kontrola boli delegované niekým, kto takéto právo na používanie alebo kontrolu mal);  
+  **ii.)** dodržal tento postup pri vydávaní certifikátu; a  
+  **iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;
 
-**[2] Autorizácia certifikátu:** Že v čase vydania Poskytovateľ:
-**i.)** implementoval postup na overenie, či Subjekt autorizoval vydanie certifikátu a či zástupca žiadateľa (Applicant Representative) je oprávnený žiadať o certifikát v mene Subjektu;
-**ii.)** dodržal tento postup pri vydávaní certifikátu; a
-**iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;
+**[2] Autorizácia certifikátu:** Že v čase vydania Poskytovateľ:  
+  **i.)** implementoval postup na overenie, či Subjekt autorizoval vydanie certifikátu a či zástupca žiadateľa     (Applicant Representative) je oprávnený žiadať o certifikát v mene Subjektu;  
+  **ii.)** dodržal tento postup pri vydávaní certifikátu; a  
+  **iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;  
 
-**[3] Presnosť informácií:** Že v čase vydania Poskytovateľ:
-**i.)** implementoval postup na overenie presnosti všetkých informácií obsiahnutých v certifikáte (s výnimkou atribútu „subject:serialNumber“);
-**ii.)** dodržal tento postup pri vydávaní certifikátu; a
-**iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;
+**[3] Presnosť informácií:** Že v čase vydania Poskytovateľ:    
+  **i.)** implementoval postup na overenie presnosti všetkých informácií obsiahnutých v certifikáte (s výnimkou atribútu „subject:serialNumber“);    
+  **ii.)** dodržal tento postup pri vydávaní certifikátu; a    
+  **iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;  
 
-**[4] Identita žiadateľa:** Že ak certifikát obsahuje identifikačné informácie o subjekte, Poskytovateľ:
-**i.)** implementoval postup na overenie identity Žiadateľa v súlade s časťou 3.2 a časťou 7.1.4.2.2;
-**ii.)** dodržal tento postup pri vydávaní certifikátu; a
-**iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;
+**[4] Identita žiadateľa:** Že ak certifikát obsahuje identifikačné informácie o subjekte, Poskytovateľ:  
+  **i.)** implementoval postup na overenie identity Žiadateľa v súlade s časťou 3.2 a časťou 7.1.4.2.2;  
+  **ii.)** dodržal tento postup pri vydávaní certifikátu; a  
+  **iii.)** presne opísal tento postup v CP/CPS Poskytovateľa;  
 
 **[5] Zmluva s odberateľom:** Že ak Poskytovateľ a Odberateľ nie sú pridruženými osobami, Odberateľ a Poskytovateľ sú stranami právne platnej a vymáhateľnej zmluvy s odberateľom, ktorá spĺňa tieto požiadavky, alebo ak sú Poskytovateľ a Odberateľ tým istým subjektom alebo sú pridruženými osobami, zástupca žiadateľa vzal na vedomie podmienky používania;
 
@@ -2300,7 +2308,7 @@ Ak sa akékoľvek ustanovenie týchto CP/CPS stane neplatným alebo nevymáhate�
 ### 9.16.4 Vymáhateľnosť 
 V prípade, že určité právo nie je uplatnené počas trvania zmluvného vzťahu medzi stranami, toto právo nezaniká z dôvodu jeho neuplatnenia, ak nie je uvedené inak.
 
-Z dôvodu zrušenia zmluvného vzťahu medzi zmluvnými stranami nie sú strany zbavené povinnosti splniť všetky záväzky vyplývajúce z doteraz uplatnených práv a vykonať všetky potrebné právne úkony, ktoré nesnesú odklad a ktoré sú nevyhnutné na zabránenie škode.
+Z dôvodu zrušenia zmluvného vzťahu medzi zmluvnými stranami nie sú strany zbavené povinnosti splniť všetky záväzky vyplývajúce z doteraz uplatnených práv a vykonať všetky potrebné právne úkony, ktoré neznesú odklad a ktoré sú nevyhnutné na zabránenie škode.
 
 ### 9.16.5 Vyššia moc (Force Majeure) 
 Poskytovateľ, Odberateľ/Držiteľ nezodpovedajú za omeškanie plnenia svojich povinností v dôsledku okolností vylučujúcich zodpovednosť (vyššia moc).

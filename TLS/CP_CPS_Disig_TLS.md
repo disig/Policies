@@ -2,8 +2,8 @@
 
 
 **Disig, a.s.**  
-**Version 7.6**  
-**Valid from October 30, 2026**  
+**Version 7.7**  
+**Valid from November 26, 2026**  
 **OID 1.3.158.35975946.0.0.0.1.1**
 
 Copyright © 2026 Disig, a.s. 
@@ -129,9 +129,9 @@ The Provider explicitly states that the publicly trusted CA hierarchies covered 
 | :--- | :--- |
 | Document Name:|**Disig TLS Certificate Policy and Certification Practice Statement (CP/CPS)** |
 | Name abbreviation: | **CA Disig TLS CP/CPS** |
-| Version:|  **7.6** |
-| Approved on:| **October 28, 2026**   |
-| Valid from:| **October 30, 2026**    |  
+| Version:|  **7.7** |
+| Approved on:| **November 17, 2026**   |
+| Valid from:| **November 26, 2026**    |  
 |This document is assigned to an object identifier (OID):|**1.3.158.35975946.0.0.0.1.1** |  
  
 
@@ -157,7 +157,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |:--------:|:-------------:|---------------------|
 |1.0|2006/03/25|First version; Miskovic|  
 |1.5|2006/12/20|Formal text editing - Formatting, correcting links, editing text in section 4 "Operational requirements"; Miskovic|  
-|2.0|2007/01/23|CP expansion in relation to the new type of TLS Certificate issued to the contracted client. Addition of section 7 "Certificate Profiles"; MiSkovic|  
+|2.0|2007/01/23|CP expansion in relation to the new type of TLS Certificate issued to the contracted client. Addition of section 7 "Certificate Profiles"; Miskovic|  
 |2.1|2007/03/29|Correcting text in chap. 2.8 and Chap. 4.9; Text editing related to a minor change in a partner's TLS Certificate; Miskovic|  
 |3.0|2008/03/19|Overall revision of the CP for each type of TLS Certificate; Durisova, Miskovic|  
 |3.1|2008/06/24|A new type of TLS Certificate adding.; Miskovic|
@@ -196,6 +196,7 @@ This OID (1.3.158.35975946.0.0.0.1.1) is also listed in issued TLS Certificates 
 |7.4|2026/09/04| CP/CPS Update Based on Apple Review; Miškovič|
 |7.5|2026/09/18| Transition to the new single-purpose TLS hierarchy, discontinuation of issuance under the legacy hierarchy, and establishment of its decommissioning plan (1.3.1.1; 1.3.1.2; 5.8.1); Miškovič|
 |7.6|2026/10/30| Adjustment of links to test pages (2.2.4), refinement of the wording in section 7.2.2 regarding CRL; Miškovič|
+|7.7|2026/11/26|Revision of the content of section 3.2.2.4.7, which was in conflict with section 4.2.1; Editorial changes and linguistic proofreading; Miškovič|
 
 ##  1.3 PKI Participants  
 
@@ -320,7 +321,7 @@ PMA represents the top component, which shall decide finally on all matters and 
 
 #### 1.3.5.2 Conformity assessors (auditors)
 Conformity assessors are independent organizations that, based on accreditation, assess the Provider's compliance with:
-* relevant standards (e.g. ETSI EN 319 401, ETSI EN 319 411-1, or other relevant standards),
+* relevant standards (e.g., ETSI EN 319 401, ETSI EN 319 411-1, or other relevant standards),
 * this CP/CPS and related internal policies of the Provider,
 * requirements of the Trusted Root CA and/or CCADB programs.  
 
@@ -334,13 +335,13 @@ The provider shall ensure that relations with conformity assessors are regulated
 #### 1.3.5.3 Supervisory bodies and operators of trusted root programs
 Supervisory bodies and operators of trusted root programs are entities that exercise statutory or programmatic supervision over the activities of the Provider, for example:
 * a national supervisory authority for trust services or electronic identification;
-* operators of trusted root CA programs (e.g. browser and OS manufacturers) who decide on the inclusion/removal of root CAs in the relevant program;
+* operators of trusted root CA programs (e.g., browser and OS manufacturers) who decide on the inclusion/removal of root CAs in the relevant program;
 * administrators and operators of CCADB.  
 
 These entities:
 * may request information, documents, and explanations from the Provider regarding the operation of the CA and compliance with requirements;
 * may require the adoption of corrective measures, restrictions, or termination of TLS Certificate issuance;
-* are not a contracting party or relying party but may affect the trustworthiness of issued TLS Certificates (e.g. by removing the root CA from the program).  
+* are not a contracting party or relying party but may affect the trustworthiness of issued TLS Certificates (e.g., by removing the root CA from the program).  
 
 The Provider shall cooperate with these entities to the extent required by applicable law, applicable program rules, and this CP/CPS.  
 
@@ -431,7 +432,7 @@ The CP/CPS is published in accordance with the publication and notification poli
 
 **Key pair** means a part of a PKI system that uses an asymmetric cryptography and consists of a public key and a private key.  
 
-**Multi-purpose CA** - A root CA or subordinate CA that is in a hierarchy without restrictions on the type of TLS Certificate issued to the end holder, i.e. in the hierarchy it is possible to issue TLS Certificates as well as S/MIME TLS Certificates, or other types of TLS Certificates, to end users;
+**Multi-purpose CA** - A root CA or subordinate CA that is in a hierarchy without restrictions on the type of TLS Certificate issued to the end holder, i.e., in the hierarchy it is possible to issue TLS Certificates as well as S/MIME TLS Certificates, or other types of TLS Certificates, to end users;
 
 **Domain Contact** means the Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record.
 
@@ -443,7 +444,7 @@ The CP/CPS is published in accordance with the publication and notification poli
 
 **Publicly Trusted Certificate** means a TLS Certificate that is trusted by virtue of the fact that its corresponding root TLS Certificate is distributed as a trust anchor in widely available application software.  
 
-**Single-purpose CA** - A root CA or subordinate CA that is in a hierarchy that is strictly limited to issuing exactly one type of TLS Certificate to an end user, i.e. in the hierarchy, only TLS Certificates can be issued to end user;  
+**Single-purpose CA** - A root CA or subordinate CA that is in a hierarchy that is strictly limited to issuing exactly one type of TLS Certificate to an end user, i.e., in the hierarchy, only TLS Certificates can be issued to end user;  
 
 **Subscriber** means a natural person or legal entity to whom a TLS Certificate is issued and who is legally bound by a subscriber agreement or terms of use.  
 
@@ -478,31 +479,31 @@ The CP/CPS is published in accordance with the publication and notification poli
 |SSL |Secure Sockets Layer |
 
 ### 1.6.3 References  
- **[1]** Recommendation ITU-T X.509; Information technology - Open Systems Interconnection - The Directory: Public-key and attribute TLS Certificate frameworks.   
- **[2]** RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile.   
- **[3]** Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates [https://cabforum.org/baseline-requirements-documents/](https://cabforum.org/baseline-requirements-documents/).  
- **[4]** Program Requirements - Microsoft Trusted Root Program: [https://learn.microsoft.com/en-us/security/trusted-root/program-requirements](https://learn.microsoft.com/en-us/security/trusted-root/program-requirements).  
- **[5]** Mozilla Root Store Policy: [https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/)  
- **[6]** Apple Root Certificate Program, [https://www.apple.com/certificateauthority/ca_program.html](https://www.apple.com/certificateauthority/ca_program.html).  
- **[7]** Chrome Root Program Policy [https://www.chromium.org/Home/chromium-security/root-ca-policy/](https://www.chromium.org/Home/chromium-security/root-ca-policy/).  
- **[8]** Regulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market as amended by Regulation 1183/2024.   
- **[9]** ETSI EN 319 401 Electronic Signatures and Infrastructures (ESI); General Policy Requirements for Trust Service Providers.   
- **[10]** ETSI EN 319 411-1 Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing Certificates; Part 1: General requirements.   
- **[11]** RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.   
- **[12]** General terms and conditions of provision and use of a trusted services Disig, a.s.   
- **[13]** RFC 8659 DNS Certification Authority Authorization (CAA) Resource Record.   
- **[14]** RFC8555 Automatic Certificate Management Environment (ACME).   
- **[15]** RFC 7231 Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content.   
- **[16]** RFC 7538 The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect).   
- **[17]** RFC 6454 The Web Origin Concept.   
- **[18]** Information about the Processing of Personal Data, Disig, a.s. [https://eidas.disig.sk/pdf/info_oou_gdpr_en.pdf](https://eidas.disig.sk/pdf/info_oou_gdpr_en.pdf)  
- **[19]** RFC 6960 "X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP".  
- **[20]** RFC 5019 The Lightweight Online Certificate Status Protocol (OCSP) Profile.   
- **[21]** RFC 8954 Online Certificate Status Protocol (OCSP) Nonce Extension.   
- **[22]** Network and Certificate System Security Requirements [https://cabforum.org/working-groups/netsec/documents/](https://cabforum.org/working-groups/netsec/documents/)  
- **[23]** RFC 6962 Certificate Transparency.  
- **[24]** CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy).
- **[25]** RFC 9733 ACME Renewal Information (ARI) Extension  
+ **[1]**  Recommendation ITU-T X.509; Information technology - Open Systems Interconnection - The Directory: Public-key and attribute TLS Certificate frameworks.   
+ **[2]**  RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile.   
+ **[3]**  Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates [https://cabforum.org/baseline-requirements-documents/](https://cabforum.org/baseline-requirements-documents/).  
+ **[4]**  Program Requirements - Microsoft Trusted Root Program: [https://learn.microsoft.com/en-us/security/trusted-root/program-requirements](https://learn.microsoft.com/en-us/security/trusted-root/program-requirements).  
+ **[5]**  Mozilla Root Store Policy: [https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/)  
+ **[6]**  Apple Root Certificate Program, [https://www.apple.com/certificateauthority/ca_program.html](https://www.apple.com/certificateauthority/ca_program.html).  
+ **[7]**  Chrome Root Program Policy [https://www.chromium.org/Home/chromium-security/root-ca-policy/](https://www.chromium.org/Home/chromium-security/root-ca-policy/).  
+ **[8]**  Regulation (EU) No 910/2014 of the European Parliament and of the Council of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market as amended by Regulation 1183/2024.   
+ **[9]**  ETSI EN 319 401 Electronic Signatures and Infrastructures (ESI); General Policy Requirements for Trust Service Providers.   
+ **[10]**  ETSI EN 319 411-1 Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing Certificates; Part 1: General requirements.   
+ **[11]**  RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.   
+ **[12]**  General terms and conditions of provision and use of a trusted services Disig, a.s.   
+ **[13]**  RFC 8659 DNS Certification Authority Authorization (CAA) Resource Record.   
+ **[14]**  RFC8555 Automatic Certificate Management Environment (ACME).   
+ **[15]**  RFC 7231 Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content.   
+ **[16]**  RFC 7538 The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect).   
+ **[17]**  RFC 6454 The Web Origin Concept.   
+ **[18]**  Information about the Processing of Personal Data, Disig, a.s. [https://eidas.disig.sk/pdf/info_oou_gdpr_en.pdf](https://eidas.disig.sk/pdf/info_oou_gdpr_en.pdf)  
+ **[19]**  RFC 6960 "X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP".  
+ **[20]**  RFC 5019 The Lightweight Online Certificate Status Protocol (OCSP) Profile.   
+ **[21]**  RFC 8954 Online Certificate Status Protocol (OCSP) Nonce Extension.   
+ **[22]**  Network and Certificate System Security Requirements [https://cabforum.org/working-groups/netsec/documents/](https://cabforum.org/working-groups/netsec/documents/)  
+ **[23]**  RFC 6962 Certificate Transparency.  
+ **[24]**  CCADB Policy [https://www.ccadb.org/policy](https://www.ccadb.org/policy).  
+ **[25]**  RFC 9733 ACME Renewal Information (ARI) Extension.  
  
 ### 1.6.4 Conventions 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this CP/CPS shall be interpreted in accordance with RFC 2119.
@@ -681,7 +682,7 @@ If the legal entity cannot prove its identity by a statement from the commercial
 For a Subscriber/Holder who applies for a TLS Certificate for a legal entity, the RA checks the submitted documents proving the existence of the given legal entity, which is usually an extract from the commercial register or another equivalent extract from another official valid register of legal entities.  
 
 Natural person who, based on the submitted extract from the commercial register, act at the RA on behalf of the given legal entity in the matter of obtaining a TLS Certificate shall prove their identity according to section 3.2.3.
-Only an authorized person of the user may act at the RA on behalf of the legal entity, i.e. a person who is its statutory member (or more such persons simultaneously, if required by the submitted extract from the commercial register), or the legal entity may be represented by a natural person or another legal entity.  
+Only an authorized person of the user may act at the RA on behalf of the legal entity, i.e., a person who is its statutory member (or more such persons simultaneously, if required by the submitted extract from the commercial register), or the legal entity may be represented by a natural person or another legal entity.  
 
 If a legal entity is represented at the RA, the representing natural person or legal entity shall always submit for inspection a verified extract from the commercial register of the represented legal entity not older than three months.
 If a legal entity is represented at the RA by a natural person, the representing natural person shall prove his/her identity in accordance with section 3.2.3 and shall also prove his/her identity with an officially certified (notary or registry office) power of attorney, the text of which clearly states that the representing natural person has been authorized by the authorizing legal entity to act in the given matter on its behalf.  
@@ -790,7 +791,7 @@ Once the FQDN has been validated using this method, the CA may also issue Certif
 
 This method is available to the RA as an automated method of verifying ownership and control over a domain, where the system used to generate TLS Certificates sends a unique randomly generated value for each FQDN that is expected to be in the SAN of the issued TLS Certificate, with the proviso that this unique value shall be registered in the DNS TXT record for each FQDN and shall also be registered for all lower levels, up to the second level, of the given FQDNs.
 
-Subsequently, the CA system automatically checks for the presence of the TXT value in the DNS records. Verification of the randomly generated unique value for the given FQDN will be used for verification within a maximum of 30 days from its submission. Verification data obtained using this method can be used to verify ownership and control over the same FQDN if it is not older than 398 days.  
+Subsequently, the CA system automatically checks for the presence of the TXT value in the DNS records. Verification of the randomly generated unique value for the given FQDN will be used for verification within a maximum of 30 days from its submission.
 
 ##### 3.2.2.4.8 IP Address  
 The Provider does not use this method.  
@@ -885,7 +886,7 @@ Some methods relied upon validating the Applicant's ownership or control of the 
 
 If the Provider issues, they shall do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 The RA staff member must check the published CAA record before issuing a TLS Certificate. If he finds that such a record exists, he must not issue the TLS Certificate until it is confirmed that the TLS Certificate application is in accordance with the relevant set of records in the CAA.
-The verification of the record is performed for each FQDN specified in the CN of the application or that which is to be specified in the SAN in such a way that the name tree is progressed from left to right, e.g. for checking the CAA record of an application that contains an FQDN in the form X.Y.X, the check is performed in the order X.Y.X -> Y.Z -> Z, unless Z is a national level, e.g. ".sk".  
+The verification of the record is performed for each FQDN specified in the CN of the application or that which is to be specified in the SAN in such a way that the name tree is progressed from left to right, e.g., for checking the CAA record of an application that contains an FQDN in the form X.Y.X, the check is performed in the order X.Y.X -> Y.Z -> Z, unless Z is a national level, e.g., ".sk".  
 
 A written record of the CAA record check is created, containing all checked FQDNs and the result of the check. 
 
@@ -907,15 +908,15 @@ The Provider MAY use either the same set, or different sets of Network Perspecti
 * Domain Authorization or Control; and
 * CAA Record checks.
 
-The set of responses from the Network Perspectives relied upon SHALL provide the Provider with the necessary information to allow it to affirmatively assess:
-**a)** the presence of the expected Random Value, Request Token, IP Address, or Contact Address, as required by the relied upon validation method specified in Section 3.2.2.4; and
+The set of responses from the Network Perspectives relied upon SHALL provide the Provider with the necessary information to allow it to affirmatively assess:  
+**a)** the presence of the expected Random Value, Request Token, IP Address, or Contact Address, as required by the relied upon validation method specified in Section 3.2.2.4; and  
 **b)** the Provider's authority to issue to the requested domain(s), as specified in Section 3.2.2.8.
 
 Results or information obtained from one Network Perspective MUST NOT be reused or cached when performing validation through subsequent Network Perspectives. The network infrastructure providing Internet connectivity to a Network Perspective MAY be administered by the same organization providing the computational services required to operate the Network Perspective. All communications between a remote Network Perspective and the Provider MUST take place over an authenticated and encrypted channel relying on modern protocols (e.g., over HTTPS).
 
 A Network Perspective MAY use a recursive DNS resolver that is not co-located with the Network Perspective. However, the DNS resolver used by the Network Perspective MUST fall within the same Regional Internet Registry (RIR) service region as the Network Perspective relying upon it. Furthermore, for any pair of DNS resolvers used on a Multi-Perspective Issuance Corroboration attempt, the straight-line distance between the two States, Provinces, or Countries the DNS resolvers reside in MUST be at least 500 km.
 
-The Provider MAY immediately retry Multi-Perspective Issuance Corroboration using the same validation method or an alternative method. When retrying Multi-Perspective Issuance Corroboration, the Provider MUST NOT rely on corroborations from previous attempts. There is no stipulation regarding the maximum number of validation attempts that may be performed in any period of time.
+The Provider MAY immediately retry Multi-Perspective Issuance Corroboration using the same validation method or an alternative method. When retrying Multi-Perspective Issuance Corroboration, the Provider MUST NOT rely on corroborations from previous attempts. There is no stipulation regarding the maximum number of validations attempts that may be performed in any period of time.
 
 Network Perspectives are considered distinct when the straight-line distance between the two States, Provinces, or Countries they reside in is at least 500 km. Network Perspectives are considered "remote" when they are distinct from the Primary Network Perspective and the other Network Perspectives represented in a quorum.
 
@@ -1205,7 +1206,7 @@ Methods used by the Provider to produce a certificate containing the to-be-signe
 1. Signing the `tbsCertificate` with a "dummy" Private Key whose Public Key component is not certified by a Certificate that chains to a publicly-trusted CA Certificate; or
 2. Specifying a static value for the `signature` field of the Certificate ASN.1 `SEQUENCE`.
 
-The Provider MAY implement its own certificate Linting tools, but SHOULD use Linting tools that have been widely adopted by the industry. The Provider is encouraged to contribute to open-source Linting projects.
+The Provider MAY implement its own certificate Linting tools but SHOULD use Linting tools that have been widely adopted by the industry. The Provider is encouraged to contribute to open-source Linting projects.
 
 #### 4.3.1.3 Linting of Issued Certificates
 The Provider MAY use a Linting process to test each issued Certificate post-issuance to ensure ongoing compliance with applicable Certificate Profiles and standards.
@@ -1355,7 +1356,7 @@ The Provider should revoke a TLS Certificate within 24 hours and shall revoke a 
 * The Provider obtains evidence that the TLS Certificate was misused.  
 * The Provider is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use.  
 * There is a suspicion that the TLS Certificate was not issued in accordance with this CP/CPS;  
-* The Provider is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the TLS Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);  
+* The Provider is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name in the TLS Certificate is no longer legally permitted (e.g., a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);  
 * The Provider is made aware that a wildcard TLS Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name.  
 * The Provider's right to issue TLS Certificates under TLS BR [3] expires or is revoked or terminated unless the Provider has made arrangements to continue maintaining the CRL/OCSP Repository.  
 * The Provider is made aware of a demonstrated or proven method that exposes the Subscriber's/Subject's Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see [http//wiki.debian.org/SSLkeys](http//wiki.debian.org/SSLkeys)), or if there is clear evidence that the specific method used to generate the Private Key was flawed.  
@@ -1407,7 +1408,7 @@ If the Subscriber's authentication requirements are met, which requests the revo
 
 The TLS Certificate that expired cannot be revoked.  
 
-Reporting and incident reporting procedures for possible compromise of a private key, misuse of a TLS Certificate or other type of fraud, unauthorized release or other matter related to a issued TLS Certificate are listed in 1.5.2.
+Reporting and incident reporting procedures for possible compromise of a private key, misuse of a TLS Certificate or other type of fraud, unauthorized release or other matter related to an issued TLS Certificate are listed in 1.5.2.
 The person requesting the revocation of a TLS Certificate must either undergo the same authentication process at the RA as is required during the initial registration of the applicant for a TLS Certificate or must prove in a credible manner that he is an authorized person who can request the revocation of the given TLS Certificate.  
 
 If the TLS Certificate Subscriber/Holder is represented at the RA in the matter of revocation of the TLS Certificate, the representing entity must prove himself with a verified power of attorney (notary or registry office), from the text of which the will of the TLS Certificate Subscriber/Holder to revoke his TLS Certificate is clearly evident. The representing entity is obliged to leave a document confirming his power of attorney or a copy thereof at the RA (it does not have to be verified). The RA staff member will take over and keep this document, in the case of an unverified copy, compare it with the original and write on it the text "I confirm compliance with the original" translated to the Slovak language and add the date and his signature.  
@@ -1436,7 +1437,7 @@ Provider shall
    * The entity making the complaint (for example, a complaint from a law enforcement official that a Web site is engaged in illegal activities should carry more weight than a complaint from a consumer alleging that she did not receive the goods she ordered); and  
    * Relevant legislation.  
 * Publish the current CRL and all previous CRLs on its website (see Section 1);  
-* Publish all revoked TLS Certificates in the CRL. i.e. even those that have expired in the meantime;  
+* Publish all revoked TLS Certificates in the CRL. i.e., even those that have expired in the meantime;  
 * Archive all CRLs it has released.  
 
 The Provider shall automatically inform the TLS Certificate Subscriber/Holder about revocation of TLS Certificate by sending an email to the email address provided by the Subscriber/Holder during registration to the RA.  
@@ -1495,7 +1496,7 @@ For the status of Subscriber TLS Certificates:
    **[2]** OCSP responses shall have a validity interval less than or equal to ten days;  
    **[3]** For OCSP responses with validity intervals less than sixteen hours, then the Provider shall update the information provided via an OCSP prior to one-half of the validity period before the nextUpdate;  
    **[4]** For OCSP responses with validity intervals greater than or equal to sixteen hours, then the Provider shall update the information provided via an OCSP at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate;  
-   **[5]** An authoritative OCSP response shall be available (i.e. the responder shall not respond with the 'unknown' status) starting no more than 15 minutes after the Certificate or TLS Precertificate is first published or otherwise made available.  
+   **[5]** An authoritative OCSP response shall be available (i.e., the responder shall not respond with the 'unknown' status) starting no more than 15 minutes after the Certificate or TLS Precertificate is first published or otherwise made available.  
 
 For the status of Subordinate CA Certificates:
 * The Provider shall update information provided via an OCSP:    
@@ -1577,7 +1578,7 @@ The Provider's basic infrastructure is located in protected areas that are acces
 
 ### 5.1.2 Physical access  
 Access Control Mechanisms for Provider's Protected Areas e. g. the areas of the highest security zone shall be secured in such a way that these spaces are protected by a security alarm and are only accessible to persons holding a security token and listed in the list of authorized persons to enter the Provider's protected areas. Provider equipment shall be permanently protected from unauthorized access, even from unauthorized physical access.  
-The access control mechanisms to the Provider's protected areas, i.e. to the areas of the highest security zone, are ensured in such a way that the areas are protected by a security alarm and entry is allowed only to persons who own a security token and are listed on the list of persons authorized to enter the Provider's protected areas (multi-factor authentication).   
+The access control mechanisms to the Provider's protected areas, i.e., to the areas of the highest security zone, are ensured in such a way that the areas are protected by a security alarm and entry is allowed only to persons who own a security token and are listed on the list of persons authorized to enter the Provider's protected areas (multi-factor authentication).   
 The Provider's equipment is constantly protected from unauthorized access, including unauthorized physical access.  
 
 ### 5.1.3 Power and air conditioning  
@@ -1595,7 +1596,7 @@ Media shall be stored in rooms that are protected against accidental, unintentio
 Media is stored in a location that is protected from accidental, unintentional damage (water, fire, electromagnetic). Media containing information related to security audits, archives, or backup information is stored in a location separate from CMA equipment.
 
 ### 5.1.7 Waste disposal  
-With the waste arising from the operation of the Provider it shall be managed in such a way that no environmental pollution is involved.  
+With the waste arising from the operation of the Provider, it shall be managed in such a way that no environmental pollution is involved.  
 Waste generated in connection with the Provider's operations is managed in such a way that it cannot, under any circumstances, pollute the environment.  
 
 ### 5.1.8 Off-site backup  
@@ -1641,7 +1642,7 @@ An important security measure that significantly limits the possibility of misus
 Additional security measures appropriate to the threat level in the RA equipment environment will also be used to protect the RA equipment.  
 
 ### 5.3.1 Qualifications, experience, and clearance requirements  
-Employees in trusted roles shall meet the qualification requirements, professional experience requirements, and have security clearance at the specified level or shall be in the process of requesting a security clearance, respectively. Requirements for each role are described in separate sheets used to recruit new staff.
+Employees in trusted roles shall meet the qualification requirements, professional experience requirements, and have security clearance at the specified level or shall be in the process of requesting a security clearance, respectively. Requirements for each role are described in separate sheets used to recruit inexperienced staff.
 Persons in managerial positions shall  
 * Have appropriate training or experience in the field of trusted services provided by the Provider;  
 * Be familiar with security measures for safety roles;       
@@ -1655,15 +1656,15 @@ Security clearance is not required for the RA staff member role.
 
 ### 5.3.3 Training Requirements and Procedures  
 Verification duties and issuance functions for TLS Certificates are strictly performed in-house by a small, highly specialized group of the Provider's internal personnel. The Provider does not delegate any validation or verification functions to any third party or external Registration Authority (RA).
-Before allowing any internal RA Staff memeber - Validation Specialist to perform verification tasks, the Provider shall provide comprehensive skills-training. The training program shall cover:
+Before allowing any internal RA Staff member - Validation Specialist to perform verification tasks, the Provider shall provide comprehensive skills-training. The training program shall cover:
 *  Basic Public Key Infrastructure (PKI) knowledge and principles;
 *	Authentication and vetting policies and procedures (including this CP/CPS);
 *	Common threats to the information verification process, including phishing, typosquatting, and other social engineering tactics;
 *	The full scope of the TLS Baseline Requirements.
 
-The Provider shall maintain complete records of all training sessions and qualifications. The Provider shall formally document that each RA staff - Validation Specialists possesses the skills required by a task before allowing theRA Staff memeber - Validation Specialists possesses the necessary skills and expertise required for a task before authorizing them to perform that task, ensuring they maintain a high skill level to execute their duties satisfactorily.
+The Provider shall maintain complete records of all training sessions and qualifications. The Provider shall formally document that each RA staff - Validation Specialists possesses the skills required by a task before allowing the RA Staff member - Validation Specialists possesses the necessary skills and expertise required for a task before authorizing them to perform that task, ensuring they maintain a high skill level to execute their duties satisfactorily.
  
-Prior to being authorized to perform validation duties, all RA Staff memeber - Validation Specialists shall be required to pass a formal examination provided by the Provider testing their knowledge on the information verification requirements outlined in the TLS Baseline Requirements and this CP/CPS.   
+Prior to being authorized to perform validation duties, all RA Staff member - Validation Specialists shall be required to pass a formal examination provided by the Provider testing their knowledge on the information verification requirements outlined in the TLS Baseline Requirements and this CP/CPS.   
 
 ### 5.3.4 Retraining frequency and requirements  
 For roles where the requirements for passing the prescribed training are set, it is possible to determine the need to repeat them after completing the primary training.  
@@ -1687,7 +1688,7 @@ The Provider shall record and have available all-important information regarding
 The Provider shall record accurate time in the trust service concerning key management and clock synchronization. The time recorded for each event shall be synchronized with UTC at least every 24 hours.  
 
 ### 5.4.1 Types of events recorded  
-The Provider shall records at least the following events:
+The Provider shall record at least the following events:
 * CA Certificate and key lifecycle events, including:  
    * Key generation, backup, storage, recovery, archival, and destruction;  
    * Certificate requests, renewal, and re-key requests, and revocation;  
@@ -1830,7 +1831,7 @@ No stipulation.
 No stipulation.  
 
 ## 5.8 CA or RA termination  
-Upon termination of the Provider's activities for reasons other than those caused by force majeure (e.g. natural disaster, state of war, state power, etc.), the procedure shall be followed in accordance with section 5.7.  
+Upon termination of the Provider's activities for reasons other than those caused by force majeure (e.g., natural disaster, state of war, state power, etc.), the procedure shall be followed in accordance with section 5.7.  
 Before terminating providing the services, the Provider shall:  
 * At least 6 months in advance notify the supervisory Authority, all Subscribers/Holders of valid TLS Certificates, the Relying Parties and to the public planned closure of its activities. This notice shall be made through the Provider's website, electronic mail, ordinary mail, registration authorities, or electronic media and printing.
 * Terminate all existing mandate contracts, powers of attorney under which other legal persons could act on behalf of the Provider.  
@@ -1891,7 +1892,7 @@ Key pair generation is performed by the user (applicant) himself, using appropri
 The Provider shall reject a TLS Certificate request if one or more of the following conditions are met:  
 
 **1.** The Key Pair does not meet the requirements set forth in Section 6.1.5 and/or Section 6.1.6;  
-**2.** There is clear evidence that the specific method used to generate Private Key was flawed;  
+**2.** There is unambiguous evidence that the specific method used to generate Private Key was flawed;  
 **3.** The Provider is aware of a demonstrated or proven method that exposes the Applicant's private Key to compromise;  
 **4.** The Provider has previously been made aware that the Applicant's private key has suffered a key compromise, such as through the provisions of Section 4.9.1.1;  
 **5.** The Provider is aware of a demonstrated or proven method to easily compute the Applicant's Private Key based on the Public Key (such as a Debian weak key, see [https://wiki.debian.org/SSLkeys](https://wiki.debian.org/SSLkeys)).  
@@ -1952,14 +1953,13 @@ The Provider CA's private keys:
 * are never exported from the HSM in unencrypted form.  
 
 ### 6.2.2 Private key (K out of N) multi-person control   
-In the case of operations with the Provider's private keys (e.g. generation, backup, liquidation), the appropriate number of authorized persons will participate. always on the "K" of "N" principle.   
+In the case of operations with the Provider's private keys (e.g., generation, backup, liquidation), the appropriate number of authorized persons will participate. always on the "K" of "N" principle.   
 
 ### 6.2.3 Private key escrow  
 No stipulation.  
 
 ### 6.2.4 Private key backup  
-Private keys of Provider shall be generated and stored inside hardware cryptographic modules.   
-Private keys shall always be encrypted in case authorized personnel within the meaning of Section 6.2.2 perform transfer them for backup and recovery purposes, transferring private keys and restoring them to another hardware cryptographic module may only.  
+The Provider’s private keys must be generated and stored within hardware cryptographic modules. Where transfer is necessary for backup and recovery purposes, private keys must always be transferred in encrypted form. Transfer of private keys and their recovery into another hardware cryptographic module may be performed only by authorized staff members in accordance with the rules set out in Section 6.2.2.  
 
 ### 6.2.5 Private key archival  
 No stipulation.  
@@ -1996,8 +1996,9 @@ The validity of the Certificate issued by the Provider and the usability of the 
 |Certificate type|Validity (minimum)|Validity (maximum)|
 |----------------|:------------------:|:------------------:|
 |Root CA|2922 days |9132 days |
-|Subordinate CA||1095 days|
-|TLS Certificate|-| 200 days from 15.3.2026 to 14.3.2027<br> 100 days from 15.3.2027 to 14.3.2029<br> 47 days from 15.3.2029|
+|Subordinate CA    ||1095 days|
+| OCSP responder   |         |  735 days             |
+|TLS Certificate   || 200 days from 15.3.2026 to 14.3.2027<br> 100 days from 15.3.2027 to 14.3.2029<br> 47 days from 15.3.2029|
 
 To calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day.  
 
@@ -2030,7 +2031,7 @@ No stipulation.
 ### 6.6.1 System development controls  
 Provider uses strict guidelines and methods when building software for CA operations to make sure it is safe and reliable. 
 Every code change MUST be reviewed by another person. Only approved and trusted developers can commit code.
-Updates of third party software, e.g. linting tools, are monitored and should be updated nolater than three months from the latest update.  
+Updates of third-party software, e.g., linting tools, are monitored and should be updated no later than three months from the latest update.  
 
 ### 6.6.2 Security management controls  
 No stipulation.  
@@ -2084,6 +2085,7 @@ Table 4 Certificate extensions in the Root CA Certificate
 |basicConstraints / 2.5.29.19|YES|YES|
 |keyUsage / 2.5.29.15|YES|YES|
 |subjectKeyIdentifier / 2.5.29.14|YES|NO|
+|authorityKeyIdentifier / 2.5.29.35|YES|NO|
 
 From 15.9.2023, the certificate extensions of the root CA Certificate can only contain items given in Section 7.1.2.1.2 of TLS BR [3].  
 
@@ -2139,7 +2141,7 @@ Algorithms and key lengths applied in the TLS Subordinate CA:
 |  | |
 | :--- | :--- |
 | Signature AlgorithmName:|**sha256RSA**|
-| Public key:|**RSA, length 2 048 bit**|
+| Public key:|**RSA, minimum length 2 048 bit**|
 |Validity of subordinate CA|maximum 3 years|
 
 Table 7 The content of the items in the TLS Subordinate CA subject 
@@ -2183,7 +2185,8 @@ Next table lists the extensions used in issued TLS Certificates.
 |Extended Key Usage|{id-ce-extKeyUsage}<br>[2.5.29.37]<br>This field indicates one or more purposes for which the certified public key may be used, <br>in addition to or in place of the basic purposes indicated in the key usage extension field.|YES|NO|
 |subjectAltName|id-ce-subjectAltName<br>[2.5.29.17]<br>This extension contains one or more alternative names, using any of a variety of name forms, <br>for the entity that is bound by the CA to the certified public key.|YES|NO|
 |Key Usage|{id-ce-keyUsage}<br>{2.5.29.15}<br>This extension indicates the purpose for which the certified public key is used.|YES|YES|
-|CRL Distribution Points|{id-ce-CRLDistributionPoints}<br>{2.5.29.31}<br>This field identifies the CRL distribution point or points to which a <br>TLS Certificate user should refer to ascertain if the TLS Certificate has been revoked|YES|NO|  
+|CRL Distribution Points|{id-ce-CRLDistributionPoints}<br>{2.5.29.31}<br>This field identifies the CRL distribution point or points to which a <br>TLS Certificate user should refer to ascertain if the TLS Certificate has been revoked|YES|NO| 
+|Signed Certificate Timestamp List|{id-ce-embeddedSCT-CTv1}<br>{1.3.6.1.4.1.11129.2.4.2}<br>This extension contains a list of Signed Certificate Timestamps (SCTs) demonstrating that the certificate was logged in one or more Certificate Transparency logs|YES|NO |
 
 The cRLDistributionPoints extension contains the HTTP URL of the CA’s CRL service as specified in Section 2.2.3 of this CP/CPS. 
 
@@ -2360,7 +2363,7 @@ CRL Extensions:
 Revoked certificate component shall be as specified in Section 7.2.2 of TLS BR [3] in "Table 90: revokedCertificates Component". 
 
 #### 7.2.2.1 CRL Issuing Distribution Point
-We issuing full and complete CRLs only and this extension is not trecommended for full and complete CRLs.
+We are issuing full and complete CRLs only and this extension is not recommended for full and complete CRLs.
 
 ## 7.3 OCSP profile  
 If the OCSP response refers to a root CA or a subordinate CA TLS Certificate, including cross-certified CA TLS Certificates, and this TLS Certificate has been revoked, then the reason for the revocation shall be specified in the RevokedInfo CertStatus field.  
@@ -2405,13 +2408,13 @@ The audit report shall contain at least the following clearly-labelled informati
 1. name of the organization being audited;  
 2. name and address of the organization performing the audit;  
 3. the SHA-256 fingerprint of all roots and subordinate CA TLS Certificates, including cross-certified subordinate CA TLS Certificates, which were in-scope of the audit;  
-4. audit criteria, with version number(s), that were used to audit each of the TLS Certificates (and associated keys);  
+4. audit criteria, with version number(s), which were used to audit each of the TLS Certificates (and associated keys);  
 5. a list of the Provider policy documents, with version numbers, referenced during the audit;  
 6. whether the audit assessed a period of time or a point in time;  
 7. the start date and end date of the audit period, for those that cover a period of time;  
 8. the point in time date, for those that are for a point in time;  
 9. the date the report was issued, which will necessarily be after the end date or point in time date; and  
-10. or audits conducted in accordance with any of the ETSI standards - a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated,  e.g. DVCP/CPS, OVCP/CPS, NCP/CPS, NCP/CPS+, LCP/CPS, EVCP/CPS, EVCP/CPS+, QCP/CPS-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers);  
+10. or audits conducted in accordance with any of the ETSI standards - a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated,  e.g., DVCP/CPS, OVCP/CPS, NCP/CPS, NCP/CPS+, LCP/CPS, EVCP/CPS, EVCP/CPS+, QCP/CPS-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers);  
 11. for audits conducted in accordance with any of the ETSI standards - a statement to indicate that the auditor referenced the applicable CA/Browser Forum criteria, such as TLS BR [3], and the version used.  
 
 An authoritative English language version of the publicly available audit information shall be provided by the qualified auditor, and the Provider shall ensure it is publicly available.  
@@ -2479,7 +2482,7 @@ Confidential information subject to appropriate protection shall be
 * private keys of the Provider used to sign TLS Certificates issued to subordinate Cas;   
 * private keys of subordinate CAs used to sign TLS Certificates issued to end-users;  
 * private keys of OCSP services;  
-* private keys belonging to the executive components of the Provider (RA Staff memeber);  
+* private keys belonging to the executive components of the Provider (RA Staff member);  
 * infrastructure (e.g., documents, procedures, procedures, files, scripts, passwords, etc.) serving to ensure the operation of the Provider's CA;  
 * Personal data of holders of TLS Certificates subject to protection under the Personal Data Protection Regulations [18].   
 
@@ -2636,13 +2639,13 @@ The Provider  shall defend, indemnify, and hold harmless each Application Softwa
 ## 9.10 Term and termination  
 
 ### 9.10.1 Term  
-This version of the CP/CPS is effective from the date of its entry into force and is valid until replaced by a new version. For details on the history of changes to this CP/CPS, see the "Revision" Section 1.2.1.  
+This version of the CP/CPS is effective from the date of its entry into force and is valid until replaced by an updated version. For details on the history of changes to this CP/CPS, see the "Revision" Section 1.2.1.  
 
 ### 9.10.2 Termination  
-This CP/CPS version will expire on the date of publication of a new version, or termination of the Provider's trusted service.   
+This CP/CPS version will expire on the date of publication of an updated version, or termination of the Provider's trusted service.   
 
 ### 9.10.3 Effect of termination and survival  
-In the event that this document is not replaced by a new version and its validity expires after the finishing of providing trustworthy service by Provider, all provisions of this CP relating to the Provider, which he is obliged to observe after termination of his activity shall be fulfilled. (See Section 9).  
+In the event that this document is not replaced by an updated version and its validity expires after the finishing of providing trustworthy service by Provider, all provisions of this CP relating to the Provider, which he is obliged to observe after termination of his activity shall be fulfilled. (See Section 9).  
 
 ## 9.11 Individual notices and communications with participants  
 No stipulation.  
@@ -2662,7 +2665,7 @@ Corrections of clutter, grammar and stylistic errors are not considered as chang
 
 ### 9.12.2 Notification mechanism and period  
 Provider shall publish information about the current version of CP/CPS through its website (see Section 1.5.2).   
-Internal employees (RA staff member) issuing TLS Certificates shall be fully informed about the new version of this CP/CPS.   
+Internal employees (RA staff member) issuing TLS Certificates shall be fully informed about the updated version of this CP/CPS.   
 
 ### 9.12.3 Circumstances under which OID shall be changed  
 Every policy shall have its OID assigned by the Provider. The OID of this CP/CPS is listed in Section1.2 and for each new CP/CPS version remains unchanged.  
